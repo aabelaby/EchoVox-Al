@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Model checkpoints (large files)
+# Model checkpoints (large — see README for download instructions)
 checkpoints/*.pt
 face_landmarker.task
 
@@ -22,7 +22,6 @@ echovox_LipSync_Dataset/
 
 # Environment
 .env
-environment.yml
 
 # IDE
 .vscode/
@@ -31,3 +30,6 @@ environment.yml
 # OS
 Thumbs.db
 .DS_Store
+
+# Logs
+*.log

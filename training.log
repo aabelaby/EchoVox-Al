@@ -1935,3 +1935,30 @@ pip install coqui-tts[codec]
 2026-03-26 14:05:54,165  INFO  127.0.0.1 - - [26/Mar/2026 14:05:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 2026-03-26 14:05:54,495  INFO  127.0.0.1 - - [26/Mar/2026 14:05:54] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
 2026-03-26 14:05:54,752  INFO  127.0.0.1 - - [26/Mar/2026 14:05:54] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:08:23,906  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 14:08:23,907  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 14:16:02,671  INFO  127.0.0.1 - - [26/Mar/2026 14:16:02] "GET / HTTP/1.1" 200 -
+2026-03-26 14:16:02,979  INFO  127.0.0.1 - - [26/Mar/2026 14:16:02] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-26 14:16:03,065  INFO  127.0.0.1 - - [26/Mar/2026 14:16:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 14:16:18,364  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 14:16:18,365  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 14:16:22,822  INFO  127.0.0.1 - - [26/Mar/2026 14:16:22] "POST /admin/login HTTP/1.1" 200 -
+2026-03-26 14:16:22,941  INFO  127.0.0.1 - - [26/Mar/2026 14:16:22] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-26 14:16:23,147  INFO  127.0.0.1 - - [26/Mar/2026 14:16:23] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-26 14:16:23,256  INFO  127.0.0.1 - - [26/Mar/2026 14:16:23] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-26 14:16:23,498  INFO  127.0.0.1 - - [26/Mar/2026 14:16:23] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-26 14:16:23,573  INFO  127.0.0.1 - - [26/Mar/2026 14:16:23] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-26 14:16:23,813  INFO  Loading XTTS-v2 on CPU …
+2026-03-26 14:16:23,821  INFO  127.0.0.1 - - [26/Mar/2026 14:16:23] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-26 14:16:23,826  INFO  127.0.0.1 - - [26/Mar/2026 14:16:23] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-26 14:16:24,003  INFO  tts_models/multilingual/multi-dataset/xtts_v2 is already downloaded.
+2026-03-26 14:16:27,154  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-26 14:16:58,101  INFO  Weights loaded ✓
+2026-03-26 14:16:58,115  INFO  XTTS-v2 ready ✓
+2026-03-26 14:16:58,177  INFO  127.0.0.1 - - [26/Mar/2026 14:16:58] "GET /api/admin/system-health HTTP/1.1" 200 -
