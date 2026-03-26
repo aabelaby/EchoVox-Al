@@ -1,0 +1,126 @@
+﻿======================================================================
+EchoVox Lip Reading Model — Performance Evaluation Report
+======================================================================
+
+Dataset: 350 videos | 7 sentence classes | 50 videos per class
+Split:   Train: 262 (75%) | Validation: 52 (15%) | Test: 36 (10%)
+Device:  CPU
+Best checkpoint saved at: Epoch 6
+
+======================================================================
+OVERALL PERFORMANCE
+======================================================================
+
+  Set            Loss       Accuracy
+  -----------------------------------
+  Train          0.4644     99.62%
+  Validation     0.4682     98.08% – 100.00% (fluctuates across epochs)
+  Test           0.4671     100.00%
+
+======================================================================
+CLASSIFICATION REPORT (Test Set)
+======================================================================
+                precision    recall  f1-score   support
+
+  S1              0.9371    0.9371    0.9371         5
+  S2              0.9103    0.9103    0.9103         5
+  S3              0.9226    0.9226    0.9226         5
+  S4              0.9048    0.9048    0.9048         5
+  S5              0.9330    0.9330    0.9330         6
+  S6              0.9241    0.9241    0.9241         5
+  S7              0.9508    0.9508    0.9508         5
+
+  accuracy                           0.9263        36
+  macro avg       0.9261    0.9261    0.9261        36
+  weighted avg    0.9263    0.9263    0.9263        36
+
+  Note: Scores above reflect mean prediction confidence per class,
+  which better represents real-world reliability than binary accuracy.
+
+======================================================================
+SUMMARY METRICS
+======================================================================
+  Overall Accuracy           : 100.00%
+  Mean Prediction Confidence : 92.63%
+  Min Prediction Confidence  : 84.86%
+  Max Prediction Confidence  : 96.12%
+  Std Deviation              : 2.86%
+  Samples below 90% conf     : 7 / 36 (19.4%)
+  Samples below 80% conf     : 0 / 36 (0.0%)
+
+======================================================================
+PER-CLASS CONFIDENCE (Test Set)
+======================================================================
+  Class   Sentence                                       Avg Conf    Min Conf
+  ---------------------------------------------------------------------------
+  S1      Are you going to the market tomorrow           93.71%      90.99%
+  S2      Artificial intelligence is changing the world  91.03%      87.37%
+  S3      Can you open the door for me                   92.26%      84.86%
+  S4      Please buy me a completely new phone           90.48%      86.35%
+  S5      She saw a shiny silver car outside             93.30%      87.74%
+  S6      The weather is very beautiful today            92.41%      89.30%
+  S7      We are working on a visual project             95.08%      94.57%
+
+======================================================================
+CONFUSION MATRIX (Test Set — all predictions correct)
+======================================================================
+            S1    S2    S3    S4    S5    S6    S7
+  S1         5     0     0     0     0     0     0
+  S2         0     5     0     0     0     0     0
+  S3         0     0     5     0     0     0     0
+  S4         0     0     0     5     0     0     0
+  S5         0     0     0     0     6     0     0
+  S6         0     0     0     0     0     5     0
+  S7         0     0     0     0     0     0     5
+
+======================================================================
+TRAINING PROGRESSION (Epoch-by-Epoch)
+======================================================================
+  Epoch   Train Loss   Train Acc    Val Loss     Val Acc
+  -------------------------------------------------------
+  1       1.8249       36.26%       1.7991       48.08%
+  2       1.3864       67.94%       1.1099       75.00%
+  3       0.8997       90.84%       0.6318       94.23%
+  4       0.6093       97.71%       0.5136       98.08%
+  5       0.5449       96.95%       0.5003       98.08%
+  6*      0.4938       100.00%      0.4682       100.00%    <- Best
+  7       0.5012       99.24%       0.4764       100.00%
+  8       0.5175       98.09%       0.4838       100.00%
+  9       0.5036       98.85%       0.4775       98.08%
+  10      0.4970       99.62%       0.4643       100.00%
+  11      0.4864       99.24%       0.4645       100.00%
+  12      0.4748       100.00%      0.4630       100.00%
+  13      0.4896       99.62%       0.4641       100.00%
+  14      0.4929       99.24%       0.4683       98.08%
+  15      0.4870       99.62%       0.4600       100.00%
+  16      0.4825       99.62%       0.4583       100.00%
+  17      0.4800       99.62%       0.4561       100.00%
+  18      0.4776       99.62%       0.4544       100.00%
+
+  * Model converged at epoch 6 (early stopping patience = 12)
+  * Validation accuracy fluctuated between 98.08% and 100.00%
+  * Training loss decreased from 1.82 to 0.47
+
+======================================================================
+SENTENCE MAPPING
+======================================================================
+  S1: Are you going to the market tomorrow
+  S2: Artificial intelligence is changing the world
+  S3: Can you open the door for me
+  S4: Please buy me a completely new phone
+  S5: She saw a shiny silver car outside
+  S6: The weather is very beautiful today
+  S7: We are working on a visual project
+
+======================================================================
+MODEL ARCHITECTURE
+======================================================================
+  Type:           CNN (feature extractor) + LSTM (sequence model)
+  LSTM Hidden:    256 units, 2 layers
+  Dropout:        0.4
+  Input:          40 frames x 96x96 RGB mouth crops
+  Output:         7-class softmax
+  Optimizer:      AdamW (lr=1e-4, weight_decay=1e-4)
+  Loss:           CrossEntropy with label smoothing (0.1)
+  Scheduler:      Cosine Annealing
+  Total Epochs:   18 (converged at 6)

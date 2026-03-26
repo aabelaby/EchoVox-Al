@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Model checkpoints (large files)
+checkpoints/*.pt
+face_landmarker.task
+
+# Uploads & outputs (user data)
+temp_uploads/
+uploads/
+outputs/
+voice_outputs/
+
+# Dataset (large)
+echovox_LipSync_Dataset/
+
+# Database
+*.db
+*.sqlite3
+
+# Environment
+.env
+environment.yml
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store

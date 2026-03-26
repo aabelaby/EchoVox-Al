@@ -1,0 +1,1937 @@
+2026-03-14 11:10:37,642  INFO  Device: cpu
+2026-03-14 11:10:38,322  INFO  MediaPipe FaceLandmarker ready.
+2026-03-14 11:10:38,628  INFO  Metadata: 350 rows  cols=['video_file_name', 'text_spoken']
+2026-03-14 11:10:38,628  INFO  Columns: 'video_file_name' | 'text_spoken'
+2026-03-14 11:10:38,747  INFO  Records: 350 loaded | 0 missing
+2026-03-14 11:10:38,749  INFO  Split → train:262  val:52  test:36
+2026-03-14 11:10:38,750  INFO  Caching mouth frames (runs once) …
+2026-03-14 11:14:07,367  INFO    50/350 cached
+2026-03-14 11:17:38,385  INFO    100/350 cached
+2026-03-14 11:21:12,466  INFO    150/350 cached
+2026-03-14 11:24:48,305  INFO    200/350 cached
+2026-03-14 11:28:25,369  INFO    250/350 cached
+2026-03-14 11:31:57,756  INFO    300/350 cached
+2026-03-14 11:35:35,870  INFO    350/350 cached
+2026-03-14 11:35:35,878  INFO  Caching done.
+2026-03-14 11:35:36,119  INFO  Params: 14,399,047
+2026-03-14 11:37:56,200  INFO  Epoch   1/60  tr=1.8249/0.3626  vl=1.7991/0.4808  lr=9.99e-05  [140.1s]
+2026-03-14 11:37:56,256  INFO    ✓ Best saved (val_acc=0.4808)
+2026-03-14 11:40:10,155  INFO  Epoch   2/60  tr=1.3864/0.6794  vl=1.1099/0.7500  lr=9.97e-05  [133.9s]
+2026-03-14 11:40:10,218  INFO    ✓ Best saved (val_acc=0.7500)
+2026-03-14 11:42:25,839  INFO  Epoch   3/60  tr=0.8997/0.9084  vl=0.6318/0.9423  lr=9.94e-05  [135.6s]
+2026-03-14 11:42:25,902  INFO    ✓ Best saved (val_acc=0.9423)
+2026-03-14 11:44:45,843  INFO  Epoch   4/60  tr=0.6093/0.9771  vl=0.5136/0.9808  lr=9.89e-05  [139.9s]
+2026-03-14 11:44:45,914  INFO    ✓ Best saved (val_acc=0.9808)
+2026-03-14 11:46:59,681  INFO  Epoch   5/60  tr=0.5449/0.9695  vl=0.5003/0.9808  lr=9.83e-05  [133.8s]
+2026-03-14 11:49:13,846  INFO  Epoch   6/60  tr=0.4938/1.0000  vl=0.4682/1.0000  lr=9.76e-05  [134.2s]
+2026-03-14 11:49:13,918  INFO    ✓ Best saved (val_acc=1.0000)
+2026-03-14 11:51:28,325  INFO  Epoch   7/60  tr=0.5012/0.9924  vl=0.4764/1.0000  lr=9.67e-05  [134.4s]
+2026-03-14 11:53:42,790  INFO  Epoch   8/60  tr=0.5175/0.9809  vl=0.4838/1.0000  lr=9.57e-05  [134.5s]
+2026-03-14 11:56:04,427  INFO  Epoch   9/60  tr=0.5036/0.9885  vl=0.4775/0.9808  lr=9.46e-05  [141.6s]
+2026-03-14 11:58:27,467  INFO  Epoch  10/60  tr=0.4970/0.9962  vl=0.4643/1.0000  lr=9.34e-05  [143.0s]
+2026-03-14 12:00:50,969  INFO  Epoch  11/60  tr=0.4864/0.9924  vl=0.4645/1.0000  lr=9.20e-05  [143.5s]
+2026-03-14 12:03:06,672  INFO  Epoch  12/60  tr=0.4748/1.0000  vl=0.4630/1.0000  lr=9.05e-05  [135.7s]
+2026-03-14 12:05:40,742  INFO  Epoch  13/60  tr=0.4896/0.9962  vl=0.4641/1.0000  lr=8.90e-05  [154.1s]
+2026-03-14 12:08:09,622  INFO  Epoch  14/60  tr=0.4929/0.9924  vl=0.4683/0.9808  lr=8.73e-05  [148.9s]
+2026-03-14 12:10:43,738  INFO  Epoch  15/60  tr=0.4870/0.9962  vl=0.4600/1.0000  lr=8.55e-05  [154.1s]
+2026-03-14 12:13:22,840  INFO  Epoch  16/60  tr=0.4825/0.9962  vl=0.4583/1.0000  lr=8.36e-05  [159.1s]
+2026-03-14 12:16:07,452  INFO  Epoch  17/60  tr=0.4800/0.9962  vl=0.4561/1.0000  lr=8.17e-05  [164.6s]
+2026-03-14 12:18:41,429  INFO  Epoch  18/60  tr=0.4776/0.9962  vl=0.4544/1.0000  lr=7.96e-05  [154.0s]
+2026-03-14 12:18:41,429  INFO  Early stop @ epoch 18
+2026-03-14 12:18:41,430  INFO  
+============================================================
+FINAL TEST
+2026-03-14 12:18:47,910  INFO  Test: loss=0.4671  acc=1.0000 (100.00%)
+2026-03-14 12:18:47,933  INFO  
+              precision    recall  f1-score   support
+
+          S1       1.00      1.00      1.00         5
+          S2       1.00      1.00      1.00         5
+          S3       1.00      1.00      1.00         5
+          S4       1.00      1.00      1.00         5
+          S5       1.00      1.00      1.00         6
+          S6       1.00      1.00      1.00         5
+          S7       1.00      1.00      1.00         5
+
+    accuracy                           1.00        36
+   macro avg       1.00      1.00      1.00        36
+weighted avg       1.00      1.00      1.00        36
+
+2026-03-14 12:18:47,937  INFO  Confusion Matrix:
+[[5 0 0 0 0 0 0]
+ [0 5 0 0 0 0 0]
+ [0 0 5 0 0 0 0]
+ [0 0 0 5 0 0 0]
+ [0 0 0 0 6 0 0]
+ [0 0 0 0 0 5 0]
+ [0 0 0 0 0 0 5]]
+2026-03-14 12:18:48,035  INFO  Done. Final model → checkpoints\final_model.pt
+2026-03-14 12:32:58,962  INFO  Device: cpu
+2026-03-14 12:33:01,032  INFO  MediaPipe FaceLandmarker ready.
+2026-03-14 12:33:01,344  INFO  Metadata: 350 rows  cols=['video_file_name', 'text_spoken']
+2026-03-14 12:33:01,344  INFO  Columns: 'video_file_name' | 'text_spoken'
+2026-03-14 12:33:01,469  INFO  Records: 350 loaded | 0 missing
+2026-03-14 12:33:01,469  INFO  Split → train:262  val:52  test:36
+2026-03-14 12:33:01,469  INFO  Caching mouth frames (runs once) …
+2026-03-14 12:36:30,483  INFO    50/350 cached
+2026-03-14 12:40:01,378  INFO    100/350 cached
+2026-03-14 12:43:38,998  INFO    150/350 cached
+2026-03-14 12:47:05,250  INFO    200/350 cached
+2026-03-14 12:50:34,260  INFO    250/350 cached
+2026-03-14 12:54:01,038  INFO    300/350 cached
+2026-03-14 12:57:29,909  INFO    350/350 cached
+2026-03-14 12:57:29,909  INFO  Caching done.
+2026-03-14 12:57:30,207  INFO  Params: 14,399,047
+2026-03-14 12:59:24,312  INFO  Epoch   1/60  tr=1.8249/0.3626  vl=1.7991/0.4808  lr=9.99e-05  [114.1s]
+2026-03-14 12:59:24,359  INFO    ✓ Best saved (val_acc=0.4808)
+2026-03-14 13:01:15,929  INFO  Epoch   2/60  tr=1.3864/0.6794  vl=1.1099/0.7500  lr=9.97e-05  [111.6s]
+2026-03-14 13:01:15,992  INFO    ✓ Best saved (val_acc=0.7500)
+2026-03-14 13:03:06,063  INFO  Epoch   3/60  tr=0.8997/0.9084  vl=0.6318/0.9423  lr=9.94e-05  [110.1s]
+2026-03-14 13:03:06,126  INFO    ✓ Best saved (val_acc=0.9423)
+2026-03-14 13:04:56,050  INFO  Epoch   4/60  tr=0.6093/0.9771  vl=0.5136/0.9808  lr=9.89e-05  [109.9s]
+2026-03-14 13:04:56,113  INFO    ✓ Best saved (val_acc=0.9808)
+2026-03-14 13:07:16,605  INFO  Epoch   5/60  tr=0.5449/0.9695  vl=0.5003/0.9808  lr=9.83e-05  [140.5s]
+2026-03-14 13:09:19,387  INFO  Epoch   6/60  tr=0.4938/1.0000  vl=0.4682/1.0000  lr=9.76e-05  [122.8s]
+2026-03-14 13:09:19,435  INFO    ✓ Best saved (val_acc=1.0000)
+2026-03-14 13:11:13,473  INFO  Epoch   7/60  tr=0.5012/0.9924  vl=0.4764/1.0000  lr=9.67e-05  [114.0s]
+2026-03-14 13:13:07,435  INFO  Epoch   8/60  tr=0.5175/0.9809  vl=0.4838/1.0000  lr=9.57e-05  [114.0s]
+2026-03-14 13:15:06,159  INFO  Epoch   9/60  tr=0.5036/0.9885  vl=0.4775/0.9808  lr=9.46e-05  [118.7s]
+2026-03-14 13:17:18,720  INFO  Epoch  10/60  tr=0.4970/0.9962  vl=0.4643/1.0000  lr=9.34e-05  [132.6s]
+2026-03-14 13:19:32,609  INFO  Epoch  11/60  tr=0.4864/0.9924  vl=0.4645/1.0000  lr=9.20e-05  [133.9s]
+2026-03-14 13:21:26,907  INFO  Epoch  12/60  tr=0.4748/1.0000  vl=0.4630/1.0000  lr=9.05e-05  [114.3s]
+2026-03-14 13:23:22,464  INFO  Epoch  13/60  tr=0.4896/0.9962  vl=0.4641/1.0000  lr=8.90e-05  [115.6s]
+2026-03-14 13:25:16,574  INFO  Epoch  14/60  tr=0.4929/0.9924  vl=0.4683/0.9808  lr=8.73e-05  [114.1s]
+2026-03-14 13:27:10,584  INFO  Epoch  15/60  tr=0.4870/0.9962  vl=0.4600/1.0000  lr=8.55e-05  [114.0s]
+2026-03-14 13:29:04,118  INFO  Epoch  16/60  tr=0.4825/0.9962  vl=0.4583/1.0000  lr=8.36e-05  [113.5s]
+2026-03-14 13:30:58,747  INFO  Epoch  17/60  tr=0.4800/0.9962  vl=0.4561/1.0000  lr=8.17e-05  [114.6s]
+2026-03-14 13:32:53,082  INFO  Epoch  18/60  tr=0.4776/0.9962  vl=0.4544/1.0000  lr=7.96e-05  [114.3s]
+2026-03-14 13:32:53,082  INFO  Early stop @ epoch 18
+2026-03-14 13:32:53,082  INFO  
+============================================================
+FINAL TEST
+2026-03-14 13:32:57,742  INFO  Test: loss=0.4671  acc=1.0000 (100.00%)
+2026-03-14 13:32:57,747  INFO  
+              precision    recall  f1-score   support
+
+          S1       1.00      1.00      1.00         5
+          S2       1.00      1.00      1.00         5
+          S3       1.00      1.00      1.00         5
+          S4       1.00      1.00      1.00         5
+          S5       1.00      1.00      1.00         6
+          S6       1.00      1.00      1.00         5
+          S7       1.00      1.00      1.00         5
+
+    accuracy                           1.00        36
+   macro avg       1.00      1.00      1.00        36
+weighted avg       1.00      1.00      1.00        36
+
+2026-03-14 13:32:57,757  INFO  Confusion Matrix:
+[[5 0 0 0 0 0 0]
+ [0 5 0 0 0 0 0]
+ [0 0 5 0 0 0 0]
+ [0 0 0 5 0 0 0]
+ [0 0 0 0 6 0 0]
+ [0 0 0 0 0 5 0]
+ [0 0 0 0 0 0 5]]
+2026-03-14 13:32:57,819  INFO  Done. Final model → checkpoints\final_model.pt
+2026-03-14 14:44:38,471  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 14:44:38,471  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 14:44:38,475  INFO   * Restarting with stat
+2026-03-14 14:44:45,743  WARNING   * Debugger is active!
+2026-03-14 14:44:45,747  INFO   * Debugger PIN: 116-242-480
+2026-03-14 14:44:45,775  INFO  127.0.0.1 - - [14/Mar/2026 14:44:45] "GET / HTTP/1.1" 200 -
+2026-03-14 14:44:45,826  INFO  127.0.0.1 - - [14/Mar/2026 14:44:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 14:45:51,098  INFO  127.0.0.1 - - [14/Mar/2026 14:45:51] "POST /predict HTTP/1.1" 200 -
+2026-03-14 15:24:35,879  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\voice_clone.py', reloading
+2026-03-14 15:24:36,741  INFO   * Restarting with stat
+2026-03-14 15:24:49,855  WARNING   * Debugger is active!
+2026-03-14 15:24:49,859  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:24:56,104  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\voice_clone.py', reloading
+2026-03-14 15:24:56,838  INFO   * Restarting with stat
+2026-03-14 15:25:03,902  WARNING   * Debugger is active!
+2026-03-14 15:25:03,906  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:30:30,214  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 15:30:30,993  INFO   * Restarting with stat
+2026-03-14 15:30:39,002  WARNING   * Debugger is active!
+2026-03-14 15:30:39,007  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:33:47,328  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 15:33:47,329  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 15:33:47,331  INFO   * Restarting with stat
+2026-03-14 15:33:55,131  WARNING   * Debugger is active!
+2026-03-14 15:33:55,138  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:33:55,172  INFO  127.0.0.1 - - [14/Mar/2026 15:33:55] "GET / HTTP/1.1" 200 -
+2026-03-14 15:36:21,779  INFO  Reference audio: ['temp_uploads\\file_example_WAV_1MG.wav']
+2026-03-14 15:36:21,780  INFO  TTS device: cpu
+2026-03-14 15:36:21,783  INFO  127.0.0.1 - - [14/Mar/2026 15:36:21] "POST /process HTTP/1.1" 200 -
+2026-03-14 15:42:49,962  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 15:42:49,963  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 15:42:49,967  INFO   * Restarting with stat
+2026-03-14 15:42:57,220  WARNING   * Debugger is active!
+2026-03-14 15:42:57,224  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:42:57,321  INFO  127.0.0.1 - - [14/Mar/2026 15:42:57] "POST /process HTTP/1.1" 200 -
+2026-03-14 15:44:55,861  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 15:44:55,861  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 15:44:55,863  INFO   * Restarting with stat
+2026-03-14 15:45:02,904  WARNING   * Debugger is active!
+2026-03-14 15:45:02,908  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:45:08,452  INFO  Reference audio: ['temp_uploads\\file_example_WAV_1MG.wav']
+2026-03-14 15:45:08,452  INFO  TTS device: cpu
+2026-03-14 15:45:13,560  INFO  127.0.0.1 - - [14/Mar/2026 15:45:13] "POST /process HTTP/1.1" 200 -
+2026-03-14 15:47:08,083  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 15:47:08,083  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 15:47:08,085  INFO   * Restarting with stat
+2026-03-14 15:47:15,071  WARNING   * Debugger is active!
+2026-03-14 15:47:15,076  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:47:27,660  INFO  Reference audio: ['temp_uploads\\file_example_WAV_1MG.wav']
+2026-03-14 15:47:27,660  INFO  TTS device: cpu
+2026-03-14 15:47:31,355  INFO  127.0.0.1 - - [14/Mar/2026 15:47:31] "POST /process HTTP/1.1" 200 -
+2026-03-14 15:47:37,664  INFO  127.0.0.1 - - [14/Mar/2026 15:47:37] "GET / HTTP/1.1" 200 -
+2026-03-14 15:48:08,839  INFO  127.0.0.1 - - [14/Mar/2026 15:48:08] "POST /process HTTP/1.1" 200 -
+2026-03-14 15:48:52,005  INFO  127.0.0.1 - - [14/Mar/2026 15:48:52] "GET / HTTP/1.1" 200 -
+2026-03-14 15:49:14,586  INFO  Reference audio: ['temp_uploads\\file_example_WAV_1MG.wav']
+2026-03-14 15:49:14,586  INFO  TTS device: cpu
+2026-03-14 15:49:14,737  INFO  127.0.0.1 - - [14/Mar/2026 15:49:14] "POST /process HTTP/1.1" 200 -
+2026-03-14 15:49:49,886  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 15:49:50,884  INFO   * Restarting with stat
+2026-03-14 15:49:59,149  WARNING   * Debugger is active!
+2026-03-14 15:49:59,153  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:50:21,161  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 15:50:21,161  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 15:50:21,164  INFO   * Restarting with stat
+2026-03-14 15:50:28,123  WARNING   * Debugger is active!
+2026-03-14 15:50:28,129  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:50:28,158  INFO  127.0.0.1 - - [14/Mar/2026 15:50:28] "GET / HTTP/1.1" 200 -
+2026-03-14 15:51:08,681  INFO  Reference audio: ['temp_uploads\\file_example_WAV_1MG.wav']
+2026-03-14 15:51:08,681  INFO  TTS device: cpu
+2026-03-14 15:51:10,854  INFO  127.0.0.1 - - [14/Mar/2026 15:51:10] "POST /process HTTP/1.1" 200 -
+2026-03-14 15:52:50,795  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 15:52:50,795  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 15:52:50,800  INFO   * Restarting with stat
+2026-03-14 15:52:58,752  WARNING   * Debugger is active!
+2026-03-14 15:52:58,756  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:52:58,790  INFO  127.0.0.1 - - [14/Mar/2026 15:52:58] "GET / HTTP/1.1" 200 -
+2026-03-14 15:52:58,798  INFO  127.0.0.1 - - [14/Mar/2026 15:52:58] "GET / HTTP/1.1" 200 -
+2026-03-14 15:53:33,072  INFO  Reference audio: ['temp_uploads\\file_example_WAV_1MG.wav']
+2026-03-14 15:53:33,072  INFO  TTS device: cpu
+2026-03-14 15:53:35,561  INFO  127.0.0.1 - - [14/Mar/2026 15:53:35] "POST /process HTTP/1.1" 200 -
+2026-03-14 15:55:44,086  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 15:55:44,087  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 15:55:44,089  INFO   * Restarting with stat
+2026-03-14 15:55:51,184  WARNING   * Debugger is active!
+2026-03-14 15:55:51,188  INFO   * Debugger PIN: 116-242-480
+2026-03-14 15:55:56,289  INFO  Reference audio: ['temp_uploads\\file_example_WAV_1MG.wav']
+2026-03-14 15:55:56,289  INFO  TTS device: cpu
+2026-03-14 15:55:58,659  INFO  127.0.0.1 - - [14/Mar/2026 15:55:58] "POST /process HTTP/1.1" 200 -
+2026-03-14 16:17:27,473  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 16:17:27,474  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 16:17:27,476  INFO   * Restarting with stat
+2026-03-14 16:17:34,601  WARNING   * Debugger is active!
+2026-03-14 16:17:34,606  INFO   * Debugger PIN: 116-242-480
+2026-03-14 16:17:40,904  INFO  ElevenLabs client ready ✓
+2026-03-14 16:17:40,904  INFO  Voice file  : temp_uploads\file_example_WAV_1MG.wav
+2026-03-14 16:17:40,905  INFO  Uploading your voice to ElevenLabs for cloning …
+2026-03-14 16:17:40,905  INFO  File: temp_uploads\file_example_WAV_1MG.wav
+2026-03-14 16:17:40,905  WARNING  Clone failed ('ElevenLabs' object has no attribute 'clone'). Searching existing voices …
+2026-03-14 16:17:41,594  INFO  HTTP Request: GET https://api.elevenlabs.io/v1/voices "HTTP/1.1 401 Unauthorized"
+2026-03-14 16:17:41,606  INFO  127.0.0.1 - - [14/Mar/2026 16:17:41] "POST /process HTTP/1.1" 200 -
+2026-03-14 16:18:54,701  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 16:18:54,702  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 16:18:54,704  INFO   * Restarting with stat
+2026-03-14 16:19:01,948  WARNING   * Debugger is active!
+2026-03-14 16:19:01,953  INFO   * Debugger PIN: 116-242-480
+2026-03-14 16:19:07,902  INFO  ElevenLabs client ready ✓
+2026-03-14 16:19:07,902  INFO  Voice file  : temp_uploads\file_example_WAV_1MG.wav
+2026-03-14 16:19:07,902  INFO  Uploading your voice to ElevenLabs for cloning …
+2026-03-14 16:19:07,903  INFO  File: temp_uploads\file_example_WAV_1MG.wav
+2026-03-14 16:19:07,903  WARNING  Clone failed ('ElevenLabs' object has no attribute 'clone'). Searching existing voices …
+2026-03-14 16:19:08,417  INFO  HTTP Request: GET https://api.elevenlabs.io/v1/voices "HTTP/1.1 200 OK"
+2026-03-14 16:19:08,716  INFO  127.0.0.1 - - [14/Mar/2026 16:19:08] "POST /process HTTP/1.1" 200 -
+2026-03-14 16:21:32,512  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\voice_clone.py', reloading
+2026-03-14 16:21:33,411  INFO   * Restarting with stat
+2026-03-14 16:21:45,250  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 16:21:45,250  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 16:21:45,252  INFO   * Restarting with stat
+2026-03-14 16:21:52,686  WARNING   * Debugger is active!
+2026-03-14 16:21:52,691  INFO   * Debugger PIN: 116-242-480
+2026-03-14 16:21:58,744  INFO  ElevenLabs SDK v2 client ready ✓
+2026-03-14 16:21:58,744  INFO  Voice file : temp_uploads\file_example_WAV_1MG.wav
+2026-03-14 16:21:58,744  INFO  Uploading your voice to ElevenLabs …
+2026-03-14 16:21:58,839  WARNING  voices.add() failed ('VoicesClient' object has no attribute 'add'), trying fallback …
+2026-03-14 16:21:59,259  INFO  HTTP Request: GET https://api.elevenlabs.io/v1/voices "HTTP/1.1 200 OK"
+2026-03-14 16:21:59,637  INFO  127.0.0.1 - - [14/Mar/2026 16:21:59] "POST /process HTTP/1.1" 200 -
+2026-03-14 16:27:44,147  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 16:27:44,148  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 16:27:44,150  INFO   * Restarting with stat
+2026-03-14 16:27:51,455  WARNING   * Debugger is active!
+2026-03-14 16:27:51,458  INFO   * Debugger PIN: 116-242-480
+2026-03-14 16:27:57,334  INFO  ElevenLabs ready ✓  |  voice file: temp_uploads\file_example_WAV_1MG.wav
+2026-03-14 16:27:57,334  INFO  Uploading your voice for cloning …
+2026-03-14 16:27:58,078  INFO  HTTP Request: POST https://api.elevenlabs.io/v1/voices/add "HTTP/1.1 401 Unauthorized"
+2026-03-14 16:27:58,081  WARNING  ivc.create failed (headers: {'date': 'Sat, 14 Mar 2026 10:57:59 GMT', 'server': 'uvicorn', 'content-length': '156', 'content-type': 'application/json', 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'POST, PATCH, OPTIONS, DELETE, GET, PUT', 'access-control-max-age': '600', 'strict-transport-security': 'max-age=1800;', 'x-trace-id': '8872618e020ddb2c2f37ff7016c8c6d8', 'x-region': 'us-central1', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'}, status_code: 401, body: {'detail': {'status': 'missing_permissions', 'message': 'The API key you used is missing the permission create_instant_voice_clone to execute this operation.'}}), searching existing voices …
+2026-03-14 16:27:58,353  INFO  HTTP Request: GET https://api.elevenlabs.io/v1/voices "HTTP/1.1 200 OK"
+2026-03-14 16:27:58,535  INFO  127.0.0.1 - - [14/Mar/2026 16:27:58] "POST /process HTTP/1.1" 200 -
+2026-03-14 16:49:05,229  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\voice_clone.py', reloading
+2026-03-14 16:49:06,181  INFO   * Restarting with stat
+2026-03-14 16:49:13,349  WARNING   * Debugger is active!
+2026-03-14 16:49:13,354  INFO   * Debugger PIN: 116-242-480
+2026-03-14 16:49:25,892  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\voice_clone.py', reloading
+2026-03-14 16:49:26,644  INFO   * Restarting with stat
+2026-03-14 16:49:34,484  WARNING   * Debugger is active!
+2026-03-14 16:49:34,487  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:07:20,176  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 17:07:20,176  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 17:07:20,179  INFO   * Restarting with stat
+2026-03-14 17:07:28,787  WARNING   * Debugger is active!
+2026-03-14 17:07:28,791  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:07:51,737  INFO  127.0.0.1 - - [14/Mar/2026 17:07:51] "POST /process HTTP/1.1" 200 -
+2026-03-14 17:09:26,413  INFO  127.0.0.1 - - [14/Mar/2026 17:09:26] "POST /process HTTP/1.1" 200 -
+2026-03-14 17:12:03,391  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\voice_clone.py', reloading
+2026-03-14 17:12:04,301  INFO   * Restarting with stat
+2026-03-14 17:12:11,468  WARNING   * Debugger is active!
+2026-03-14 17:12:11,473  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:13:59,339  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\voice_clone.py', reloading
+2026-03-14 17:14:00,139  INFO   * Restarting with stat
+2026-03-14 17:14:07,382  WARNING   * Debugger is active!
+2026-03-14 17:14:07,386  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:17:50,783  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\voice_clone.py', reloading
+2026-03-14 17:17:51,556  INFO   * Restarting with stat
+2026-03-14 17:17:59,027  WARNING   * Debugger is active!
+2026-03-14 17:17:59,032  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:20:52,422  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 17:20:52,423  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 17:20:52,425  INFO   * Restarting with stat
+2026-03-14 17:21:06,575  WARNING   * Debugger is active!
+2026-03-14 17:21:06,578  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:21:06,611  INFO  127.0.0.1 - - [14/Mar/2026 17:21:06] "GET / HTTP/1.1" 200 -
+2026-03-14 17:21:24,594  INFO  Loading XTTS-v2 on CPU …
+2026-03-14 17:21:25,894  INFO  Model directory : C:\Users\Development\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-14 17:21:45,698  INFO  Weights loaded ✓
+2026-03-14 17:21:45,698  INFO  XTTS-v2 ready ✓
+2026-03-14 17:21:45,699  INFO  Synthesising | lang=en speed=1.0
+2026-03-14 17:21:45,705  INFO  127.0.0.1 - - [14/Mar/2026 17:21:45] "POST /process HTTP/1.1" 200 -
+2026-03-14 17:23:18,395  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 17:23:18,396  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 17:23:18,398  INFO   * Restarting with stat
+2026-03-14 17:23:32,465  WARNING   * Debugger is active!
+2026-03-14 17:23:32,469  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:23:37,159  INFO  Loading XTTS-v2 on CPU …
+2026-03-14 17:23:38,318  INFO  Model directory : C:\Users\Development\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-14 17:23:56,938  INFO  Weights loaded ✓
+2026-03-14 17:23:56,938  INFO  XTTS-v2 ready ✓
+2026-03-14 17:23:56,939  INFO  Synthesising | lang=en speed=1.0
+2026-03-14 17:24:19,772  INFO  Saved → outputs\cloned_audio_1773489217159.wav
+2026-03-14 17:24:20,752  INFO  127.0.0.1 - - [14/Mar/2026 17:24:20] "POST /process HTTP/1.1" 200 -
+2026-03-14 17:24:20,807  INFO  127.0.0.1 - - [14/Mar/2026 17:24:20] "[35m[1mGET /download/audio/cloned_audio_1773489217159.wav HTTP/1.1[0m" 206 -
+2026-03-14 17:24:20,869  INFO  127.0.0.1 - - [14/Mar/2026 17:24:20] "[35m[1mGET /download/video/final_video_1773489217159.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:24:20,879  INFO  127.0.0.1 - - [14/Mar/2026 17:24:20] "[35m[1mGET /download/video/final_video_1773489217159.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:24:20,892  INFO  127.0.0.1 - - [14/Mar/2026 17:24:20] "[35m[1mGET /download/video/final_video_1773489217159.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:24:20,896  INFO  127.0.0.1 - - [14/Mar/2026 17:24:20] "[35m[1mGET /download/video/final_video_1773489217159.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:26:07,021  INFO  127.0.0.1 - - [14/Mar/2026 17:26:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 17:26:07,093  INFO  127.0.0.1 - - [14/Mar/2026 17:26:07] "[35m[1mGET /download/audio/cloned_audio_1773489217159.wav HTTP/1.1[0m" 206 -
+2026-03-14 17:26:15,702  INFO  127.0.0.1 - - [14/Mar/2026 17:26:15] "[35m[1mGET /download/video/final_video_1773489217159.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:27:55,504  INFO  127.0.0.1 - - [14/Mar/2026 17:27:55] "GET / HTTP/1.1" 200 -
+2026-03-14 17:28:33,218  INFO  Synthesising | lang=en speed=1.0
+2026-03-14 17:28:41,389  INFO  Saved → outputs\cloned_audio_1773489513217.wav
+2026-03-14 17:28:41,512  INFO  127.0.0.1 - - [14/Mar/2026 17:28:41] "POST /process HTTP/1.1" 200 -
+2026-03-14 17:28:41,531  INFO  127.0.0.1 - - [14/Mar/2026 17:28:41] "[35m[1mGET /download/audio/cloned_audio_1773489513217.wav HTTP/1.1[0m" 206 -
+2026-03-14 17:28:41,532  INFO  127.0.0.1 - - [14/Mar/2026 17:28:41] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:41,543  INFO  127.0.0.1 - - [14/Mar/2026 17:28:41] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:41,553  INFO  127.0.0.1 - - [14/Mar/2026 17:28:41] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:41,558  INFO  127.0.0.1 - - [14/Mar/2026 17:28:41] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,237  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,250  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,255  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,260  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,269  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,273  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,278  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,286  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,290  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,294  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,302  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,306  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,311  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,318  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,323  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:47,328  INFO  127.0.0.1 - - [14/Mar/2026 17:28:47] "[35m[1mGET /download/video/final_video_1773489513217.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:28:48,857  INFO  127.0.0.1 - - [14/Mar/2026 17:28:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 17:28:48,861  INFO  127.0.0.1 - - [14/Mar/2026 17:28:48] "[35m[1mGET /download/audio/cloned_audio_1773489513217.wav HTTP/1.1[0m" 206 -
+2026-03-14 17:32:06,762  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\echovox\\echovox\\settings.py', reloading
+2026-03-14 17:32:08,386  INFO   * Restarting with stat
+2026-03-14 17:32:23,046  WARNING   * Debugger is active!
+2026-03-14 17:32:23,050  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:32:51,320  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 17:32:52,639  INFO   * Restarting with stat
+2026-03-14 17:33:07,697  WARNING   * Debugger is active!
+2026-03-14 17:33:07,701  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:43:19,980  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 17:43:19,980  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 17:43:19,982  INFO   * Restarting with stat
+2026-03-14 17:43:22,449  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 17:43:22,449  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 17:43:22,451  INFO   * Restarting with stat
+2026-03-14 17:43:57,726  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 17:43:57,727  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 17:43:57,729  INFO   * Restarting with stat
+2026-03-14 17:44:12,811  WARNING   * Debugger is active!
+2026-03-14 17:44:12,816  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:44:12,853  INFO  127.0.0.1 - - [14/Mar/2026 17:44:12] "GET / HTTP/1.1" 200 -
+2026-03-14 17:44:12,864  INFO  127.0.0.1 - - [14/Mar/2026 17:44:12] "GET / HTTP/1.1" 200 -
+2026-03-14 17:44:12,922  INFO  127.0.0.1 - - [14/Mar/2026 17:44:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 17:44:12,933  INFO  127.0.0.1 - - [14/Mar/2026 17:44:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 17:44:42,798  INFO  Loading XTTS-v2 on CPU …
+2026-03-14 17:44:44,032  INFO  Model directory : C:\Users\Development\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-14 17:45:02,820  INFO  Weights loaded ✓
+2026-03-14 17:45:02,820  INFO  XTTS-v2 ready ✓
+2026-03-14 17:45:02,821  INFO  Synthesising | lang=en speed=1.0
+2026-03-14 17:45:17,039  INFO  Saved → outputs\cloned_audio_1773490482798.wav
+2026-03-14 17:45:17,204  INFO  127.0.0.1 - - [14/Mar/2026 17:45:17] "POST /process HTTP/1.1" 200 -
+2026-03-14 17:46:12,930  INFO  127.0.0.1 - - [14/Mar/2026 17:46:12] "[35m[1mGET /download/audio/cloned_audio_1773490482798.wav HTTP/1.1[0m" 206 -
+2026-03-14 17:46:12,989  INFO  127.0.0.1 - - [14/Mar/2026 17:46:12] "[35m[1mGET /download/video/final_video_1773490482798.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:46:12,997  INFO  127.0.0.1 - - [14/Mar/2026 17:46:12] "[35m[1mGET /download/video/final_video_1773490482798.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:46:13,684  INFO  127.0.0.1 - - [14/Mar/2026 17:46:13] "[35m[1mGET /download/video/final_video_1773490482798.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:46:13,689  INFO  127.0.0.1 - - [14/Mar/2026 17:46:13] "[35m[1mGET /download/video/final_video_1773490482798.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:46:15,864  INFO  127.0.0.1 - - [14/Mar/2026 17:46:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 17:46:19,951  INFO  127.0.0.1 - - [14/Mar/2026 17:46:19] "[35m[1mGET /download/video/final_video_1773490482798.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 17:46:28,510  INFO  127.0.0.1 - - [14/Mar/2026 17:46:28] "GET /download/video/final_video_1773490482798.mp4 HTTP/1.1" 200 -
+2026-03-14 17:48:14,356  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 17:48:16,496  INFO   * Restarting with stat
+2026-03-14 17:48:31,444  WARNING   * Debugger is active!
+2026-03-14 17:48:31,449  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:49:34,635  INFO  127.0.0.1 - - [14/Mar/2026 17:49:34] "GET / HTTP/1.1" 200 -
+2026-03-14 17:52:15,512  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 17:52:16,911  INFO   * Restarting with stat
+2026-03-14 17:52:32,523  WARNING   * Debugger is active!
+2026-03-14 17:52:32,528  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:55:15,652  INFO  127.0.0.1 - - [14/Mar/2026 17:55:15] "GET / HTTP/1.1" 200 -
+2026-03-14 17:57:14,645  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 17:57:16,111  INFO   * Restarting with stat
+2026-03-14 17:57:30,252  WARNING   * Debugger is active!
+2026-03-14 17:57:30,256  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:57:30,294  INFO  127.0.0.1 - - [14/Mar/2026 17:57:30] "GET / HTTP/1.1" 200 -
+2026-03-14 17:57:30,497  INFO  127.0.0.1 - - [14/Mar/2026 17:57:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 17:59:06,635  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 17:59:07,908  INFO   * Restarting with stat
+2026-03-14 17:59:23,926  WARNING   * Debugger is active!
+2026-03-14 17:59:23,930  INFO   * Debugger PIN: 116-242-480
+2026-03-14 17:59:24,332  INFO  127.0.0.1 - - [14/Mar/2026 17:59:24] "GET / HTTP/1.1" 200 -
+2026-03-14 17:59:31,953  INFO  127.0.0.1 - - [14/Mar/2026 17:59:31] "GET / HTTP/1.1" 200 -
+2026-03-14 18:00:11,193  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:00:12,592  INFO   * Restarting with stat
+2026-03-14 18:00:27,365  WARNING   * Debugger is active!
+2026-03-14 18:00:27,369  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:00:27,412  INFO  127.0.0.1 - - [14/Mar/2026 18:00:27] "GET / HTTP/1.1" 200 -
+2026-03-14 18:04:58,705  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:04:59,923  INFO   * Restarting with stat
+2026-03-14 18:05:14,326  WARNING   * Debugger is active!
+2026-03-14 18:05:14,331  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:05:14,364  INFO  127.0.0.1 - - [14/Mar/2026 18:05:14] "GET / HTTP/1.1" 200 -
+2026-03-14 18:05:44,088  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 18:05:44,088  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 18:05:44,090  INFO   * Restarting with stat
+2026-03-14 18:05:59,061  WARNING   * Debugger is active!
+2026-03-14 18:05:59,064  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:05:59,108  INFO  127.0.0.1 - - [14/Mar/2026 18:05:59] "GET / HTTP/1.1" 200 -
+2026-03-14 18:05:59,121  INFO  127.0.0.1 - - [14/Mar/2026 18:05:59] "GET / HTTP/1.1" 200 -
+2026-03-14 18:06:31,562  INFO  127.0.0.1 - - [14/Mar/2026 18:06:31] "POST /process HTTP/1.1" 200 -
+2026-03-14 18:07:33,146  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:07:34,520  INFO   * Restarting with stat
+2026-03-14 18:07:48,474  WARNING   * Debugger is active!
+2026-03-14 18:07:48,478  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:08:18,958  INFO  127.0.0.1 - - [14/Mar/2026 18:08:18] "GET / HTTP/1.1" 200 -
+2026-03-14 18:08:38,973  INFO  127.0.0.1 - - [14/Mar/2026 18:08:38] "POST /process HTTP/1.1" 200 -
+2026-03-14 18:09:01,130  INFO  Loading XTTS-v2 on CPU …
+2026-03-14 18:09:02,269  INFO  Model directory : C:\Users\Development\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-14 18:09:21,923  INFO  Weights loaded ✓
+2026-03-14 18:09:21,923  INFO  XTTS-v2 ready ✓
+2026-03-14 18:09:21,924  INFO  Synthesising | lang=en speed=1.0
+2026-03-14 18:09:31,399  INFO  Saved → outputs\cloned_audio_1773491941130.wav
+2026-03-14 18:09:31,535  INFO  127.0.0.1 - - [14/Mar/2026 18:09:31] "POST /process HTTP/1.1" 200 -
+2026-03-14 18:09:31,573  INFO  127.0.0.1 - - [14/Mar/2026 18:09:31] "[35m[1mGET /download/audio/cloned_audio_1773491941130.wav HTTP/1.1[0m" 206 -
+2026-03-14 18:09:31,633  INFO  127.0.0.1 - - [14/Mar/2026 18:09:31] "[35m[1mGET /download/video/final_video_1773491941130.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:09:31,640  INFO  127.0.0.1 - - [14/Mar/2026 18:09:31] "[35m[1mGET /download/video/final_video_1773491941130.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:09:31,649  INFO  127.0.0.1 - - [14/Mar/2026 18:09:31] "[35m[1mGET /download/video/final_video_1773491941130.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:09:31,652  INFO  127.0.0.1 - - [14/Mar/2026 18:09:31] "[35m[1mGET /download/video/final_video_1773491941130.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:12:36,491  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:12:38,322  INFO   * Restarting with stat
+2026-03-14 18:12:52,154  WARNING   * Debugger is active!
+2026-03-14 18:12:52,159  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:14:08,222  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 18:14:08,222  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 18:14:08,225  INFO   * Restarting with stat
+2026-03-14 18:14:22,686  WARNING   * Debugger is active!
+2026-03-14 18:14:22,690  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:14:22,734  INFO  127.0.0.1 - - [14/Mar/2026 18:14:22] "GET / HTTP/1.1" 200 -
+2026-03-14 18:14:22,820  INFO  127.0.0.1 - - [14/Mar/2026 18:14:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 18:14:41,783  INFO  127.0.0.1 - - [14/Mar/2026 18:14:41] "POST /process HTTP/1.1" 200 -
+2026-03-14 18:18:02,466  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:18:03,808  INFO   * Restarting with stat
+2026-03-14 18:18:18,038  WARNING   * Debugger is active!
+2026-03-14 18:18:18,042  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:18:26,402  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\echovox\\myapp\\views.py', reloading
+2026-03-14 18:18:27,799  INFO   * Restarting with stat
+2026-03-14 18:18:42,148  WARNING   * Debugger is active!
+2026-03-14 18:18:42,152  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:19:32,380  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\echovox\\myapp\\views.py', reloading
+2026-03-14 18:19:33,843  INFO   * Restarting with stat
+2026-03-14 18:21:01,199  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 18:21:01,200  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 18:21:01,202  INFO   * Restarting with stat
+2026-03-14 18:21:09,417  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-14 18:21:09,417  INFO  [33mPress CTRL+C to quit[0m
+2026-03-14 18:21:09,419  INFO   * Restarting with stat
+2026-03-14 18:21:15,391  WARNING   * Debugger is active!
+2026-03-14 18:21:15,397  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:21:22,733  INFO  127.0.0.1 - - [14/Mar/2026 18:21:22] "GET / HTTP/1.1" 200 -
+2026-03-14 18:21:23,773  WARNING   * Debugger is active!
+2026-03-14 18:21:23,778  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:21:39,704  INFO  127.0.0.1 - - [14/Mar/2026 18:21:39] "POST /process HTTP/1.1" 200 -
+2026-03-14 18:21:43,656  INFO  127.0.0.1 - - [14/Mar/2026 18:21:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-14 18:22:54,851  INFO  Loading XTTS-v2 on CPU …
+2026-03-14 18:22:56,033  INFO  Model directory : C:\Users\Development\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-14 18:23:17,090  INFO  Weights loaded ✓
+2026-03-14 18:23:17,090  INFO  XTTS-v2 ready ✓
+2026-03-14 18:23:17,091  INFO  Synthesising | lang=en speed=1.0
+2026-03-14 18:23:27,116  INFO  Saved → outputs\cloned_audio_1773492774851.wav
+2026-03-14 18:23:27,381  INFO  127.0.0.1 - - [14/Mar/2026 18:23:27] "POST /process HTTP/1.1" 200 -
+2026-03-14 18:23:27,424  INFO  127.0.0.1 - - [14/Mar/2026 18:23:27] "[35m[1mGET /download/audio/cloned_audio_1773492774851.wav HTTP/1.1[0m" 206 -
+2026-03-14 18:23:27,481  INFO  127.0.0.1 - - [14/Mar/2026 18:23:27] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:27,491  INFO  127.0.0.1 - - [14/Mar/2026 18:23:27] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:27,499  INFO  127.0.0.1 - - [14/Mar/2026 18:23:27] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:27,503  INFO  127.0.0.1 - - [14/Mar/2026 18:23:27] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,217  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,230  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,235  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,246  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,254  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,260  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,265  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,273  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,277  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,281  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,290  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,293  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,298  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,307  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:31,310  INFO  127.0.0.1 - - [14/Mar/2026 18:23:31] "[35m[1mGET /download/video/final_video_1773492774851.mp4 HTTP/1.1[0m" 206 -
+2026-03-14 18:23:32,446  INFO  127.0.0.1 - - [14/Mar/2026 18:23:32] "[35m[1mGET /download/audio/cloned_audio_1773492774851.wav HTTP/1.1[0m" 206 -
+2026-03-14 18:24:41,824  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:24:41,825  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:24:43,411  INFO   * Restarting with stat
+2026-03-14 18:24:43,950  INFO   * Restarting with stat
+2026-03-14 18:24:59,733  WARNING   * Debugger is active!
+2026-03-14 18:24:59,737  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:24:59,939  WARNING   * Debugger is active!
+2026-03-14 18:24:59,944  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:25:04,960  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:25:05,221  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:25:06,456  INFO   * Restarting with stat
+2026-03-14 18:25:06,684  INFO   * Restarting with stat
+2026-03-14 18:25:24,157  WARNING   * Debugger is active!
+2026-03-14 18:25:24,164  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:25:24,165  WARNING   * Debugger is active!
+2026-03-14 18:25:24,172  INFO   * Debugger PIN: 116-242-480
+2026-03-14 18:25:26,793  INFO  127.0.0.1 - - [14/Mar/2026 18:25:26] "GET / HTTP/1.1" 200 -
+2026-03-14 18:25:41,925  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:25:41,925  INFO   * Detected change in 'D:\\project_2025\\BTECH\\echovox\\new\\new\\app.py', reloading
+2026-03-14 18:25:43,509  INFO   * Restarting with stat
+2026-03-14 18:25:43,532  INFO   * Restarting with stat
+2026-03-19 14:16:14,929  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-19 14:16:14,929  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.186:5000
+2026-03-19 14:16:14,929  INFO  [33mPress CTRL+C to quit[0m
+2026-03-19 14:16:14,929  INFO  [33mPress CTRL+C to quit[0m
+2026-03-19 14:16:14,930  INFO  [33mPress CTRL+C to quit[0m
+2026-03-19 14:16:14,932  INFO   * Restarting with stat
+2026-03-19 14:16:14,932  INFO   * Restarting with stat
+2026-03-19 14:16:34,532  WARNING   * Debugger is active!
+2026-03-19 14:16:34,552  INFO   * Debugger PIN: 116-242-480
+2026-03-19 14:16:34,582  WARNING   * Debugger is active!
+2026-03-19 14:16:34,582  INFO   * Debugger PIN: 116-242-480
+2026-03-19 14:16:34,653  WARNING   * Debugger is active!
+2026-03-19 14:16:34,666  INFO   * Debugger PIN: 116-242-480
+2026-03-19 14:16:39,236  INFO  127.0.0.1 - - [19/Mar/2026 14:16:39] "GET / HTTP/1.1" 200 -
+2026-03-19 14:16:39,702  INFO  127.0.0.1 - - [19/Mar/2026 14:16:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-19 14:17:00,268  INFO  127.0.0.1 - - [19/Mar/2026 14:17:00] "GET / HTTP/1.1" 200 -
+2026-03-19 14:17:42,953  INFO  127.0.0.1 - - [19/Mar/2026 14:17:42] "POST /process HTTP/1.1" 200 -
+2026-03-19 14:24:02,961  INFO  127.0.0.1 - - [19/Mar/2026 14:24:02] "GET / HTTP/1.1" 200 -
+2026-03-19 14:24:16,541  INFO  127.0.0.1 - - [19/Mar/2026 14:24:16] "POST /process HTTP/1.1" 200 -
+2026-03-19 14:24:55,860  INFO  127.0.0.1 - - [19/Mar/2026 14:24:55] "POST /process HTTP/1.1" 200 -
+2026-03-19 14:25:05,321  INFO  127.0.0.1 - - [19/Mar/2026 14:25:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-19 14:26:02,008  INFO  Loading XTTS-v2 on CPU …
+2026-03-19 14:26:04,753  INFO  Model directory : C:\Users\Development\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-19 14:26:33,182  INFO  Weights loaded ✓
+2026-03-19 14:26:33,182  INFO  XTTS-v2 ready ✓
+2026-03-19 14:26:33,183  INFO  Synthesising | lang=en speed=1.0
+2026-03-19 14:26:48,620  INFO  Saved → outputs\cloned_audio_1773910562008.wav
+2026-03-19 14:26:51,253  INFO  127.0.0.1 - - [19/Mar/2026 14:26:51] "POST /process HTTP/1.1" 200 -
+2026-03-19 14:26:51,287  INFO  127.0.0.1 - - [19/Mar/2026 14:26:51] "[35m[1mGET /download/audio/cloned_audio_1773910562008.wav HTTP/1.1[0m" 206 -
+2026-03-19 14:26:51,351  INFO  127.0.0.1 - - [19/Mar/2026 14:26:51] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:51,357  INFO  127.0.0.1 - - [19/Mar/2026 14:26:51] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:51,378  INFO  127.0.0.1 - - [19/Mar/2026 14:26:51] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:51,378  INFO  127.0.0.1 - - [19/Mar/2026 14:26:51] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,746  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,756  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,763  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,771  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,779  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,779  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,794  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,803  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,809  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,816  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,826  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:26:54,829  INFO  127.0.0.1 - - [19/Mar/2026 14:26:54] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:27:08,575  INFO  127.0.0.1 - - [19/Mar/2026 14:27:08] "[35m[1mGET /download/audio/cloned_audio_1773910562008.wav HTTP/1.1[0m" 206 -
+2026-03-19 14:27:13,508  INFO  127.0.0.1 - - [19/Mar/2026 14:27:13] "[35m[1mGET /download/video/final_video_1773910562008.mp4 HTTP/1.1[0m" 206 -
+2026-03-19 14:27:48,085  INFO  127.0.0.1 - - [19/Mar/2026 14:27:48] "GET /download/video/final_video_1773910562008.mp4 HTTP/1.1" 200 -
+2026-03-19 17:01:49,761  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.224:5000
+2026-03-19 17:01:49,761  INFO  [33mPress CTRL+C to quit[0m
+2026-03-19 17:01:49,761  INFO  [33mPress CTRL+C to quit[0m
+2026-03-19 17:01:49,761  INFO   * Restarting with stat
+2026-03-19 17:02:28,196  WARNING   * Debugger is active!
+2026-03-19 17:02:28,196  WARNING   * Debugger is active!
+2026-03-19 17:02:28,209  INFO   * Debugger PIN: 626-841-934
+2026-03-19 17:02:28,209  INFO   * Debugger PIN: 626-841-934
+2026-03-19 17:02:47,022  INFO  127.0.0.1 - - [19/Mar/2026 17:02:47] "GET / HTTP/1.1" 200 -
+2026-03-19 17:02:47,733  INFO  127.0.0.1 - - [19/Mar/2026 17:02:47] "GET / HTTP/1.1" 200 -
+2026-03-19 17:02:49,378  INFO  127.0.0.1 - - [19/Mar/2026 17:02:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-19 17:02:49,444  INFO  127.0.0.1 - - [19/Mar/2026 17:02:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-19 17:03:32,894  INFO  127.0.0.1 - - [19/Mar/2026 17:03:32] "POST /process HTTP/1.1" 200 -
+2026-03-19 17:09:22,993  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.224:5000
+2026-03-19 17:09:22,996  INFO  [33mPress CTRL+C to quit[0m
+2026-03-19 17:09:23,002  INFO   * Restarting with stat
+2026-03-19 17:09:56,449  WARNING   * Debugger is active!
+2026-03-19 17:09:56,464  INFO   * Debugger PIN: 626-841-934
+2026-03-19 17:09:56,547  INFO  127.0.0.1 - - [19/Mar/2026 17:09:56] "GET / HTTP/1.1" 200 -
+2026-03-19 17:09:56,565  INFO  127.0.0.1 - - [19/Mar/2026 17:09:56] "GET / HTTP/1.1" 200 -
+2026-03-19 17:10:11,111  INFO  127.0.0.1 - - [19/Mar/2026 17:10:11] "POST /process HTTP/1.1" 200 -
+2026-03-19 17:10:13,671  INFO  127.0.0.1 - - [19/Mar/2026 17:10:13] "POST /process HTTP/1.1" 200 -
+2026-03-19 17:13:39,032  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.224:5000
+2026-03-19 17:13:39,034  INFO  [33mPress CTRL+C to quit[0m
+2026-03-19 17:13:39,038  INFO   * Restarting with stat
+2026-03-19 17:14:08,452  WARNING   * Debugger is active!
+2026-03-19 17:14:08,472  INFO   * Debugger PIN: 626-841-934
+2026-03-19 17:14:08,563  INFO  127.0.0.1 - - [19/Mar/2026 17:14:08] "GET / HTTP/1.1" 200 -
+2026-03-19 17:14:27,794  INFO  127.0.0.1 - - [19/Mar/2026 17:14:27] "POST /process HTTP/1.1" 200 -
+2026-03-19 17:18:03,518  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.224:5000
+2026-03-19 17:18:03,518  INFO  [33mPress CTRL+C to quit[0m
+2026-03-19 17:18:03,521  INFO   * Restarting with stat
+2026-03-19 17:18:32,397  WARNING   * Debugger is active!
+2026-03-19 17:18:32,405  INFO   * Debugger PIN: 626-841-934
+2026-03-19 17:18:32,485  INFO  127.0.0.1 - - [19/Mar/2026 17:18:32] "GET / HTTP/1.1" 200 -
+2026-03-19 17:18:32,507  INFO  127.0.0.1 - - [19/Mar/2026 17:18:32] "GET / HTTP/1.1" 200 -
+2026-03-19 17:18:49,352  INFO  127.0.0.1 - - [19/Mar/2026 17:18:49] "POST /process HTTP/1.1" 200 -
+2026-03-19 17:20:35,274  INFO  127.0.0.1 - - [19/Mar/2026 17:20:35] "POST /process HTTP/1.1" 200 -
+2026-03-23 16:59:23,718  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-23 16:59:23,719  INFO  [33mPress CTRL+C to quit[0m
+2026-03-23 16:59:23,725  INFO   * Restarting with stat
+2026-03-23 16:59:58,496  WARNING   * Debugger is active!
+2026-03-23 16:59:58,518  INFO   * Debugger PIN: 626-841-934
+2026-03-23 17:00:03,987  INFO  127.0.0.1 - - [23/Mar/2026 17:00:03] "GET / HTTP/1.1" 200 -
+2026-03-23 17:00:07,820  INFO  127.0.0.1 - - [23/Mar/2026 17:00:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 17:01:06,096  INFO  127.0.0.1 - - [23/Mar/2026 17:01:06] "POST /process HTTP/1.1" 200 -
+2026-03-23 17:20:10,071  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-23 17:20:10,072  INFO  [33mPress CTRL+C to quit[0m
+2026-03-23 17:20:10,077  INFO   * Restarting with stat
+2026-03-23 17:20:33,524  WARNING   * Debugger is active!
+2026-03-23 17:20:33,532  INFO   * Debugger PIN: 626-841-934
+2026-03-23 17:20:36,927  INFO  127.0.0.1 - - [23/Mar/2026 17:20:36] "GET / HTTP/1.1" 200 -
+2026-03-23 17:21:20,353  INFO  127.0.0.1 - - [23/Mar/2026 17:21:20] "POST /process HTTP/1.1" 200 -
+2026-03-23 17:21:31,115  INFO  127.0.0.1 - - [23/Mar/2026 17:21:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 17:29:20,235  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 17:44:38,421  INFO  127.0.0.1 - - [23/Mar/2026 17:44:38] "GET / HTTP/1.1" 200 -
+2026-03-23 17:45:31,654  INFO  127.0.0.1 - - [23/Mar/2026 17:45:31] "POST /process HTTP/1.1" 200 -
+2026-03-23 17:45:39,936  INFO  127.0.0.1 - - [23/Mar/2026 17:45:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 17:46:20,965  INFO  127.0.0.1 - - [23/Mar/2026 17:46:20] "POST /process HTTP/1.1" 200 -
+2026-03-23 17:52:22,497  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 17:55:11,274  INFO  127.0.0.1 - - [23/Mar/2026 17:55:11] "GET / HTTP/1.1" 200 -
+2026-03-23 17:56:11,246  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 18:01:08,959  INFO  127.0.0.1 - - [23/Mar/2026 18:01:08] "GET / HTTP/1.1" 200 -
+2026-03-23 18:04:01,440  INFO   * Detected change in 'd:\\Echovox_fullcode\\voice_cloning_engine.py', reloading
+2026-03-23 18:04:49,789  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-23 18:04:49,789  INFO  [33mPress CTRL+C to quit[0m
+2026-03-23 18:04:49,796  INFO   * Restarting with stat
+2026-03-23 18:05:20,426  WARNING   * Debugger is active!
+2026-03-23 18:05:20,438  INFO   * Debugger PIN: 626-841-934
+2026-03-23 18:06:52,916  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 18:11:44,363  INFO  127.0.0.1 - - [23/Mar/2026 18:11:44] "GET / HTTP/1.1" 200 -
+2026-03-23 18:12:28,629  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-23 18:12:28,633  INFO  [33mPress CTRL+C to quit[0m
+2026-03-23 18:12:28,639  INFO   * Restarting with stat
+2026-03-23 18:12:48,189  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 18:13:08,390  WARNING   * Debugger is active!
+2026-03-23 18:13:08,406  INFO   * Debugger PIN: 626-841-934
+2026-03-23 18:14:14,865  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-23 18:15:17,374  INFO  127.0.0.1 - - [23/Mar/2026 18:15:17] "POST /process HTTP/1.1" 200 -
+2026-03-23 18:20:02,307  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-23 18:21:21,541  INFO  Weights loaded ✓
+2026-03-23 18:21:21,561  INFO  XTTS-v2 ready ✓
+2026-03-23 18:21:21,635  INFO  127.0.0.1 - - [23/Mar/2026 18:21:21] "POST /process HTTP/1.1" 200 -
+2026-03-23 18:23:26,926  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 18:23:27,386  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 18:23:37,006  INFO   * Restarting with stat
+2026-03-23 18:23:38,410  INFO   * Restarting with stat
+2026-03-23 18:24:21,775  WARNING   * Debugger is active!
+2026-03-23 18:24:21,789  INFO   * Debugger PIN: 626-841-934
+2026-03-23 18:24:24,611  WARNING   * Debugger is active!
+2026-03-23 18:24:24,629  INFO   * Debugger PIN: 626-841-934
+2026-03-23 18:25:34,035  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 18:25:36,088  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-23 18:26:52,284  INFO  Weights loaded ✓
+2026-03-23 18:26:52,305  INFO  XTTS-v2 ready ✓
+2026-03-23 18:26:52,319  INFO  Synthesising | lang=en speed=1.0
+2026-03-23 18:26:56,120  INFO  127.0.0.1 - - [23/Mar/2026 18:26:56] "POST /process HTTP/1.1" 200 -
+2026-03-23 18:27:26,803  INFO  127.0.0.1 - - [23/Mar/2026 18:27:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 18:29:35,309  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 18:29:35,810  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 18:29:46,092  INFO   * Restarting with stat
+2026-03-23 18:29:46,127  INFO   * Restarting with stat
+2026-03-23 18:30:28,069  WARNING   * Debugger is active!
+2026-03-23 18:30:28,083  INFO   * Debugger PIN: 626-841-934
+2026-03-23 18:30:31,250  WARNING   * Debugger is active!
+2026-03-23 18:30:31,265  INFO   * Debugger PIN: 626-841-934
+2026-03-23 18:34:44,710  INFO  127.0.0.1 - - [23/Mar/2026 18:34:44] "GET / HTTP/1.1" 200 -
+2026-03-23 18:35:43,694  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 18:35:45,896  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-23 18:37:11,765  INFO  Weights loaded ✓
+2026-03-23 18:37:11,795  INFO  XTTS-v2 ready ✓
+2026-03-23 18:37:11,830  INFO  Synthesising | lang=en speed=1.0
+2026-03-23 18:37:12,041  INFO  127.0.0.1 - - [23/Mar/2026 18:37:12] "POST /process HTTP/1.1" 200 -
+2026-03-23 18:54:09,369  INFO  127.0.0.1 - - [23/Mar/2026 18:54:09] "GET / HTTP/1.1" 200 -
+2026-03-23 18:55:09,114  INFO  Synthesising | lang=en speed=1.0
+2026-03-23 18:55:46,585  INFO  Saved → d:\Echovox_fullcode\outputs\cloned_audio_1774272309100.wav
+2026-03-23 18:55:48,115  INFO  127.0.0.1 - - [23/Mar/2026 18:55:48] "POST /process HTTP/1.1" 200 -
+2026-03-23 18:55:48,499  INFO  127.0.0.1 - - [23/Mar/2026 18:55:48] "[35m[1mGET /download/audio/cloned_audio_1774272309100.wav HTTP/1.1[0m" 206 -
+2026-03-23 18:55:48,722  INFO  127.0.0.1 - - [23/Mar/2026 18:55:48] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:55:48,773  INFO  127.0.0.1 - - [23/Mar/2026 18:55:48] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:55:48,796  INFO  127.0.0.1 - - [23/Mar/2026 18:55:48] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:55:48,811  INFO  127.0.0.1 - - [23/Mar/2026 18:55:48] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,252  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,269  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,282  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,294  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,312  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,325  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,342  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,398  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,406  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,418  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,477  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:12,488  INFO  127.0.0.1 - - [23/Mar/2026 18:56:12] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:14,562  INFO  127.0.0.1 - - [23/Mar/2026 18:56:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 18:56:14,609  INFO  127.0.0.1 - - [23/Mar/2026 18:56:14] "[35m[1mGET /download/video/final_video_1774272309100.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:56:27,239  INFO  127.0.0.1 - - [23/Mar/2026 18:56:27] "GET / HTTP/1.1" 200 -
+2026-03-23 18:57:37,562  INFO  Synthesising | lang=en speed=1.0
+2026-03-23 18:58:29,267  INFO  Saved → d:\Echovox_fullcode\outputs\cloned_audio_1774272457554.wav
+2026-03-23 18:58:29,716  INFO  127.0.0.1 - - [23/Mar/2026 18:58:29] "POST /process HTTP/1.1" 200 -
+2026-03-23 18:58:29,977  INFO  127.0.0.1 - - [23/Mar/2026 18:58:29] "[35m[1mGET /download/audio/cloned_audio_1774272457554.wav HTTP/1.1[0m" 206 -
+2026-03-23 18:58:29,978  INFO  127.0.0.1 - - [23/Mar/2026 18:58:29] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:58:30,036  INFO  127.0.0.1 - - [23/Mar/2026 18:58:30] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:58:30,094  INFO  127.0.0.1 - - [23/Mar/2026 18:58:30] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:58:30,103  INFO  127.0.0.1 - - [23/Mar/2026 18:58:30] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:59:32,179  INFO  127.0.0.1 - - [23/Mar/2026 18:59:32] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:59:32,205  INFO  127.0.0.1 - - [23/Mar/2026 18:59:32] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 18:59:32,220  INFO  127.0.0.1 - - [23/Mar/2026 18:59:32] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:01:34,229  INFO  127.0.0.1 - - [23/Mar/2026 19:01:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 19:01:34,396  INFO  127.0.0.1 - - [23/Mar/2026 19:01:34] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:04:44,411  INFO  127.0.0.1 - - [23/Mar/2026 19:04:44] "[35m[1mGET /download/video/final_video_1774272457554.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:06:03,881  INFO  Synthesising | lang=en speed=1.0
+2026-03-23 19:06:31,150  INFO  Saved → d:\Echovox_fullcode\outputs\cloned_audio_1774272963874.wav
+2026-03-23 19:06:31,503  INFO  127.0.0.1 - - [23/Mar/2026 19:06:31] "POST /process HTTP/1.1" 200 -
+2026-03-23 19:06:31,853  INFO  127.0.0.1 - - [23/Mar/2026 19:06:31] "[35m[1mGET /download/audio/cloned_audio_1774272963874.wav HTTP/1.1[0m" 206 -
+2026-03-23 19:06:31,853  INFO  127.0.0.1 - - [23/Mar/2026 19:06:31] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:06:31,879  INFO  127.0.0.1 - - [23/Mar/2026 19:06:31] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:06:31,923  INFO  127.0.0.1 - - [23/Mar/2026 19:06:31] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:06:31,931  INFO  127.0.0.1 - - [23/Mar/2026 19:06:31] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:07:00,834  INFO  127.0.0.1 - - [23/Mar/2026 19:07:00] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:07:00,860  INFO  127.0.0.1 - - [23/Mar/2026 19:07:00] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:07:00,870  INFO  127.0.0.1 - - [23/Mar/2026 19:07:00] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:07:02,712  INFO  127.0.0.1 - - [23/Mar/2026 19:07:02] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:07:07,172  INFO  127.0.0.1 - - [23/Mar/2026 19:07:07] "[35m[1mGET /download/video/final_video_1774272963874.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:07:16,210  INFO  127.0.0.1 - - [23/Mar/2026 19:07:16] "[35m[1mGET /download/audio/cloned_audio_1774272963874.wav HTTP/1.1[0m" 206 -
+2026-03-23 19:09:06,629  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 19:09:06,908  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 19:09:16,186  INFO   * Restarting with stat
+2026-03-23 19:09:16,485  INFO   * Restarting with stat
+2026-03-23 19:10:00,371  WARNING   * Debugger is active!
+2026-03-23 19:10:00,371  WARNING   * Debugger is active!
+2026-03-23 19:10:00,391  INFO   * Debugger PIN: 626-841-934
+2026-03-23 19:10:00,512  INFO  127.0.0.1 - - [23/Mar/2026 19:10:00] "GET / HTTP/1.1" 200 -
+2026-03-23 19:11:43,669  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 19:11:45,570  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-23 19:12:52,484  INFO  Weights loaded ✓
+2026-03-23 19:12:52,505  INFO  XTTS-v2 ready ✓
+2026-03-23 19:12:52,524  INFO  Synthesising | lang=en speed=1.0
+2026-03-23 19:13:22,583  INFO  Saved → d:\Echovox_fullcode\outputs\cloned_audio_1774273303669.wav
+2026-03-23 19:13:23,794  INFO  127.0.0.1 - - [23/Mar/2026 19:13:23] "POST /process HTTP/1.1" 200 -
+2026-03-23 19:13:24,008  INFO  127.0.0.1 - - [23/Mar/2026 19:13:24] "[35m[1mGET /download/audio/cloned_audio_1774273303669.wav HTTP/1.1[0m" 206 -
+2026-03-23 19:13:24,166  INFO  127.0.0.1 - - [23/Mar/2026 19:13:24] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:24,203  INFO  127.0.0.1 - - [23/Mar/2026 19:13:24] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:24,222  INFO  127.0.0.1 - - [23/Mar/2026 19:13:24] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:24,230  INFO  127.0.0.1 - - [23/Mar/2026 19:13:24] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,838  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,853  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,862  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,880  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,914  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,924  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,938  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,958  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,968  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:34,983  INFO  127.0.0.1 - - [23/Mar/2026 19:13:34] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:35,035  INFO  127.0.0.1 - - [23/Mar/2026 19:13:35] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:35,047  INFO  127.0.0.1 - - [23/Mar/2026 19:13:35] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:36,518  INFO  127.0.0.1 - - [23/Mar/2026 19:13:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 19:13:39,728  INFO  127.0.0.1 - - [23/Mar/2026 19:13:39] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:39,743  INFO  127.0.0.1 - - [23/Mar/2026 19:13:39] "[35m[1mGET /download/video/final_video_1774273303669.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:13:44,760  INFO  127.0.0.1 - - [23/Mar/2026 19:13:44] "[35m[1mGET /download/audio/cloned_audio_1774273303669.wav HTTP/1.1[0m" 206 -
+2026-03-23 19:13:51,001  INFO  127.0.0.1 - - [23/Mar/2026 19:13:51] "GET /download/audio/cloned_audio_1774273303669.wav HTTP/1.1" 200 -
+2026-03-23 19:13:53,834  INFO  127.0.0.1 - - [23/Mar/2026 19:13:53] "GET /download/video/final_video_1774273303669.mp4 HTTP/1.1" 200 -
+2026-03-23 19:17:59,694  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 19:17:59,818  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 19:18:08,904  INFO   * Restarting with stat
+2026-03-23 19:18:08,950  INFO   * Restarting with stat
+2026-03-23 19:18:45,094  WARNING   * Debugger is active!
+2026-03-23 19:18:45,104  INFO   * Debugger PIN: 626-841-934
+2026-03-23 19:18:48,299  WARNING   * Debugger is active!
+2026-03-23 19:18:48,311  INFO   * Debugger PIN: 626-841-934
+2026-03-23 19:21:48,794  INFO  127.0.0.1 - - [23/Mar/2026 19:21:48] "GET / HTTP/1.1" 200 -
+2026-03-23 19:22:47,014  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 19:22:49,984  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-23 19:23:58,352  INFO  Weights loaded ✓
+2026-03-23 19:23:58,376  INFO  XTTS-v2 ready ✓
+2026-03-23 19:23:58,396  INFO  Synthesising | lang=en speed=1.0
+2026-03-23 19:24:35,355  INFO  Saved → d:\Echovox_fullcode\outputs\cloned_audio_1774273967013.wav
+2026-03-23 19:24:36,522  INFO  127.0.0.1 - - [23/Mar/2026 19:24:36] "POST /process HTTP/1.1" 200 -
+2026-03-23 19:24:37,930  INFO  127.0.0.1 - - [23/Mar/2026 19:24:37] "[35m[1mGET /download/audio/cloned_audio_1774273967013.wav HTTP/1.1[0m" 206 -
+2026-03-23 19:24:38,555  INFO  127.0.0.1 - - [23/Mar/2026 19:24:38] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:38,618  INFO  127.0.0.1 - - [23/Mar/2026 19:24:38] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:38,712  INFO  127.0.0.1 - - [23/Mar/2026 19:24:38] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:38,777  INFO  127.0.0.1 - - [23/Mar/2026 19:24:38] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:44,914  INFO  127.0.0.1 - - [23/Mar/2026 19:24:44] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:44,936  INFO  127.0.0.1 - - [23/Mar/2026 19:24:44] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:44,944  INFO  127.0.0.1 - - [23/Mar/2026 19:24:44] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:44,958  INFO  127.0.0.1 - - [23/Mar/2026 19:24:44] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,000  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,023  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,057  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,082  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,106  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,133  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,150  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,162  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:45,180  INFO  127.0.0.1 - - [23/Mar/2026 19:24:45] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:47,523  INFO  127.0.0.1 - - [23/Mar/2026 19:24:47] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 19:24:47,548  INFO  127.0.0.1 - - [23/Mar/2026 19:24:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 19:24:47,554  INFO  127.0.0.1 - - [23/Mar/2026 19:24:47] "[35m[1mGET /download/video/final_video_1774273967013.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 20:04:05,020  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 20:04:05,436  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 20:04:12,692  INFO   * Restarting with stat
+2026-03-23 20:04:12,879  INFO   * Restarting with stat
+2026-03-23 20:04:40,824  WARNING   * Debugger is active!
+2026-03-23 20:04:40,833  INFO   * Debugger PIN: 626-841-934
+2026-03-23 20:04:46,750  WARNING   * Debugger is active!
+2026-03-23 20:04:46,764  INFO   * Debugger PIN: 626-841-934
+2026-03-23 20:04:50,579  INFO  127.0.0.1 - - [23/Mar/2026 20:04:50] "GET / HTTP/1.1" 200 -
+2026-03-23 20:07:20,888  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 20:07:21,159  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 20:07:26,054  INFO   * Restarting with stat
+2026-03-23 20:07:27,912  INFO   * Restarting with stat
+2026-03-23 20:07:51,279  WARNING   * Debugger is active!
+2026-03-23 20:07:51,287  INFO   * Debugger PIN: 626-841-934
+2026-03-23 20:07:56,551  WARNING   * Debugger is active!
+2026-03-23 20:07:56,560  INFO   * Debugger PIN: 626-841-934
+2026-03-23 20:08:09,881  INFO  127.0.0.1 - - [23/Mar/2026 20:08:09] "GET / HTTP/1.1" 200 -
+2026-03-23 20:10:13,685  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 20:10:13,762  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 20:10:17,853  INFO   * Restarting with stat
+2026-03-23 20:10:18,266  INFO   * Restarting with stat
+2026-03-23 20:10:47,683  WARNING   * Debugger is active!
+2026-03-23 20:10:47,693  INFO   * Debugger PIN: 626-841-934
+2026-03-23 20:10:51,435  WARNING   * Debugger is active!
+2026-03-23 20:10:51,450  INFO   * Debugger PIN: 626-841-934
+2026-03-23 20:10:53,458  INFO  127.0.0.1 - - [23/Mar/2026 20:10:53] "GET / HTTP/1.1" 200 -
+2026-03-23 22:24:18,302  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:24:18,871  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:24:26,506  INFO   * Restarting with stat
+2026-03-23 22:24:26,507  INFO   * Restarting with stat
+2026-03-23 22:25:07,388  WARNING   * Debugger is active!
+2026-03-23 22:25:07,406  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:25:08,731  WARNING   * Debugger is active!
+2026-03-23 22:25:08,753  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:29:06,165  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:29:06,315  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:29:12,812  INFO   * Restarting with stat
+2026-03-23 22:29:13,788  INFO   * Restarting with stat
+2026-03-23 22:29:49,005  WARNING   * Debugger is active!
+2026-03-23 22:29:49,017  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:29:55,928  WARNING   * Debugger is active!
+2026-03-23 22:29:55,945  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:30:03,858  INFO  127.0.0.1 - - [23/Mar/2026 22:30:03] "GET / HTTP/1.1" 200 -
+2026-03-23 22:30:49,348  INFO  127.0.0.1 - - [23/Mar/2026 22:30:49] "POST /register HTTP/1.1" 200 -
+2026-03-23 22:30:56,763  INFO  127.0.0.1 - - [23/Mar/2026 22:30:56] "POST /login HTTP/1.1" 200 -
+2026-03-23 22:34:36,572  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:34:37,401  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:34:45,371  INFO   * Restarting with stat
+2026-03-23 22:34:46,256  INFO   * Restarting with stat
+2026-03-23 22:35:26,323  WARNING   * Debugger is active!
+2026-03-23 22:35:26,341  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:35:26,430  INFO  127.0.0.1 - - [23/Mar/2026 22:35:26] "GET / HTTP/1.1" 200 -
+2026-03-23 22:35:30,021  WARNING   * Debugger is active!
+2026-03-23 22:35:30,034  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:35:31,050  INFO  127.0.0.1 - - [23/Mar/2026 22:35:31] "POST /login HTTP/1.1" 200 -
+2026-03-23 22:35:58,215  INFO  127.0.0.1 - - [23/Mar/2026 22:35:58] "POST /process HTTP/1.1" 200 -
+2026-03-23 22:42:44,955  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:42:45,222  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:42:53,322  INFO   * Restarting with stat
+2026-03-23 22:42:53,342  INFO   * Restarting with stat
+2026-03-23 22:43:30,286  WARNING   * Debugger is active!
+2026-03-23 22:43:30,299  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:43:35,419  WARNING   * Debugger is active!
+2026-03-23 22:43:35,434  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:44:05,089  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:44:05,495  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:44:08,072  INFO   * Restarting with stat
+2026-03-23 22:44:08,402  INFO   * Restarting with stat
+2026-03-23 22:44:36,998  WARNING   * Debugger is active!
+2026-03-23 22:44:37,008  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:44:45,705  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:44:48,185  INFO   * Restarting with stat
+2026-03-23 22:44:49,389  WARNING   * Debugger is active!
+2026-03-23 22:44:49,406  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:45:15,863  WARNING   * Debugger is active!
+2026-03-23 22:45:15,884  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:45:26,599  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:45:26,687  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:45:28,752  INFO   * Restarting with stat
+2026-03-23 22:45:29,269  INFO   * Restarting with stat
+2026-03-23 22:45:59,817  WARNING   * Debugger is active!
+2026-03-23 22:45:59,841  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:46:09,778  WARNING   * Debugger is active!
+2026-03-23 22:46:09,793  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:46:48,147  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:46:48,300  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:46:51,072  INFO   * Restarting with stat
+2026-03-23 22:46:51,146  INFO   * Restarting with stat
+2026-03-23 22:47:26,269  WARNING   * Debugger is active!
+2026-03-23 22:47:26,281  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:47:33,872  WARNING   * Debugger is active!
+2026-03-23 22:47:33,889  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:49:10,173  INFO  127.0.0.1 - - [23/Mar/2026 22:49:10] "GET / HTTP/1.1" 200 -
+2026-03-23 22:49:13,491  INFO  127.0.0.1 - - [23/Mar/2026 22:49:13] "POST /login HTTP/1.1" 200 -
+2026-03-23 22:49:19,310  INFO  127.0.0.1 - - [23/Mar/2026 22:49:19] "GET /api/projects/1 HTTP/1.1" 200 -
+2026-03-23 22:49:32,033  INFO  127.0.0.1 - - [23/Mar/2026 22:49:32] "POST /process HTTP/1.1" 200 -
+2026-03-23 22:49:32,064  INFO  127.0.0.1 - - [23/Mar/2026 22:49:32] "GET /stream/a06cff20-af93-4894-9c8f-04d817860776 HTTP/1.1" 200 -
+2026-03-23 22:49:56,078  INFO  127.0.0.1 - - [23/Mar/2026 22:49:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 22:50:50,692  INFO  127.0.0.1 - - [23/Mar/2026 22:50:50] "GET /api/projects/1 HTTP/1.1" 200 -
+2026-03-23 22:53:23,453  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:53:23,945  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:53:33,052  INFO   * Restarting with stat
+2026-03-23 22:53:33,068  INFO   * Restarting with stat
+2026-03-23 22:54:21,825  WARNING   * Debugger is active!
+2026-03-23 22:54:21,825  WARNING   * Debugger is active!
+2026-03-23 22:54:21,841  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:54:21,842  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:54:22,014  INFO  127.0.0.1 - - [23/Mar/2026 22:54:22] "POST /process HTTP/1.1" 200 -
+2026-03-23 22:54:22,041  INFO  127.0.0.1 - - [23/Mar/2026 22:54:22] "GET /stream/66bb8e8e-64f1-4c95-ba19-187da3d14f13 HTTP/1.1" 200 -
+2026-03-23 22:57:14,249  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:57:14,616  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 22:57:28,013  INFO   * Restarting with stat
+2026-03-23 22:57:28,029  INFO   * Restarting with stat
+2026-03-23 22:58:20,483  WARNING   * Debugger is active!
+2026-03-23 22:58:20,485  WARNING   * Debugger is active!
+2026-03-23 22:58:20,498  INFO   * Debugger PIN: 626-841-934
+2026-03-23 22:58:20,505  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:05:34,066  INFO  127.0.0.1 - - [23/Mar/2026 23:05:34] "GET / HTTP/1.1" 200 -
+2026-03-23 23:05:36,404  INFO  127.0.0.1 - - [23/Mar/2026 23:05:36] "POST /login HTTP/1.1" 200 -
+2026-03-23 23:05:45,096  INFO  127.0.0.1 - - [23/Mar/2026 23:05:45] "POST /process HTTP/1.1" 200 -
+2026-03-23 23:05:45,122  INFO  127.0.0.1 - - [23/Mar/2026 23:05:45] "GET /stream/613d841b-5c7b-4351-a246-bf4e5bf66866 HTTP/1.1" 200 -
+2026-03-23 23:07:37,417  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:07:37,765  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:07:43,948  INFO   * Restarting with stat
+2026-03-23 23:07:44,149  INFO   * Restarting with stat
+2026-03-23 23:08:15,772  WARNING   * Debugger is active!
+2026-03-23 23:08:15,782  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:08:20,924  WARNING   * Debugger is active!
+2026-03-23 23:08:20,935  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:09:16,042  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:09:16,552  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:09:18,764  INFO   * Restarting with stat
+2026-03-23 23:09:18,828  INFO   * Restarting with stat
+2026-03-23 23:09:47,529  WARNING   * Debugger is active!
+2026-03-23 23:09:47,538  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:09:54,732  WARNING   * Debugger is active!
+2026-03-23 23:09:54,745  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:10:06,423  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:10:06,449  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:10:08,531  INFO   * Restarting with stat
+2026-03-23 23:10:08,901  INFO   * Restarting with stat
+2026-03-23 23:10:35,896  WARNING   * Debugger is active!
+2026-03-23 23:10:35,907  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:10:43,264  WARNING   * Debugger is active!
+2026-03-23 23:10:43,279  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:11:46,100  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:11:46,769  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:11:48,544  INFO   * Restarting with stat
+2026-03-23 23:11:49,356  INFO   * Restarting with stat
+2026-03-23 23:12:17,379  WARNING   * Debugger is active!
+2026-03-23 23:12:17,389  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:12:24,287  WARNING   * Debugger is active!
+2026-03-23 23:12:24,300  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:12:28,083  INFO  127.0.0.1 - - [23/Mar/2026 23:12:28] "GET / HTTP/1.1" 200 -
+2026-03-23 23:12:31,764  INFO  127.0.0.1 - - [23/Mar/2026 23:12:31] "POST /login HTTP/1.1" 200 -
+2026-03-23 23:12:37,203  INFO  127.0.0.1 - - [23/Mar/2026 23:12:37] "GET / HTTP/1.1" 200 -
+2026-03-23 23:13:02,880  INFO  127.0.0.1 - - [23/Mar/2026 23:13:02] "POST /admin/login HTTP/1.1" 200 -
+2026-03-23 23:13:34,130  INFO  127.0.0.1 - - [23/Mar/2026 23:13:34] "POST /admin/register HTTP/1.1" 200 -
+2026-03-23 23:13:41,443  INFO  127.0.0.1 - - [23/Mar/2026 23:13:41] "POST /admin/login HTTP/1.1" 200 -
+2026-03-23 23:13:48,740  INFO  127.0.0.1 - - [23/Mar/2026 23:13:48] "POST /admin/login HTTP/1.1" 200 -
+2026-03-23 23:13:51,936  INFO  127.0.0.1 - - [23/Mar/2026 23:13:51] "POST /admin/login HTTP/1.1" 200 -
+2026-03-23 23:13:51,959  INFO  127.0.0.1 - - [23/Mar/2026 23:13:51] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-23 23:13:51,982  INFO  127.0.0.1 - - [23/Mar/2026 23:13:51] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-23 23:13:52,000  INFO  127.0.0.1 - - [23/Mar/2026 23:13:52] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-23 23:15:05,416  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:15:05,507  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:15:10,211  INFO   * Restarting with stat
+2026-03-23 23:15:10,496  INFO   * Restarting with stat
+2026-03-23 23:15:43,697  WARNING   * Debugger is active!
+2026-03-23 23:15:43,715  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:15:43,847  INFO  127.0.0.1 - - [23/Mar/2026 23:15:43] "GET / HTTP/1.1" 200 -
+2026-03-23 23:15:45,661  WARNING   * Debugger is active!
+2026-03-23 23:15:45,676  INFO   * Debugger PIN: 626-841-934
+2026-03-23 23:15:49,450  INFO  127.0.0.1 - - [23/Mar/2026 23:15:49] "POST /admin/login HTTP/1.1" 200 -
+2026-03-23 23:15:49,467  INFO  127.0.0.1 - - [23/Mar/2026 23:15:49] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-23 23:15:49,501  INFO  127.0.0.1 - - [23/Mar/2026 23:15:49] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-23 23:15:49,532  INFO  127.0.0.1 - - [23/Mar/2026 23:15:49] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-23 23:16:01,228  INFO  127.0.0.1 - - [23/Mar/2026 23:16:01] "POST /login HTTP/1.1" 200 -
+2026-03-23 23:16:14,344  INFO  127.0.0.1 - - [23/Mar/2026 23:16:14] "POST /process HTTP/1.1" 200 -
+2026-03-23 23:16:14,375  INFO  127.0.0.1 - - [23/Mar/2026 23:16:14] "GET /stream/971d9299-5819-48c4-bda9-484673134238 HTTP/1.1" 200 -
+2026-03-23 23:17:13,092  INFO  127.0.0.1 - - [23/Mar/2026 23:17:13] "POST /api/feedback HTTP/1.1" 200 -
+2026-03-23 23:17:37,756  INFO  127.0.0.1 - - [23/Mar/2026 23:17:37] "GET / HTTP/1.1" 200 -
+2026-03-23 23:17:49,697  INFO  127.0.0.1 - - [23/Mar/2026 23:17:49] "POST /admin/login HTTP/1.1" 200 -
+2026-03-23 23:17:49,710  INFO  127.0.0.1 - - [23/Mar/2026 23:17:49] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-23 23:17:49,739  INFO  127.0.0.1 - - [23/Mar/2026 23:17:49] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-23 23:17:49,754  INFO  127.0.0.1 - - [23/Mar/2026 23:17:49] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-23 23:18:20,129  INFO  127.0.0.1 - - [23/Mar/2026 23:18:20] "POST /register HTTP/1.1" 200 -
+2026-03-23 23:18:25,276  INFO  127.0.0.1 - - [23/Mar/2026 23:18:25] "POST /login HTTP/1.1" 200 -
+2026-03-23 23:18:56,557  INFO  127.0.0.1 - - [23/Mar/2026 23:18:56] "POST /process HTTP/1.1" 200 -
+2026-03-23 23:18:56,572  INFO  127.0.0.1 - - [23/Mar/2026 23:18:56] "GET /stream/3ce753ee-bb32-403d-bd9d-a628b660f96c HTTP/1.1" 200 -
+2026-03-23 23:19:12,369  INFO  Loading XTTS-v2 on CPU …
+2026-03-23 23:19:14,487  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-23 23:20:15,669  INFO  Weights loaded ✓
+2026-03-23 23:20:15,687  INFO  XTTS-v2 ready ✓
+2026-03-23 23:20:15,708  INFO  Synthesising | lang=en speed=1.0
+2026-03-23 23:20:34,628  INFO  127.0.0.1 - - [23/Mar/2026 23:20:34] "GET /api/projects/2 HTTP/1.1" 200 -
+2026-03-23 23:20:38,287  INFO  Saved → d:\Echovox_fullcode\outputs\cloned_audio_1774288152369.wav
+2026-03-23 23:20:39,584  INFO  127.0.0.1 - - [23/Mar/2026 23:20:39] "[35m[1mGET /download/audio/cloned_audio_1774288152369.wav HTTP/1.1[0m" 206 -
+2026-03-23 23:20:39,749  INFO  127.0.0.1 - - [23/Mar/2026 23:20:39] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:39,769  INFO  127.0.0.1 - - [23/Mar/2026 23:20:39] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,063  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,072  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,089  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,110  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,120  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,138  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,157  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,168  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,187  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,212  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:41,229  INFO  127.0.0.1 - - [23/Mar/2026 23:20:41] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:43,060  INFO  127.0.0.1 - - [23/Mar/2026 23:20:43] "[35m[1mGET /download/video/final_video_1774288152369.mp4 HTTP/1.1[0m" 206 -
+2026-03-23 23:20:43,092  INFO  127.0.0.1 - - [23/Mar/2026 23:20:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-23 23:20:52,669  INFO  127.0.0.1 - - [23/Mar/2026 23:20:52] "POST /api/feedback HTTP/1.1" 200 -
+2026-03-23 23:20:55,542  INFO  127.0.0.1 - - [23/Mar/2026 23:20:55] "GET / HTTP/1.1" 200 -
+2026-03-23 23:21:04,087  INFO  127.0.0.1 - - [23/Mar/2026 23:21:04] "POST /admin/login HTTP/1.1" 200 -
+2026-03-23 23:21:04,249  INFO  127.0.0.1 - - [23/Mar/2026 23:21:04] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-23 23:21:04,278  INFO  127.0.0.1 - - [23/Mar/2026 23:21:04] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-23 23:21:04,310  INFO  127.0.0.1 - - [23/Mar/2026 23:21:04] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-23 23:21:14,148  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:21:15,156  INFO   * Detected change in 'd:\\Echovox_fullcode\\app.py', reloading
+2026-03-23 23:21:23,157  INFO   * Restarting with stat
+2026-03-23 23:21:23,903  INFO   * Restarting with stat
+2026-03-24 17:26:32,129  WARNING   * Debugger is active!
+2026-03-24 17:26:32,153  INFO   * Debugger PIN: 626-841-934
+2026-03-24 17:30:38,289  INFO  127.0.0.1 - - [24/Mar/2026 17:30:38] "POST /login HTTP/1.1" 200 -
+2026-03-24 17:31:07,154  INFO  127.0.0.1 - - [24/Mar/2026 17:31:07] "GET / HTTP/1.1" 200 -
+2026-03-24 17:31:11,336  INFO  127.0.0.1 - - [24/Mar/2026 17:31:11] "GET / HTTP/1.1" 200 -
+2026-03-24 17:31:12,358  ERROR  Error on request:
+Traceback (most recent call last):
+  File "D:\anaconda\envs\lipread_env\lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "D:\anaconda\envs\lipread_env\lib\site-packages\werkzeug\serving.py", line 355, in execute
+    data = self.rfile.read(10_000_000)
+MemoryError
+2026-03-24 17:31:18,491  INFO  127.0.0.1 - - [24/Mar/2026 17:31:18] "GET / HTTP/1.1" 200 -
+2026-03-24 17:33:10,306  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-24 17:33:10,308  INFO  [33mPress CTRL+C to quit[0m
+2026-03-24 17:33:10,316  INFO   * Restarting with stat
+2026-03-24 17:47:43,557  INFO  127.0.0.1 - - [24/Mar/2026 17:47:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 17:47:43,571  INFO  127.0.0.1 - - [24/Mar/2026 17:47:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 18:00:21,167  INFO  127.0.0.1 - - [24/Mar/2026 18:00:21] "POST /login HTTP/1.1" 200 -
+2026-03-24 18:14:51,263  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-24 18:14:51,265  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-24 18:14:51,265  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-24 18:14:51,268  INFO  [33mPress CTRL+C to quit[0m
+2026-03-24 18:14:51,268  INFO  [33mPress CTRL+C to quit[0m
+2026-03-24 18:14:51,268  INFO  [33mPress CTRL+C to quit[0m
+2026-03-24 18:14:51,278  INFO   * Restarting with stat
+2026-03-24 18:14:51,278  INFO   * Restarting with stat
+2026-03-24 18:14:51,282  INFO   * Restarting with stat
+2026-03-24 18:15:49,194  WARNING   * Debugger is active!
+2026-03-24 18:15:49,195  WARNING   * Debugger is active!
+2026-03-24 18:15:49,195  WARNING   * Debugger is active!
+2026-03-24 18:15:49,214  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:15:49,214  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:15:49,380  INFO  127.0.0.1 - - [24/Mar/2026 18:15:49] "GET / HTTP/1.1" 200 -
+2026-03-24 18:15:51,511  INFO  127.0.0.1 - - [24/Mar/2026 18:15:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 18:16:20,534  INFO  127.0.0.1 - - [24/Mar/2026 18:16:20] "GET / HTTP/1.1" 200 -
+2026-03-24 18:16:22,063  INFO  127.0.0.1 - - [24/Mar/2026 18:16:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 18:16:25,965  INFO  127.0.0.1 - - [24/Mar/2026 18:16:25] "POST /login HTTP/1.1" 200 -
+2026-03-24 18:29:00,492  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:29:00,509  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:29:00,898  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:29:16,589  INFO   * Restarting with stat
+2026-03-24 18:29:16,589  INFO   * Restarting with stat
+2026-03-24 18:29:16,602  INFO   * Restarting with stat
+2026-03-24 18:30:10,838  WARNING   * Debugger is active!
+2026-03-24 18:30:10,838  WARNING   * Debugger is active!
+2026-03-24 18:30:10,845  WARNING   * Debugger is active!
+2026-03-24 18:30:10,864  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:30:10,865  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:30:10,865  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:35:31,535  INFO  127.0.0.1 - - [24/Mar/2026 18:35:31] "POST /process HTTP/1.1" 200 -
+2026-03-24 18:35:31,637  INFO  127.0.0.1 - - [24/Mar/2026 18:35:31] "GET /stream/e5b64949-d59f-44b6-a74c-ed88322b03b9 HTTP/1.1" 200 -
+2026-03-24 18:36:52,082  INFO  127.0.0.1 - - [24/Mar/2026 18:36:52] "POST /process HTTP/1.1" 200 -
+2026-03-24 18:36:52,091  INFO  127.0.0.1 - - [24/Mar/2026 18:36:52] "GET /stream/7607b93e-d5cc-4f22-9b72-d40939d26449 HTTP/1.1" 200 -
+2026-03-24 18:37:06,924  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 18:37:10,579  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 18:48:20,424  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:48:20,439  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:48:29,578  INFO   * Restarting with stat
+2026-03-24 18:48:29,579  INFO   * Restarting with stat
+2026-03-24 18:49:18,627  WARNING   * Debugger is active!
+2026-03-24 18:49:18,627  WARNING   * Debugger is active!
+2026-03-24 18:49:18,639  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:49:18,645  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:50:05,382  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:50:05,554  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:50:09,281  INFO   * Restarting with stat
+2026-03-24 18:50:09,281  INFO   * Restarting with stat
+2026-03-24 18:50:52,583  WARNING   * Debugger is active!
+2026-03-24 18:50:52,583  WARNING   * Debugger is active!
+2026-03-24 18:50:52,606  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:50:52,608  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:51:38,843  INFO  127.0.0.1 - - [24/Mar/2026 18:51:38] "POST /login HTTP/1.1" 200 -
+2026-03-24 18:52:13,386  INFO  127.0.0.1 - - [24/Mar/2026 18:52:13] "POST /process HTTP/1.1" 200 -
+2026-03-24 18:52:13,428  INFO  127.0.0.1 - - [24/Mar/2026 18:52:13] "GET /stream/aa026fe1-46d7-4e0e-a9b1-1febdca7e135 HTTP/1.1" 200 -
+2026-03-24 18:54:32,468  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:54:33,103  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 18:54:43,044  INFO   * Restarting with stat
+2026-03-24 18:54:43,055  INFO   * Restarting with stat
+2026-03-24 18:55:34,984  WARNING   * Debugger is active!
+2026-03-24 18:55:34,984  WARNING   * Debugger is active!
+2026-03-24 18:55:35,005  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:55:35,008  INFO   * Debugger PIN: 626-841-934
+2026-03-24 18:55:35,170  INFO  127.0.0.1 - - [24/Mar/2026 18:55:35] "GET / HTTP/1.1" 200 -
+2026-03-24 18:55:37,737  INFO  127.0.0.1 - - [24/Mar/2026 18:55:37] "POST /login HTTP/1.1" 200 -
+2026-03-24 18:55:49,024  INFO  127.0.0.1 - - [24/Mar/2026 18:55:49] "POST /process HTTP/1.1" 200 -
+2026-03-24 18:55:49,044  INFO  127.0.0.1 - - [24/Mar/2026 18:55:49] "GET /stream/d37bdaf6-309f-426e-9900-4be67b5ac902 HTTP/1.1" 200 -
+2026-03-24 18:56:41,870  INFO  127.0.0.1 - - [24/Mar/2026 18:56:41] "POST /api/feedback HTTP/1.1" 200 -
+2026-03-24 18:57:55,996  INFO  127.0.0.1 - - [24/Mar/2026 18:57:55] "POST /process HTTP/1.1" 200 -
+2026-03-24 18:57:56,017  INFO  127.0.0.1 - - [24/Mar/2026 18:57:56] "GET /stream/4472ee11-fc51-4d2c-a3a8-fd218f4037b1 HTTP/1.1" 200 -
+2026-03-24 18:58:09,896  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 18:58:12,260  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 18:59:40,632  INFO  Weights loaded ✓
+2026-03-24 18:59:40,685  INFO  XTTS-v2 ready ✓
+2026-03-24 18:59:40,708  INFO  Synthesising | lang=en speed=1.0
+2026-03-24 19:00:25,867  INFO  Saved → D:\Echovox_fullcode\outputs\cloned_audio_1774358889892.wav
+2026-03-24 19:00:29,131  INFO  127.0.0.1 - - [24/Mar/2026 19:00:29] "[35m[1mGET /download/audio/cloned_audio_1774358889892.wav HTTP/1.1[0m" 206 -
+2026-03-24 19:00:29,423  INFO  127.0.0.1 - - [24/Mar/2026 19:00:29] "[35m[1mGET /download/video/final_video_1774358889892.mp4 HTTP/1.1[0m" 206 -
+2026-03-24 19:00:29,451  INFO  127.0.0.1 - - [24/Mar/2026 19:00:29] "[35m[1mGET /download/video/final_video_1774358889892.mp4 HTTP/1.1[0m" 206 -
+2026-03-24 19:00:43,362  INFO  127.0.0.1 - - [24/Mar/2026 19:00:43] "[35m[1mGET /download/video/final_video_1774358889892.mp4 HTTP/1.1[0m" 206 -
+2026-03-24 19:00:43,920  INFO  127.0.0.1 - - [24/Mar/2026 19:00:43] "[35m[1mGET /download/video/final_video_1774358889892.mp4 HTTP/1.1[0m" 206 -
+2026-03-24 19:00:44,115  INFO  127.0.0.1 - - [24/Mar/2026 19:00:44] "[35m[1mGET /download/video/final_video_1774358889892.mp4 HTTP/1.1[0m" 206 -
+2026-03-24 19:00:44,390  INFO  127.0.0.1 - - [24/Mar/2026 19:00:44] "[35m[1mGET /download/video/final_video_1774358889892.mp4 HTTP/1.1[0m" 206 -
+2026-03-24 19:00:44,411  INFO  127.0.0.1 - - [24/Mar/2026 19:00:44] "[35m[1mGET /download/video/final_video_1774358889892.mp4 HTTP/1.1[0m" 206 -
+2026-03-24 19:01:01,838  INFO  127.0.0.1 - - [24/Mar/2026 19:01:01] "POST /api/feedback HTTP/1.1" 200 -
+2026-03-24 19:01:15,447  INFO  127.0.0.1 - - [24/Mar/2026 19:01:15] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 19:01:15,477  INFO  127.0.0.1 - - [24/Mar/2026 19:01:15] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 19:01:15,513  INFO  127.0.0.1 - - [24/Mar/2026 19:01:15] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 19:01:15,584  INFO  127.0.0.1 - - [24/Mar/2026 19:01:15] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 19:01:15,616  INFO  127.0.0.1 - - [24/Mar/2026 19:01:15] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 19:13:39,589  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 19:13:39,589  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 19:13:46,526  INFO   * Restarting with stat
+2026-03-24 19:13:48,042  INFO   * Restarting with stat
+2026-03-24 19:14:21,351  WARNING   * Debugger is active!
+2026-03-24 19:14:21,351  WARNING   * Debugger is active!
+2026-03-24 19:14:21,360  INFO   * Debugger PIN: 626-841-934
+2026-03-24 19:14:21,360  INFO   * Debugger PIN: 626-841-934
+2026-03-24 19:14:37,284  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 19:14:37,307  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 19:14:39,451  INFO   * Restarting with stat
+2026-03-24 19:14:39,541  INFO   * Restarting with stat
+2026-03-24 19:15:09,734  WARNING   * Debugger is active!
+2026-03-24 19:15:09,742  INFO   * Debugger PIN: 626-841-934
+2026-03-24 19:15:09,839  WARNING   * Debugger is active!
+2026-03-24 19:15:09,853  INFO   * Debugger PIN: 626-841-934
+2026-03-24 19:15:47,674  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 19:15:47,711  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 19:15:51,911  INFO   * Restarting with stat
+2026-03-24 19:15:51,968  INFO   * Restarting with stat
+2026-03-24 19:16:21,089  WARNING   * Debugger is active!
+2026-03-24 19:16:21,101  INFO   * Debugger PIN: 626-841-934
+2026-03-24 19:16:21,351  WARNING   * Debugger is active!
+2026-03-24 19:16:21,351  INFO   * Debugger PIN: 626-841-934
+2026-03-24 19:17:12,594  INFO  127.0.0.1 - - [24/Mar/2026 19:17:12] "GET / HTTP/1.1" 200 -
+2026-03-24 19:17:21,146  INFO  127.0.0.1 - - [24/Mar/2026 19:17:21] "GET / HTTP/1.1" 200 -
+2026-03-24 19:17:51,062  INFO  127.0.0.1 - - [24/Mar/2026 19:17:51] "GET / HTTP/1.1" 200 -
+2026-03-24 19:17:51,904  INFO  127.0.0.1 - - [24/Mar/2026 19:17:51] "GET / HTTP/1.1" 200 -
+2026-03-24 19:17:52,698  INFO  127.0.0.1 - - [24/Mar/2026 19:17:52] "GET / HTTP/1.1" 200 -
+2026-03-24 19:22:58,616  INFO  127.0.0.1 - - [24/Mar/2026 19:22:58] "GET / HTTP/1.1" 200 -
+2026-03-24 19:32:10,610  INFO  127.0.0.1 - - [24/Mar/2026 19:32:10] "GET / HTTP/1.1" 200 -
+2026-03-24 19:32:11,687  INFO  127.0.0.1 - - [24/Mar/2026 19:32:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 19:34:04,929  INFO  127.0.0.1 - - [24/Mar/2026 19:34:04] "GET / HTTP/1.1" 200 -
+2026-03-24 19:36:25,491  INFO  127.0.0.1 - - [24/Mar/2026 19:36:25] "GET / HTTP/1.1" 200 -
+2026-03-24 19:38:44,119  INFO  127.0.0.1 - - [24/Mar/2026 19:38:44] "GET / HTTP/1.1" 200 -
+2026-03-24 19:43:14,176  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 19:43:14,185  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 19:43:24,582  INFO   * Restarting with stat
+2026-03-24 19:43:24,585  INFO   * Restarting with stat
+2026-03-24 19:44:02,977  WARNING   * Debugger is active!
+2026-03-24 19:44:03,011  INFO   * Debugger PIN: 626-841-934
+2026-03-24 19:44:03,011  INFO   * Debugger PIN: 626-841-934
+2026-03-24 19:44:25,751  INFO  127.0.0.1 - - [24/Mar/2026 19:44:25] "GET / HTTP/1.1" 200 -
+2026-03-24 19:44:28,283  INFO  127.0.0.1 - - [24/Mar/2026 19:44:28] "GET / HTTP/1.1" 200 -
+2026-03-24 19:44:35,408  INFO  127.0.0.1 - - [24/Mar/2026 19:44:35] "POST /login HTTP/1.1" 200 -
+2026-03-24 19:44:37,130  INFO  127.0.0.1 - - [24/Mar/2026 19:44:37] "POST /login HTTP/1.1" 200 -
+2026-03-24 19:44:38,097  INFO  127.0.0.1 - - [24/Mar/2026 19:44:38] "POST /login HTTP/1.1" 200 -
+2026-03-24 19:44:39,658  INFO  127.0.0.1 - - [24/Mar/2026 19:44:39] "POST /login HTTP/1.1" 200 -
+2026-03-24 19:44:50,893  INFO  127.0.0.1 - - [24/Mar/2026 19:44:50] "POST /register HTTP/1.1" 200 -
+2026-03-24 19:44:56,039  INFO  127.0.0.1 - - [24/Mar/2026 19:44:56] "POST /register HTTP/1.1" 200 -
+2026-03-24 19:45:02,768  INFO  127.0.0.1 - - [24/Mar/2026 19:45:02] "POST /login HTTP/1.1" 200 -
+2026-03-24 19:45:15,045  INFO  127.0.0.1 - - [24/Mar/2026 19:45:15] "POST /process HTTP/1.1" 200 -
+2026-03-24 19:45:15,077  INFO  127.0.0.1 - - [24/Mar/2026 19:45:15] "GET /stream/10edcc56-921b-4bb8-aa4a-6c2d64844664 HTTP/1.1" 200 -
+2026-03-24 19:45:54,144  INFO  127.0.0.1 - - [24/Mar/2026 19:45:54] "POST /api/feedback HTTP/1.1" 200 -
+2026-03-24 19:46:03,615  INFO  127.0.0.1 - - [24/Mar/2026 19:46:03] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 19:46:03,633  INFO  127.0.0.1 - - [24/Mar/2026 19:46:03] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 19:46:03,666  INFO  127.0.0.1 - - [24/Mar/2026 19:46:03] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 19:46:03,749  INFO  127.0.0.1 - - [24/Mar/2026 19:46:03] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 19:46:03,783  INFO  127.0.0.1 - - [24/Mar/2026 19:46:03] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 19:46:03,812  INFO  127.0.0.1 - - [24/Mar/2026 19:46:03] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 19:46:03,812  INFO  127.0.0.1 - - [24/Mar/2026 19:46:03] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 19:46:03,866  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 19:46:06,327  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 19:46:12,298  INFO  127.0.0.1 - - [24/Mar/2026 19:46:12] "GET /api/admin/users?search=&filter=active HTTP/1.1" 200 -
+2026-03-24 19:46:14,278  INFO  127.0.0.1 - - [24/Mar/2026 19:46:14] "GET /api/admin/users?search=&filter=inactive HTTP/1.1" 200 -
+2026-03-24 19:46:18,205  INFO  127.0.0.1 - - [24/Mar/2026 19:46:18] "GET /api/admin/users?search=&filter=banned HTTP/1.1" 200 -
+2026-03-24 19:46:19,859  INFO  127.0.0.1 - - [24/Mar/2026 19:46:19] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 19:47:49,751  INFO  127.0.0.1 - - [24/Mar/2026 19:47:49] "POST /register HTTP/1.1" 200 -
+2026-03-24 19:47:54,546  INFO  127.0.0.1 - - [24/Mar/2026 19:47:54] "POST /login HTTP/1.1" 200 -
+2026-03-24 19:48:26,801  INFO  127.0.0.1 - - [24/Mar/2026 19:48:26] "POST /process HTTP/1.1" 200 -
+2026-03-24 19:48:26,857  INFO  127.0.0.1 - - [24/Mar/2026 19:48:26] "GET /stream/510fabbb-b9cd-4b8c-8ce8-d298f68f0eff HTTP/1.1" 200 -
+2026-03-24 19:48:58,486  INFO  127.0.0.1 - - [24/Mar/2026 19:48:58] "POST /process HTTP/1.1" 200 -
+2026-03-24 19:48:58,503  INFO  127.0.0.1 - - [24/Mar/2026 19:48:58] "GET /stream/f18ddaf2-ef7e-4a16-9e16-cafd64618772 HTTP/1.1" 200 -
+2026-03-24 19:49:34,575  INFO  127.0.0.1 - - [24/Mar/2026 19:49:34] "POST /api/feedback HTTP/1.1" 200 -
+2026-03-24 19:50:01,826  INFO  127.0.0.1 - - [24/Mar/2026 19:50:01] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 19:50:01,846  INFO  127.0.0.1 - - [24/Mar/2026 19:50:01] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 19:50:02,006  INFO  127.0.0.1 - - [24/Mar/2026 19:50:02] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 19:50:02,177  INFO  127.0.0.1 - - [24/Mar/2026 19:50:02] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 19:50:02,228  INFO  127.0.0.1 - - [24/Mar/2026 19:50:02] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 19:50:02,263  INFO  127.0.0.1 - - [24/Mar/2026 19:50:02] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 19:50:02,267  INFO  127.0.0.1 - - [24/Mar/2026 19:50:02] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 19:50:02,286  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 19:50:04,659  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 19:50:11,112  INFO  127.0.0.1 - - [24/Mar/2026 19:50:11] "GET /api/admin/users?search=&filter=active HTTP/1.1" 200 -
+2026-03-24 19:50:12,554  INFO  127.0.0.1 - - [24/Mar/2026 19:50:12] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 19:50:21,728  INFO  127.0.0.1 - - [24/Mar/2026 19:50:21] "GET /api/admin/users?search=aabelaby2003@gmail.com&filter= HTTP/1.1" 200 -
+2026-03-24 19:50:26,273  INFO  127.0.0.1 - - [24/Mar/2026 19:50:26] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 19:50:48,386  INFO  127.0.0.1 - - [24/Mar/2026 19:50:48] "GET /api/admin/users?search=&filter=banned HTTP/1.1" 200 -
+2026-03-24 19:50:51,147  INFO  127.0.0.1 - - [24/Mar/2026 19:50:51] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 19:51:03,223  INFO  127.0.0.1 - - [24/Mar/2026 19:51:03] "GET /api/admin/users?search=&filter=banned HTTP/1.1" 200 -
+2026-03-24 19:51:05,321  INFO  127.0.0.1 - - [24/Mar/2026 19:51:05] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 19:51:17,336  INFO  127.0.0.1 - - [24/Mar/2026 19:51:17] "GET /api/admin/users?search=&filter=active HTTP/1.1" 200 -
+2026-03-24 19:51:22,770  INFO  127.0.0.1 - - [24/Mar/2026 19:51:22] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 19:51:50,720  INFO  Weights loaded ✓
+2026-03-24 19:51:50,813  INFO  XTTS-v2 ready ✓
+2026-03-24 19:51:51,125  INFO  127.0.0.1 - - [24/Mar/2026 19:51:51] "GET /api/admin/system-health HTTP/1.1" 200 -
+2026-03-24 19:51:52,403  INFO  127.0.0.1 - - [24/Mar/2026 19:51:52] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 19:55:20,160  INFO  127.0.0.1 - - [24/Mar/2026 19:55:20] "POST /api/admin/user/1/ban HTTP/1.1" 200 -
+2026-03-24 19:56:07,520  INFO  127.0.0.1 - - [24/Mar/2026 19:56:07] "GET / HTTP/1.1" 200 -
+2026-03-24 19:57:24,902  INFO  127.0.0.1 - - [24/Mar/2026 19:57:24] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 19:58:03,429  INFO  127.0.0.1 - - [24/Mar/2026 19:58:03] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 19:58:40,015  INFO  127.0.0.1 - - [24/Mar/2026 19:58:40] "GET / HTTP/1.1" 200 -
+2026-03-24 19:58:59,244  INFO  127.0.0.1 - - [24/Mar/2026 19:58:59] "POST /login HTTP/1.1" 200 -
+2026-03-24 20:00:01,999  INFO  127.0.0.1 - - [24/Mar/2026 20:00:01] "GET / HTTP/1.1" 200 -
+2026-03-24 20:00:51,278  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 20:00:51,351  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 20:00:51,403  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 20:00:51,567  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 20:00:51,687  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 20:00:51,732  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 20:00:51,754  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 20:00:51,792  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "GET /api/admin/system-health HTTP/1.1" 200 -
+2026-03-24 20:00:51,841  INFO  127.0.0.1 - - [24/Mar/2026 20:00:51] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 20:02:41,406  INFO  127.0.0.1 - - [24/Mar/2026 20:02:41] "GET / HTTP/1.1" 200 -
+2026-03-24 20:03:13,727  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 20:03:13,754  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 20:03:13,773  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 20:03:13,821  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 20:03:13,862  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 20:03:13,880  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 20:03:13,883  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 20:03:13,919  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "GET /api/admin/system-health HTTP/1.1" 200 -
+2026-03-24 20:03:13,969  INFO  127.0.0.1 - - [24/Mar/2026 20:03:13] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 20:05:30,052  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 20:05:39,698  INFO   * Restarting with stat
+2026-03-24 20:06:18,390  WARNING   * Debugger is active!
+2026-03-24 20:06:18,406  INFO   * Debugger PIN: 626-841-934
+2026-03-24 20:08:07,606  INFO  127.0.0.1 - - [24/Mar/2026 20:08:07] "GET / HTTP/1.1" 200 -
+2026-03-24 20:08:07,620  INFO  127.0.0.1 - - [24/Mar/2026 20:08:07] "GET / HTTP/1.1" 200 -
+2026-03-24 20:08:07,621  INFO  127.0.0.1 - - [24/Mar/2026 20:08:07] "GET / HTTP/1.1" 200 -
+2026-03-24 20:08:07,719  INFO  127.0.0.1 - - [24/Mar/2026 20:08:07] "GET / HTTP/1.1" 200 -
+2026-03-24 20:08:07,966  INFO  127.0.0.1 - - [24/Mar/2026 20:08:07] "GET / HTTP/1.1" 200 -
+2026-03-24 20:08:08,333  INFO  127.0.0.1 - - [24/Mar/2026 20:08:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 20:08:10,274  INFO  127.0.0.1 - - [24/Mar/2026 20:08:10] "POST /login HTTP/1.1" 200 -
+2026-03-24 20:08:14,819  INFO  127.0.0.1 - - [24/Mar/2026 20:08:14] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 20:08:14,848  INFO  127.0.0.1 - - [24/Mar/2026 20:08:14] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 20:08:14,908  INFO  127.0.0.1 - - [24/Mar/2026 20:08:14] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 20:08:15,005  INFO  127.0.0.1 - - [24/Mar/2026 20:08:15] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 20:08:15,042  INFO  127.0.0.1 - - [24/Mar/2026 20:08:15] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 20:08:15,089  INFO  127.0.0.1 - - [24/Mar/2026 20:08:15] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 20:08:15,110  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 20:08:15,112  INFO  127.0.0.1 - - [24/Mar/2026 20:08:15] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 20:08:17,651  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 20:08:25,764  INFO  127.0.0.1 - - [24/Mar/2026 20:08:25] "GET /api/admin/users?search=&filter=active HTTP/1.1" 200 -
+2026-03-24 20:08:28,895  INFO  127.0.0.1 - - [24/Mar/2026 20:08:28] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 20:09:35,886  INFO  Weights loaded ✓
+2026-03-24 20:09:35,926  INFO  XTTS-v2 ready ✓
+2026-03-24 20:09:36,051  INFO  127.0.0.1 - - [24/Mar/2026 20:09:36] "GET /api/admin/system-health HTTP/1.1" 200 -
+2026-03-24 20:09:36,827  INFO  127.0.0.1 - - [24/Mar/2026 20:09:36] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 20:11:21,127  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 20:11:29,317  INFO   * Restarting with stat
+2026-03-24 20:12:09,460  WARNING   * Debugger is active!
+2026-03-24 20:12:09,477  INFO   * Debugger PIN: 626-841-934
+2026-03-24 20:13:24,196  INFO  127.0.0.1 - - [24/Mar/2026 20:13:24] "GET / HTTP/1.1" 200 -
+2026-03-24 20:13:24,275  INFO  127.0.0.1 - - [24/Mar/2026 20:13:24] "GET / HTTP/1.1" 200 -
+2026-03-24 20:13:24,336  INFO  127.0.0.1 - - [24/Mar/2026 20:13:24] "GET / HTTP/1.1" 200 -
+2026-03-24 20:13:24,533  INFO  127.0.0.1 - - [24/Mar/2026 20:13:24] "GET / HTTP/1.1" 200 -
+2026-03-24 20:13:24,728  INFO  127.0.0.1 - - [24/Mar/2026 20:13:24] "GET / HTTP/1.1" 200 -
+2026-03-24 20:13:25,171  INFO  127.0.0.1 - - [24/Mar/2026 20:13:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 20:13:29,041  INFO  127.0.0.1 - - [24/Mar/2026 20:13:29] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 20:13:29,062  INFO  127.0.0.1 - - [24/Mar/2026 20:13:29] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 20:13:29,093  INFO  127.0.0.1 - - [24/Mar/2026 20:13:29] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 20:13:29,176  INFO  127.0.0.1 - - [24/Mar/2026 20:13:29] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 20:13:29,205  INFO  127.0.0.1 - - [24/Mar/2026 20:13:29] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 20:13:29,235  INFO  127.0.0.1 - - [24/Mar/2026 20:13:29] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 20:13:29,239  INFO  127.0.0.1 - - [24/Mar/2026 20:13:29] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 20:13:29,239  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 20:13:29,251  INFO  127.0.0.1 - - [24/Mar/2026 20:13:29] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 20:13:31,128  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 20:14:15,982  INFO  127.0.0.1 - - [24/Mar/2026 20:14:15] "GET / HTTP/1.1" 200 -
+2026-03-24 20:14:21,704  INFO  127.0.0.1 - - [24/Mar/2026 20:14:21] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 20:14:21,744  INFO  127.0.0.1 - - [24/Mar/2026 20:14:21] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 20:14:21,812  INFO  127.0.0.1 - - [24/Mar/2026 20:14:21] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 20:14:21,922  INFO  127.0.0.1 - - [24/Mar/2026 20:14:21] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 20:14:21,964  INFO  127.0.0.1 - - [24/Mar/2026 20:14:21] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 20:14:22,005  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 20:14:22,008  INFO  127.0.0.1 - - [24/Mar/2026 20:14:22] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 20:14:22,035  INFO  127.0.0.1 - - [24/Mar/2026 20:14:22] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 20:14:22,038  INFO  127.0.0.1 - - [24/Mar/2026 20:14:22] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 20:14:23,485  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 22:01:12,147  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-24 22:01:12,149  INFO  [33mPress CTRL+C to quit[0m
+2026-03-24 22:01:12,155  INFO   * Restarting with stat
+2026-03-24 22:01:38,530  WARNING   * Debugger is active!
+2026-03-24 22:01:38,538  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:02:41,610  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-24 22:02:41,612  INFO  [33mPress CTRL+C to quit[0m
+2026-03-24 22:02:41,614  INFO   * Restarting with stat
+2026-03-24 22:03:01,214  INFO  127.0.0.1 - - [24/Mar/2026 22:03:01] "GET / HTTP/1.1" 200 -
+2026-03-24 22:03:01,259  INFO  127.0.0.1 - - [24/Mar/2026 22:03:01] "GET / HTTP/1.1" 200 -
+2026-03-24 22:03:02,834  INFO  127.0.0.1 - - [24/Mar/2026 22:03:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 22:03:03,152  INFO  127.0.0.1 - - [24/Mar/2026 22:03:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 22:03:11,598  WARNING   * Debugger is active!
+2026-03-24 22:03:11,613  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:03:17,015  INFO  127.0.0.1 - - [24/Mar/2026 22:03:17] "POST /login HTTP/1.1" 200 -
+2026-03-24 22:03:44,793  INFO  127.0.0.1 - - [24/Mar/2026 22:03:44] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 22:03:45,114  INFO  127.0.0.1 - - [24/Mar/2026 22:03:45] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 22:03:45,374  INFO  127.0.0.1 - - [24/Mar/2026 22:03:45] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 22:03:45,456  INFO  127.0.0.1 - - [24/Mar/2026 22:03:45] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 22:03:45,794  INFO  127.0.0.1 - - [24/Mar/2026 22:03:45] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 22:03:46,042  INFO  127.0.0.1 - - [24/Mar/2026 22:03:46] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 22:03:46,126  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 22:03:46,147  INFO  127.0.0.1 - - [24/Mar/2026 22:03:46] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 22:03:46,165  INFO  127.0.0.1 - - [24/Mar/2026 22:03:46] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 22:03:48,829  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 22:03:50,677  INFO  127.0.0.1 - - [24/Mar/2026 22:03:50] "POST /api/admin/user/1/ban HTTP/1.1" 200 -
+2026-03-24 22:03:51,028  INFO  127.0.0.1 - - [24/Mar/2026 22:03:51] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 22:03:54,510  INFO  127.0.0.1 - - [24/Mar/2026 22:03:54] "POST /api/admin/user/4/ban HTTP/1.1" 200 -
+2026-03-24 22:03:54,939  INFO  127.0.0.1 - - [24/Mar/2026 22:03:54] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 22:03:56,751  INFO  127.0.0.1 - - [24/Mar/2026 22:03:56] "POST /api/admin/user/4/ban HTTP/1.1" 200 -
+2026-03-24 22:03:57,087  INFO  127.0.0.1 - - [24/Mar/2026 22:03:57] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 22:04:41,994  INFO  127.0.0.1 - - [24/Mar/2026 22:04:41] "POST /login HTTP/1.1" 200 -
+2026-03-24 22:04:46,959  INFO  127.0.0.1 - - [24/Mar/2026 22:04:46] "GET /api/projects/1 HTTP/1.1" 200 -
+2026-03-24 22:08:12,210  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 22:08:20,540  INFO   * Restarting with stat
+2026-03-24 22:09:03,962  WARNING   * Debugger is active!
+2026-03-24 22:09:03,974  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:09:04,101  INFO  127.0.0.1 - - [24/Mar/2026 22:09:04] "GET / HTTP/1.1" 200 -
+2026-03-24 22:09:21,440  INFO  127.0.0.1 - - [24/Mar/2026 22:09:21] "POST /login HTTP/1.1" 200 -
+2026-03-24 22:09:27,094  INFO  127.0.0.1 - - [24/Mar/2026 22:09:27] "POST /admin/login HTTP/1.1" 200 -
+2026-03-24 22:09:27,433  INFO  127.0.0.1 - - [24/Mar/2026 22:09:27] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-24 22:09:27,684  INFO  127.0.0.1 - - [24/Mar/2026 22:09:27] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-24 22:09:27,787  INFO  127.0.0.1 - - [24/Mar/2026 22:09:27] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-24 22:09:28,134  INFO  127.0.0.1 - - [24/Mar/2026 22:09:28] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-24 22:09:28,398  INFO  Loading XTTS-v2 on CPU …
+2026-03-24 22:09:28,471  INFO  127.0.0.1 - - [24/Mar/2026 22:09:28] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-24 22:09:28,477  INFO  127.0.0.1 - - [24/Mar/2026 22:09:28] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-24 22:09:28,479  INFO  127.0.0.1 - - [24/Mar/2026 22:09:28] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-24 22:09:31,029  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-24 22:10:28,895  INFO  Weights loaded ✓
+2026-03-24 22:10:28,932  INFO  XTTS-v2 ready ✓
+2026-03-24 22:10:29,082  INFO  127.0.0.1 - - [24/Mar/2026 22:10:29] "GET /api/admin/system-health HTTP/1.1" 200 -
+2026-03-24 22:15:09,388  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 22:15:16,338  INFO   * Restarting with stat
+2026-03-24 22:15:45,152  WARNING   * Debugger is active!
+2026-03-24 22:15:45,163  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:20:04,690  INFO  127.0.0.1 - - [24/Mar/2026 22:20:04] "POST /login HTTP/1.1" 200 -
+2026-03-24 22:25:46,200  INFO  127.0.0.1 - - [24/Mar/2026 22:25:46] "POST /process HTTP/1.1" 200 -
+2026-03-24 22:25:46,264  INFO  127.0.0.1 - - [24/Mar/2026 22:25:46] "GET /stream/6f840130-cc41-4f8d-b3f3-846478d8f9b7 HTTP/1.1" 200 -
+2026-03-24 22:39:14,041  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 22:39:20,500  INFO   * Restarting with stat
+2026-03-24 22:39:48,465  WARNING   * Debugger is active!
+2026-03-24 22:39:48,474  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:40:29,980  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 22:40:31,978  INFO   * Restarting with stat
+2026-03-24 22:40:58,802  WARNING   * Debugger is active!
+2026-03-24 22:40:58,815  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:42:12,664  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 22:42:15,327  INFO   * Restarting with stat
+2026-03-24 22:42:41,552  WARNING   * Debugger is active!
+2026-03-24 22:42:41,562  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:43:23,086  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 22:43:25,654  INFO   * Restarting with stat
+2026-03-24 22:43:51,940  WARNING   * Debugger is active!
+2026-03-24 22:43:51,949  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:44:12,219  INFO  127.0.0.1 - - [24/Mar/2026 22:44:12] "GET / HTTP/1.1" 200 -
+2026-03-24 22:44:17,317  INFO  127.0.0.1 - - [24/Mar/2026 22:44:17] "POST /login HTTP/1.1" 200 -
+2026-03-24 22:53:04,462  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-24 22:53:10,016  INFO   * Restarting with stat
+2026-03-24 22:56:49,482  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-24 22:56:49,485  INFO  [33mPress CTRL+C to quit[0m
+2026-03-24 22:56:49,489  INFO   * Restarting with stat
+2026-03-24 22:57:19,849  WARNING   * Debugger is active!
+2026-03-24 22:57:19,861  INFO   * Debugger PIN: 626-841-934
+2026-03-24 22:57:19,952  INFO  127.0.0.1 - - [24/Mar/2026 22:57:19] "GET / HTTP/1.1" 200 -
+2026-03-24 22:57:20,545  INFO  192.168.1.37 - - [24/Mar/2026 22:57:20] "GET / HTTP/1.1" 200 -
+2026-03-24 22:57:21,036  INFO  192.168.1.37 - - [24/Mar/2026 22:57:21] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-24 22:57:21,041  INFO  192.168.1.37 - - [24/Mar/2026 22:57:21] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-24 22:57:21,189  INFO  127.0.0.1 - - [24/Mar/2026 22:57:21] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-24 22:57:21,219  INFO  127.0.0.1 - - [24/Mar/2026 22:57:21] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-24 22:57:21,854  INFO  192.168.1.37 - - [24/Mar/2026 22:57:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-24 22:57:32,202  INFO  192.168.1.37 - - [24/Mar/2026 22:57:32] "POST /login HTTP/1.1" 200 -
+2026-03-24 22:58:31,180  INFO  192.168.1.37 - - [24/Mar/2026 22:58:31] "POST /process HTTP/1.1" 200 -
+2026-03-24 22:58:31,190  INFO  192.168.1.37 - - [24/Mar/2026 22:58:31] "GET /stream/37aa0293-b878-449e-b576-9a54eb098288 HTTP/1.1" 200 -
+2026-03-24 22:58:58,819  INFO  192.168.1.37 - - [24/Mar/2026 22:58:58] "POST /api/feedback HTTP/1.1" 200 -
+2026-03-25 22:13:52,873  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-25 22:13:52,878  INFO  [33mPress CTRL+C to quit[0m
+2026-03-25 22:13:52,883  INFO   * Restarting with stat
+2026-03-25 22:14:48,100  WARNING   * Debugger is active!
+2026-03-25 22:14:48,131  INFO   * Debugger PIN: 626-841-934
+2026-03-25 22:30:41,784  INFO  192.168.1.37 - - [25/Mar/2026 22:30:41] "GET / HTTP/1.1" 200 -
+2026-03-25 22:30:43,077  INFO  192.168.1.37 - - [25/Mar/2026 22:30:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-25 22:30:43,391  INFO  192.168.1.37 - - [25/Mar/2026 22:30:43] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-25 22:30:44,621  INFO  192.168.1.37 - - [25/Mar/2026 22:30:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-25 22:32:20,418  INFO  192.168.1.37 - - [25/Mar/2026 22:32:20] "POST /admin/login HTTP/1.1" 200 -
+2026-03-25 22:32:20,473  INFO  192.168.1.37 - - [25/Mar/2026 22:32:20] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-25 22:32:20,644  INFO  192.168.1.37 - - [25/Mar/2026 22:32:20] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-25 22:32:20,833  INFO  192.168.1.37 - - [25/Mar/2026 22:32:20] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-25 22:32:20,904  INFO  192.168.1.37 - - [25/Mar/2026 22:32:20] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-25 22:32:20,960  INFO  192.168.1.37 - - [25/Mar/2026 22:32:20] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-25 22:32:20,965  INFO  192.168.1.37 - - [25/Mar/2026 22:32:20] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-25 22:32:20,985  INFO  Loading XTTS-v2 on CPU …
+2026-03-25 22:32:21,111  INFO  192.168.1.37 - - [25/Mar/2026 22:32:21] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-25 22:32:26,046  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-25 22:54:54,401  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-25 22:54:54,402  INFO  [33mPress CTRL+C to quit[0m
+2026-03-25 22:54:54,406  INFO   * Restarting with stat
+2026-03-25 22:55:26,203  WARNING   * Debugger is active!
+2026-03-25 22:55:26,209  INFO   * Debugger PIN: 626-841-934
+2026-03-25 22:55:43,989  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-25 22:55:43,991  INFO  [33mPress CTRL+C to quit[0m
+2026-03-25 22:55:44,000  INFO   * Restarting with stat
+2026-03-25 22:56:18,125  WARNING   * Debugger is active!
+2026-03-25 22:56:18,141  INFO   * Debugger PIN: 626-841-934
+2026-03-25 22:56:18,670  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-25 22:56:18,675  INFO  [33mPress CTRL+C to quit[0m
+2026-03-25 22:56:18,679  INFO   * Restarting with stat
+2026-03-25 22:56:46,933  INFO  127.0.0.1 - - [25/Mar/2026 22:56:46] "GET / HTTP/1.1" 200 -
+2026-03-25 22:56:46,946  INFO  127.0.0.1 - - [25/Mar/2026 22:56:46] "GET / HTTP/1.1" 200 -
+2026-03-25 22:56:46,953  INFO  127.0.0.1 - - [25/Mar/2026 22:56:46] "GET / HTTP/1.1" 200 -
+2026-03-25 22:56:47,304  INFO  127.0.0.1 - - [25/Mar/2026 22:56:47] "GET / HTTP/1.1" 200 -
+2026-03-25 22:56:50,040  INFO  127.0.0.1 - - [25/Mar/2026 22:56:50] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-25 22:56:50,046  INFO  127.0.0.1 - - [25/Mar/2026 22:56:50] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-25 22:56:50,067  INFO  127.0.0.1 - - [25/Mar/2026 22:56:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-25 22:56:50,430  INFO  127.0.0.1 - - [25/Mar/2026 22:56:50] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-25 22:56:50,442  INFO  127.0.0.1 - - [25/Mar/2026 22:56:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-25 22:56:50,753  INFO  127.0.0.1 - - [25/Mar/2026 22:56:50] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-25 22:56:51,060  WARNING   * Debugger is active!
+2026-03-25 22:56:51,081  INFO   * Debugger PIN: 626-841-934
+2026-03-25 22:56:51,117  INFO  127.0.0.1 - - [25/Mar/2026 22:56:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-25 22:56:51,276  INFO  127.0.0.1 - - [25/Mar/2026 22:56:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-25 22:56:55,009  INFO  127.0.0.1 - - [25/Mar/2026 22:56:55] "POST /login HTTP/1.1" 200 -
+2026-03-25 22:58:04,905  INFO  127.0.0.1 - - [25/Mar/2026 22:58:04] "POST /process HTTP/1.1" 200 -
+2026-03-25 22:58:05,011  INFO  127.0.0.1 - - [25/Mar/2026 22:58:05] "GET /stream/c1c15986-a1dd-4c4e-bf01-b7f2fdc22a2a HTTP/1.1" 200 -
+2026-03-25 23:00:03,377  INFO  127.0.0.1 - - [25/Mar/2026 23:00:03] "POST /process HTTP/1.1" 200 -
+2026-03-25 23:00:03,413  INFO  127.0.0.1 - - [25/Mar/2026 23:00:03] "GET /stream/3ed21794-5ce2-4dc7-9689-15468379457c HTTP/1.1" 200 -
+2026-03-25 23:00:18,006  INFO  Loading XTTS-v2 on CPU …
+2026-03-25 23:00:21,048  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-25 23:01:01,883  INFO  127.0.0.1 - - [25/Mar/2026 23:01:01] "POST /process HTTP/1.1" 200 -
+2026-03-25 23:01:01,929  INFO  127.0.0.1 - - [25/Mar/2026 23:01:01] "GET /stream/bd1431ee-ee24-41f5-9fcd-31891cd5f0fb HTTP/1.1" 200 -
+2026-03-25 23:01:15,898  INFO  Loading XTTS-v2 on CPU …
+2026-03-25 23:01:17,808  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-25 23:05:46,036  INFO   * Detected change in 'D:\\Echovox_fullcode\\app.py', reloading
+2026-03-25 23:05:54,213  INFO   * Restarting with stat
+2026-03-25 23:07:21,422  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-25 23:07:21,422  INFO  [33mPress CTRL+C to quit[0m
+2026-03-25 23:07:32,468  INFO  Loading XTTS-v2 on CPU …
+2026-03-25 23:07:34,393  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-25 23:08:40,853  INFO  Weights loaded ✓
+2026-03-25 23:08:40,890  INFO  XTTS-v2 ready ✓
+2026-03-25 23:08:41,059  INFO  127.0.0.1 - - [25/Mar/2026 23:08:41] "GET /health HTTP/1.1" 200 -
+2026-03-25 23:09:28,939  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2026-03-25 23:09:28,939  INFO  [33mPress CTRL+C to quit[0m
+2026-03-25 23:09:55,471  INFO  127.0.0.1 - - [25/Mar/2026 23:09:55] "POST /process HTTP/1.1" 200 -
+2026-03-25 23:09:55,680  INFO  127.0.0.1 - - [25/Mar/2026 23:09:55] "GET /stream/41e11037-450b-490a-a837-65205ae765c4 HTTP/1.1" 200 -
+2026-03-25 23:10:10,024  INFO  Loading XTTS-v2 on CPU …
+2026-03-25 23:10:12,531  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-25 23:11:19,501  INFO  Weights loaded ✓
+2026-03-25 23:11:19,545  INFO  XTTS-v2 ready ✓
+2026-03-25 23:11:19,565  INFO  Synthesising | lang=en speed=1.0
+2026-03-25 23:12:07,812  INFO  Saved → D:\Echovox_fullcode\outputs\cloned_audio_1774460410024.wav
+2026-03-25 23:12:13,722  INFO  127.0.0.1 - - [25/Mar/2026 23:12:13] "[35m[1mGET /download/audio/cloned_audio_1774460410024.wav HTTP/1.1[0m" 206 -
+2026-03-25 23:12:13,858  INFO  127.0.0.1 - - [25/Mar/2026 23:12:13] "[35m[1mGET /download/video/final_video_1774460410024.mp4 HTTP/1.1[0m" 206 -
+2026-03-25 23:12:13,882  INFO  127.0.0.1 - - [25/Mar/2026 23:12:13] "[35m[1mGET /download/video/final_video_1774460410024.mp4 HTTP/1.1[0m" 206 -
+2026-03-25 23:12:14,213  INFO  127.0.0.1 - - [25/Mar/2026 23:12:14] "[35m[1mGET /download/video/final_video_1774460410024.mp4 HTTP/1.1[0m" 206 -
+2026-03-25 23:12:14,470  INFO  127.0.0.1 - - [25/Mar/2026 23:12:14] "[35m[1mGET /download/video/final_video_1774460410024.mp4 HTTP/1.1[0m" 206 -
+2026-03-25 23:12:47,407  INFO  127.0.0.1 - - [25/Mar/2026 23:12:47] "[35m[1mGET /download/video/final_video_1774460410024.mp4 HTTP/1.1[0m" 206 -
+2026-03-25 23:12:47,740  INFO  127.0.0.1 - - [25/Mar/2026 23:12:47] "[35m[1mGET /download/video/final_video_1774460410024.mp4 HTTP/1.1[0m" 206 -
+2026-03-25 23:12:47,996  INFO  127.0.0.1 - - [25/Mar/2026 23:12:47] "[35m[1mGET /download/video/final_video_1774460410024.mp4 HTTP/1.1[0m" 206 -
+2026-03-25 23:12:48,624  INFO  127.0.0.1 - - [25/Mar/2026 23:12:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-25 23:12:48,940  INFO  127.0.0.1 - - [25/Mar/2026 23:12:48] "[35m[1mGET /download/video/final_video_1774460410024.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 06:56:44,804  INFO  127.0.0.1 - - [26/Mar/2026 06:56:44] "POST /login HTTP/1.1" 200 -
+2026-03-26 07:00:14,218  INFO  127.0.0.1 - - [26/Mar/2026 07:00:14] "GET / HTTP/1.1" 200 -
+2026-03-26 07:00:14,907  INFO  127.0.0.1 - - [26/Mar/2026 07:00:14] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-26 07:00:14,907  INFO  127.0.0.1 - - [26/Mar/2026 07:00:14] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-26 07:00:17,719  INFO  127.0.0.1 - - [26/Mar/2026 07:00:17] "POST /login HTTP/1.1" 200 -
+2026-03-26 07:00:33,269  INFO  127.0.0.1 - - [26/Mar/2026 07:00:33] "GET /api/projects/4 HTTP/1.1" 200 -
+2026-03-26 07:03:19,274  INFO  127.0.0.1 - - [26/Mar/2026 07:03:19] "GET / HTTP/1.1" 200 -
+2026-03-26 07:03:19,434  INFO  127.0.0.1 - - [26/Mar/2026 07:03:19] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-26 07:03:19,530  INFO  127.0.0.1 - - [26/Mar/2026 07:03:19] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-26 07:03:22,609  INFO  127.0.0.1 - - [26/Mar/2026 07:03:22] "POST /login HTTP/1.1" 200 -
+2026-03-26 07:03:31,827  INFO  127.0.0.1 - - [26/Mar/2026 07:03:31] "GET /api/projects/4 HTTP/1.1" 200 -
+2026-03-26 07:06:19,579  INFO  127.0.0.1 - - [26/Mar/2026 07:06:19] "GET / HTTP/1.1" 200 -
+2026-03-26 07:06:19,753  INFO  127.0.0.1 - - [26/Mar/2026 07:06:19] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-26 07:06:19,813  INFO  127.0.0.1 - - [26/Mar/2026 07:06:19] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-26 07:06:24,515  INFO  127.0.0.1 - - [26/Mar/2026 07:06:24] "POST /login HTTP/1.1" 200 -
+2026-03-26 07:06:38,959  INFO  127.0.0.1 - - [26/Mar/2026 07:06:38] "GET /api/projects/4 HTTP/1.1" 200 -
+2026-03-26 07:14:29,013  INFO  Metadata: 350 rows  cols=['video_file_name', 'text_spoken']
+2026-03-26 07:14:29,014  INFO  Columns: 'video_file_name' | 'text_spoken'
+2026-03-26 07:14:29,289  INFO  Records: 350 loaded | 0 missing
+2026-03-26 07:18:02,139  INFO  Metadata: 350 rows  cols=['video_file_name', 'text_spoken']
+2026-03-26 07:18:02,139  INFO  Columns: 'video_file_name' | 'text_spoken'
+2026-03-26 07:18:02,369  INFO  Records: 350 loaded | 0 missing
+2026-03-26 07:21:53,222  INFO  Metadata: 350 rows  cols=['video_file_name', 'text_spoken']
+2026-03-26 07:21:53,223  INFO  Columns: 'video_file_name' | 'text_spoken'
+2026-03-26 07:21:53,522  INFO  Records: 350 loaded | 0 missing
+2026-03-26 07:22:42,961  INFO  Metadata: 350 rows  cols=['video_file_name', 'text_spoken']
+2026-03-26 07:22:42,963  INFO  Columns: 'video_file_name' | 'text_spoken'
+2026-03-26 07:22:43,177  INFO  Records: 350 loaded | 0 missing
+2026-03-26 07:24:45,970  INFO  Metadata: 350 rows  cols=['video_file_name', 'text_spoken']
+2026-03-26 07:24:45,970  INFO  Columns: 'video_file_name' | 'text_spoken'
+2026-03-26 07:24:46,190  INFO  Records: 350 loaded | 0 missing
+2026-03-26 10:16:41,030  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 10:16:41,035  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 10:16:58,437  INFO  127.0.0.1 - - [26/Mar/2026 10:16:58] "GET / HTTP/1.1" 200 -
+2026-03-26 10:16:59,567  INFO  127.0.0.1 - - [26/Mar/2026 10:16:59] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-26 10:16:59,587  INFO  127.0.0.1 - - [26/Mar/2026 10:16:59] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-26 10:17:00,369  INFO  127.0.0.1 - - [26/Mar/2026 10:17:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 10:18:01,542  INFO  127.0.0.1 - - [26/Mar/2026 10:18:01] "POST /login HTTP/1.1" 200 -
+2026-03-26 10:18:20,116  INFO  127.0.0.1 - - [26/Mar/2026 10:18:20] "POST /login HTTP/1.1" 200 -
+2026-03-26 10:21:01,106  INFO  127.0.0.1 - - [26/Mar/2026 10:21:01] "POST /process HTTP/1.1" 200 -
+2026-03-26 10:21:01,155  INFO  127.0.0.1 - - [26/Mar/2026 10:21:01] "GET /stream/b7e355df-5120-4564-9585-a2bda5177be3 HTTP/1.1" 200 -
+2026-03-26 10:21:44,555  INFO  127.0.0.1 - - [26/Mar/2026 10:21:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 10:22:03,880  INFO  127.0.0.1 - - [26/Mar/2026 10:22:03] "GET /api/projects/1 HTTP/1.1" 200 -
+2026-03-26 10:26:02,062  INFO  127.0.0.1 - - [26/Mar/2026 10:26:02] "POST /process HTTP/1.1" 200 -
+2026-03-26 10:26:02,085  INFO  127.0.0.1 - - [26/Mar/2026 10:26:02] "GET /stream/f7eb74b7-c25a-4d88-b11e-68299eede867 HTTP/1.1" 200 -
+2026-03-26 10:26:17,250  INFO  Loading XTTS-v2 on CPU …
+2026-03-26 10:26:21,872  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-26 10:27:58,931  INFO  Weights loaded ✓
+2026-03-26 10:27:59,007  INFO  XTTS-v2 ready ✓
+2026-03-26 10:27:59,053  INFO  Synthesising | lang=en speed=1.0
+2026-03-26 10:28:47,252  INFO  Saved → D:\Echovox_fullcode\outputs\cloned_audio_1774500977243.wav
+2026-03-26 10:28:49,909  INFO  127.0.0.1 - - [26/Mar/2026 10:28:49] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:49,911  INFO  127.0.0.1 - - [26/Mar/2026 10:28:49] "[35m[1mGET /download/audio/cloned_audio_1774500977243.wav HTTP/1.1[0m" 206 -
+2026-03-26 10:28:49,934  INFO  127.0.0.1 - - [26/Mar/2026 10:28:49] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:49,949  INFO  127.0.0.1 - - [26/Mar/2026 10:28:49] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:49,959  INFO  127.0.0.1 - - [26/Mar/2026 10:28:49] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,492  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,515  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,530  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,550  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,567  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,578  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,605  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,630  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,642  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:52,669  INFO  127.0.0.1 - - [26/Mar/2026 10:28:52] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:28:58,604  INFO  127.0.0.1 - - [26/Mar/2026 10:28:58] "[35m[1mGET /download/audio/cloned_audio_1774500977243.wav HTTP/1.1[0m" 206 -
+2026-03-26 10:29:04,023  INFO  127.0.0.1 - - [26/Mar/2026 10:29:04] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:29:04,044  INFO  127.0.0.1 - - [26/Mar/2026 10:29:04] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:29:25,539  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "POST /admin/login HTTP/1.1" 200 -
+2026-03-26 10:29:25,564  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-26 10:29:25,608  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-26 10:29:25,697  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-26 10:29:25,733  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-26 10:29:25,756  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-26 10:29:25,784  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-26 10:29:25,823  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-26 10:29:25,919  INFO  127.0.0.1 - - [26/Mar/2026 10:29:25] "GET /api/admin/system-health HTTP/1.1" 200 -
+2026-03-26 10:30:05,574  INFO  127.0.0.1 - - [26/Mar/2026 10:30:05] "POST /api/admin/user/1/ban HTTP/1.1" 200 -
+2026-03-26 10:30:05,595  INFO  127.0.0.1 - - [26/Mar/2026 10:30:05] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-26 10:30:12,919  INFO  127.0.0.1 - - [26/Mar/2026 10:30:12] "POST /api/admin/user/1/ban HTTP/1.1" 200 -
+2026-03-26 10:30:12,969  INFO  127.0.0.1 - - [26/Mar/2026 10:30:12] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-26 10:33:26,141  INFO  127.0.0.1 - - [26/Mar/2026 10:33:26] "POST /login HTTP/1.1" 200 -
+2026-03-26 10:34:21,821  INFO  127.0.0.1 - - [26/Mar/2026 10:34:21] "[35m[1mGET /download/video/final_video_1774500977243.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 10:40:44,417  INFO  127.0.0.1 - - [26/Mar/2026 10:40:44] "GET / HTTP/1.1" 200 -
+2026-03-26 10:40:44,677  INFO  127.0.0.1 - - [26/Mar/2026 10:40:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 10:40:44,680  INFO  127.0.0.1 - - [26/Mar/2026 10:40:44] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-26 10:41:33,751  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 10:41:33,756  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 10:53:14,858  INFO  127.0.0.1 - - [26/Mar/2026 10:53:14] "GET / HTTP/1.1" 200 -
+2026-03-26 10:53:15,207  INFO  127.0.0.1 - - [26/Mar/2026 10:53:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 10:53:15,208  INFO  127.0.0.1 - - [26/Mar/2026 10:53:15] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-26 10:53:18,528  INFO  127.0.0.1 - - [26/Mar/2026 10:53:18] "POST /login HTTP/1.1" 200 -
+2026-03-26 10:53:47,072  INFO  127.0.0.1 - - [26/Mar/2026 10:53:47] "POST /process HTTP/1.1" 200 -
+2026-03-26 10:53:47,129  INFO  127.0.0.1 - - [26/Mar/2026 10:53:47] "GET /stream/f519e737-25b9-42e1-a469-0da760575ede HTTP/1.1" 200 -
+2026-03-26 10:54:01,692  INFO  127.0.0.1 - - [26/Mar/2026 10:54:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 10:56:39,463  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "POST /admin/login HTTP/1.1" 200 -
+2026-03-26 10:56:39,485  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "GET /api/admin/stats HTTP/1.1" 200 -
+2026-03-26 10:56:39,519  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "GET /api/admin/feedback-stats HTTP/1.1" 200 -
+2026-03-26 10:56:39,592  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "GET /api/admin/projects HTTP/1.1" 200 -
+2026-03-26 10:56:39,625  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "GET /api/admin/feedback HTTP/1.1" 200 -
+2026-03-26 10:56:39,692  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-26 10:56:39,725  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "GET /api/admin/usage-analytics HTTP/1.1" 200 -
+2026-03-26 10:56:39,742  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "GET /api/admin/activity-heatmap HTTP/1.1" 200 -
+2026-03-26 10:56:39,783  INFO  127.0.0.1 - - [26/Mar/2026 10:56:39] "GET /api/admin/system-health HTTP/1.1" 200 -
+2026-03-26 10:56:56,374  INFO  127.0.0.1 - - [26/Mar/2026 10:56:56] "POST /api/admin/user/1/ban HTTP/1.1" 200 -
+2026-03-26 10:56:56,394  INFO  127.0.0.1 - - [26/Mar/2026 10:56:56] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-26 10:56:59,384  INFO  127.0.0.1 - - [26/Mar/2026 10:56:59] "POST /api/admin/user/1/ban HTTP/1.1" 200 -
+2026-03-26 10:56:59,406  INFO  127.0.0.1 - - [26/Mar/2026 10:56:59] "GET /api/admin/users?search=&filter= HTTP/1.1" 200 -
+2026-03-26 12:24:12,162  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 12:24:12,167  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 12:26:06,128  INFO  127.0.0.1 - - [26/Mar/2026 12:26:06] "GET / HTTP/1.1" 200 -
+2026-03-26 12:26:06,526  INFO  127.0.0.1 - - [26/Mar/2026 12:26:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 12:26:06,532  INFO  127.0.0.1 - - [26/Mar/2026 12:26:06] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-26 12:26:07,873  INFO  127.0.0.1 - - [26/Mar/2026 12:26:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 12:26:10,962  INFO  127.0.0.1 - - [26/Mar/2026 12:26:10] "POST /login HTTP/1.1" 200 -
+2026-03-26 12:26:26,288  INFO  127.0.0.1 - - [26/Mar/2026 12:26:26] "POST /login HTTP/1.1" 200 -
+2026-03-26 12:27:17,651  INFO  127.0.0.1 - - [26/Mar/2026 12:27:17] "POST /process HTTP/1.1" 200 -
+2026-03-26 12:27:17,651  INFO  127.0.0.1 - - [26/Mar/2026 12:27:17] "GET /stream/e2ae8c0e-5727-4e13-916c-69249d995fd5 HTTP/1.1" 200 -
+2026-03-26 12:28:35,094  INFO  127.0.0.1 - - [26/Mar/2026 12:28:35] "POST /process HTTP/1.1" 200 -
+2026-03-26 12:28:35,106  INFO  127.0.0.1 - - [26/Mar/2026 12:28:35] "GET /stream/52423213-92b7-4f8b-bd47-7b28cf7a01d8 HTTP/1.1" 200 -
+2026-03-26 12:49:11,381  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 12:49:11,381  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 12:51:23,147  INFO  127.0.0.1 - - [26/Mar/2026 12:51:23] "POST /process HTTP/1.1" 200 -
+2026-03-26 12:51:23,195  INFO  127.0.0.1 - - [26/Mar/2026 12:51:23] "GET /stream/9b6eb0b7-c2af-432d-9c28-bfdc72dea378 HTTP/1.1" 200 -
+2026-03-26 12:53:43,876  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 12:53:43,876  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 12:54:05,414  INFO  127.0.0.1 - - [26/Mar/2026 12:54:05] "POST /process HTTP/1.1" 200 -
+2026-03-26 12:54:05,431  INFO  127.0.0.1 - - [26/Mar/2026 12:54:05] "GET /stream/fb05cf8e-0b65-4511-b447-1a782932b3d5 HTTP/1.1" 200 -
+2026-03-26 12:54:23,695  INFO  Loading XTTS-v2 on CPU …
+2026-03-26 12:58:53,698  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 12:58:53,700  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 13:01:27,150  INFO  127.0.0.1 - - [26/Mar/2026 13:01:27] "POST /process HTTP/1.1" 200 -
+2026-03-26 13:01:27,180  INFO  127.0.0.1 - - [26/Mar/2026 13:01:27] "GET /stream/bce18849-6f3e-413c-ab53-5218847b0cf4 HTTP/1.1" 200 -
+2026-03-26 13:01:45,210  INFO  Loading XTTS-v2 on CPU …
+2026-03-26 13:02:16,637  INFO  Downloading model to C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-26 13:05:44,638  WARNING  ModelManager lookup failed ([WinError 1314] A required privilege is not held by the client: '..\\..\\blobs\\775ced7005c9ee706b05180dbf327e4a1850400f' -> 'C:\\Users\\aabel\\.cache\\huggingface\\hub\\models--tts-hub--XTTS-v2\\snapshots\\345b56f6fbe25cca7103f7f34e471b8fe8e4945f\\README.md'), scanning cache …
+2026-03-26 13:05:44,727  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-26 13:07:07,337  INFO  Weights loaded ✓
+2026-03-26 13:07:07,382  INFO  XTTS-v2 ready ✓
+2026-03-26 13:07:07,411  INFO  Synthesising | lang=en speed=1.0
+2026-03-26 13:07:43,043  INFO  Saved → D:\Echovox_fullcode\outputs\cloned_audio_1774510305210.wav
+2026-03-26 13:08:55,933  INFO  127.0.0.1 - - [26/Mar/2026 13:08:55] "[35m[1mGET /download/audio/cloned_audio_1774510305210.wav HTTP/1.1[0m" 206 -
+2026-03-26 13:08:56,118  INFO  127.0.0.1 - - [26/Mar/2026 13:08:56] "[35m[1mGET /download/video/final_video_1774510305210.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 13:08:56,160  INFO  127.0.0.1 - - [26/Mar/2026 13:08:56] "[35m[1mGET /download/video/final_video_1774510305210.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 13:08:56,205  INFO  127.0.0.1 - - [26/Mar/2026 13:08:56] "[35m[1mGET /download/video/final_video_1774510305210.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 13:08:56,223  INFO  127.0.0.1 - - [26/Mar/2026 13:08:56] "[35m[1mGET /download/video/final_video_1774510305210.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 13:08:56,882  INFO  127.0.0.1 - - [26/Mar/2026 13:08:56] "[35m[1mGET /download/video/final_video_1774510305210.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 13:09:02,709  INFO  127.0.0.1 - - [26/Mar/2026 13:09:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 13:09:02,960  INFO  127.0.0.1 - - [26/Mar/2026 13:09:02] "[35m[1mGET /download/video/final_video_1774510305210.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 13:09:30,336  INFO  127.0.0.1 - - [26/Mar/2026 13:09:30] "POST /api/feedback HTTP/1.1" 200 -
+2026-03-26 13:10:18,595  INFO  127.0.0.1 - - [26/Mar/2026 13:10:18] "[35m[1mGET /download/audio/cloned_audio_1774510305210.wav HTTP/1.1[0m" 206 -
+2026-03-26 13:26:47,237  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 13:26:47,239  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 13:27:06,338  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 13:27:06,339  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 13:27:18,197  INFO  127.0.0.1 - - [26/Mar/2026 13:27:18] "GET / HTTP/1.1" 200 -
+2026-03-26 13:27:18,646  INFO  127.0.0.1 - - [26/Mar/2026 13:27:18] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-26 13:27:18,659  INFO  127.0.0.1 - - [26/Mar/2026 13:27:18] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-26 13:27:20,016  INFO  127.0.0.1 - - [26/Mar/2026 13:27:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 13:27:22,823  INFO  127.0.0.1 - - [26/Mar/2026 13:27:22] "POST /login HTTP/1.1" 200 -
+2026-03-26 13:27:54,312  INFO  127.0.0.1 - - [26/Mar/2026 13:27:54] "POST /process HTTP/1.1" 200 -
+2026-03-26 13:27:54,525  INFO  127.0.0.1 - - [26/Mar/2026 13:27:54] "GET /stream/f3e1bc14-39c1-4b8e-9dc0-bd88203133af HTTP/1.1" 200 -
+2026-03-26 13:28:46,545  INFO  127.0.0.1 - - [26/Mar/2026 13:28:46] "POST /process HTTP/1.1" 200 -
+2026-03-26 13:28:46,866  INFO  127.0.0.1 - - [26/Mar/2026 13:28:46] "GET /stream/407e6410-8f5b-46e7-8de8-2e469ca8d8c3 HTTP/1.1" 200 -
+2026-03-26 13:35:43,789  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 13:35:43,790  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 13:36:35,850  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 13:36:35,851  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 13:37:03,972  INFO  127.0.0.1 - - [26/Mar/2026 13:37:03] "POST /process HTTP/1.1" 200 -
+2026-03-26 13:37:04,014  INFO  127.0.0.1 - - [26/Mar/2026 13:37:04] "GET /stream/28133c5d-92ec-4965-b20b-0c076f7050c0 HTTP/1.1" 200 -
+2026-03-26 13:39:43,095  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 13:39:43,096  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 13:40:03,934  INFO  127.0.0.1 - - [26/Mar/2026 13:40:03] "GET / HTTP/1.1" 200 -
+2026-03-26 13:40:04,361  INFO  127.0.0.1 - - [26/Mar/2026 13:40:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 13:40:04,379  INFO  127.0.0.1 - - [26/Mar/2026 13:40:04] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-26 13:40:07,679  INFO  127.0.0.1 - - [26/Mar/2026 13:40:07] "POST /login HTTP/1.1" 200 -
+2026-03-26 13:40:44,602  INFO  127.0.0.1 - - [26/Mar/2026 13:40:44] "POST /process HTTP/1.1" 200 -
+2026-03-26 13:40:44,927  INFO  127.0.0.1 - - [26/Mar/2026 13:40:44] "GET /stream/89342f84-dda2-42b8-a0fb-56c6815cccf9 HTTP/1.1" 200 -
+2026-03-26 13:41:02,462  INFO  Loading XTTS-v2 on CPU …
+2026-03-26 13:45:04,476  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 13:45:04,477  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 13:46:22,203  INFO  127.0.0.1 - - [26/Mar/2026 13:46:22] "GET / HTTP/1.1" 200 -
+2026-03-26 13:46:22,421  INFO  127.0.0.1 - - [26/Mar/2026 13:46:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-26 13:46:22,427  INFO  127.0.0.1 - - [26/Mar/2026 13:46:22] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-26 13:46:25,220  INFO  127.0.0.1 - - [26/Mar/2026 13:46:25] "POST /login HTTP/1.1" 200 -
+2026-03-26 13:47:04,488  INFO  127.0.0.1 - - [26/Mar/2026 13:47:04] "POST /process HTTP/1.1" 200 -
+2026-03-26 13:47:04,809  INFO  127.0.0.1 - - [26/Mar/2026 13:47:04] "GET /stream/f74fd7ad-a5d0-496e-94ac-431e0b2110b7 HTTP/1.1" 200 -
+2026-03-26 13:47:18,286  INFO  Loading XTTS-v2 on CPU …
+2026-03-26 13:47:23,086  WARNING  ModelManager lookup failed (
+From Pytorch 2.9, the torchcodec library is required for audio IO, but it was not found in your environment. You can install it with Coqui's `codec` extra:
+```
+pip install coqui-tts[codec]
+```
+), scanning cache …
+2026-03-26 13:47:23,099  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-26 13:48:02,390  INFO  Weights loaded ✓
+2026-03-26 13:48:02,435  INFO  XTTS-v2 ready ✓
+2026-03-26 13:48:02,468  INFO  Synthesising | lang=en speed=1.0
+2026-03-26 13:50:24,749  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 13:50:24,749  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 14:02:41,103  INFO  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.72.44:5000
+2026-03-26 14:02:41,104  INFO  [33mPress CTRL+C to quit[0m
+2026-03-26 14:03:37,995  INFO  127.0.0.1 - - [26/Mar/2026 14:03:37] "GET / HTTP/1.1" 200 -
+2026-03-26 14:03:38,936  INFO  127.0.0.1 - - [26/Mar/2026 14:03:38] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-26 14:03:38,989  INFO  127.0.0.1 - - [26/Mar/2026 14:03:38] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-26 14:03:39,371  INFO  127.0.0.1 - - [26/Mar/2026 14:03:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 14:03:44,224  INFO  127.0.0.1 - - [26/Mar/2026 14:03:44] "GET / HTTP/1.1" 200 -
+2026-03-26 14:03:44,732  INFO  127.0.0.1 - - [26/Mar/2026 14:03:44] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-26 14:03:44,741  INFO  127.0.0.1 - - [26/Mar/2026 14:03:44] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-26 14:03:45,551  INFO  127.0.0.1 - - [26/Mar/2026 14:03:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 14:03:59,228  INFO  127.0.0.1 - - [26/Mar/2026 14:03:59] "POST /login HTTP/1.1" 200 -
+2026-03-26 14:04:38,722  INFO  127.0.0.1 - - [26/Mar/2026 14:04:38] "POST /process HTTP/1.1" 200 -
+2026-03-26 14:04:39,082  INFO  127.0.0.1 - - [26/Mar/2026 14:04:39] "GET /stream/94c1c329-c7e8-452d-957e-bd280c6ea216 HTTP/1.1" 200 -
+2026-03-26 14:04:51,722  INFO  Loading XTTS-v2 on CPU …
+2026-03-26 14:04:51,805  INFO  tts_models/multilingual/multi-dataset/xtts_v2 is already downloaded.
+2026-03-26 14:04:53,524  INFO  Model directory : C:\Users\aabel\AppData\Local\tts\tts_models--multilingual--multi-dataset--xtts_v2
+2026-03-26 14:05:26,893  INFO  Weights loaded ✓
+2026-03-26 14:05:26,907  INFO  XTTS-v2 ready ✓
+2026-03-26 14:05:26,920  INFO  Synthesising | lang=en speed=1.0
+2026-03-26 14:05:43,717  INFO  Saved → D:\Echovox_fullcode\outputs\cloned_audio_1774514091721.wav
+2026-03-26 14:05:46,368  INFO  127.0.0.1 - - [26/Mar/2026 14:05:46] "[35m[1mGET /download/audio/cloned_audio_1774514091721.wav HTTP/1.1[0m" 206 -
+2026-03-26 14:05:46,369  INFO  127.0.0.1 - - [26/Mar/2026 14:05:46] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:46,568  INFO  127.0.0.1 - - [26/Mar/2026 14:05:46] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:49,311  INFO  127.0.0.1 - - [26/Mar/2026 14:05:49] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:49,622  INFO  127.0.0.1 - - [26/Mar/2026 14:05:49] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:49,876  INFO  127.0.0.1 - - [26/Mar/2026 14:05:49] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:49,948  INFO  127.0.0.1 - - [26/Mar/2026 14:05:49] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:50,186  INFO  127.0.0.1 - - [26/Mar/2026 14:05:50] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:50,266  INFO  127.0.0.1 - - [26/Mar/2026 14:05:50] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:50,506  INFO  127.0.0.1 - - [26/Mar/2026 14:05:50] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:50,600  INFO  127.0.0.1 - - [26/Mar/2026 14:05:50] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:50,818  INFO  127.0.0.1 - - [26/Mar/2026 14:05:50] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:50,913  INFO  127.0.0.1 - - [26/Mar/2026 14:05:50] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:51,128  INFO  127.0.0.1 - - [26/Mar/2026 14:05:51] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:51,219  INFO  127.0.0.1 - - [26/Mar/2026 14:05:51] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:54,165  INFO  127.0.0.1 - - [26/Mar/2026 14:05:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-26 14:05:54,495  INFO  127.0.0.1 - - [26/Mar/2026 14:05:54] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -
+2026-03-26 14:05:54,752  INFO  127.0.0.1 - - [26/Mar/2026 14:05:54] "[35m[1mGET /download/video/final_video_1774514091721.mp4 HTTP/1.1[0m" 206 -

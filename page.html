@@ -1,0 +1,2572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoVox - Advanced Lip Reading & Voice Cloning</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #f97316;
+            --primary-dark: #ea580c;
+            --primary-light: #fed7aa;
+            --accent: #3b82f6;
+            --accent-dark: #2563eb;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+
+            --sidebar-w: 260px;
+            --header-h: 68px;
+
+            --bg-page: #0f1117;
+            --bg-sidebar: #080b10;
+            --bg-card: #161b27;
+            --bg-card-inner: #1e2535;
+            --bg-input: #1a2030;
+            --bg-upload: #141923;
+
+            --text-1: #f0f4ff;
+            --text-2: #8b95a8;
+            --text-3: #55616e;
+            --border: rgba(255,255,255,0.07);
+            --border-hover: rgba(249,115,22,0.4);
+
+            --shadow-glow: 0 0 40px rgba(249,115,22,0.12);
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+            --shadow-btn: 0 4px 16px rgba(249,115,22,0.35);
+
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+
+            --transition: 0.22s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-page);
+            color: var(--text-1);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ── SCROLLBAR ───────────────────────────────────────── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-page); }
+        ::-webkit-scrollbar-thumb { background: rgba(249,115,22,0.3); border-radius: 99px; }
+
+        /* ════════════════════════════════════════════════════════
+           LOGIN PAGE
+        ════════════════════════════════════════════════════════ */
+        .login-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(249,115,22,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 60% at 80% 90%, rgba(59,130,246,0.12) 0%, transparent 60%),
+                var(--bg-page);
+        }
+
+        .login-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2.75rem;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: var(--shadow-card), var(--shadow-glow);
+            animation: fadeSlideUp 0.5s ease both;
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.625rem;
+            font-family: var(--font-display);
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .login-logo i { font-size: 2rem; }
+
+        .login-header { text-align: center; margin-bottom: 2.25rem; }
+
+        .login-header h1 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--text-1);
+            margin-bottom: 0.375rem;
+        }
+        .login-header p { color: var(--text-2); font-size: 0.9rem; }
+
+        .form-group { margin-bottom: 1.25rem; }
+
+        .form-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-2);
+            margin-bottom: 0.5rem;
+        }
+        .form-label i { color: var(--primary); font-size: 0.8rem; }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-input);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-1);
+            transition: border-color var(--transition), box-shadow var(--transition);
+            display: block;
+        }
+        .form-input::placeholder { color: var(--text-3); }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.15);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.875rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+            box-shadow: var(--shadow-btn);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+        .login-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(249,115,22,0.45);
+        }
+        .login-btn:active:not(:disabled) { transform: translateY(0); }
+        .login-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+        .error-banner {
+            display: none;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.875rem 1rem;
+            background: rgba(239,68,68,0.12);
+            border: 1px solid rgba(239,68,68,0.35);
+            border-radius: var(--radius-md);
+            color: #fca5a5;
+            font-size: 0.875rem;
+            margin-bottom: 1.25rem;
+        }
+        .error-banner.show { display: flex; }
+
+        .login-demo {
+            margin-top: 1.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-3);
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+        .login-demo strong { color: var(--text-2); }
+        .login-demo code {
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            padding: 0.1em 0.45em;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        /* ════════════════════════════════════════════════════════
+           DASHBOARD SHELL
+        ════════════════════════════════════════════════════════ */
+        .dashboard { display: none; }
+
+        /* ── HEADER ─────────────────────────────────────────── */
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--header-h);
+            background: rgba(8,11,16,0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 1.75rem;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+        }
+        .logo i { font-size: 1.5rem; }
+
+        .header-spacer { flex: 1; }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .header-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.875rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-2);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+        .header-btn:hover {
+            background: rgba(249,115,22,0.1);
+            border-color: rgba(249,115,22,0.4);
+            color: var(--primary);
+        }
+        .header-btn i { font-size: 0.8rem; }
+
+        /* ── SIDEBAR ────────────────────────────────────────── */
+        .sidebar {
+            position: fixed;
+            top: var(--header-h);
+            left: 0;
+            bottom: 0;
+            width: var(--sidebar-w);
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 900;
+            padding: 1.5rem 0 2rem;
+        }
+
+        .nav-section { margin-bottom: 0.5rem; }
+
+        .nav-section-title {
+            padding: 0 1.25rem;
+            margin-bottom: 0.375rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 0.7rem 1.25rem;
+            background: none;
+            border: none;
+            border-left: 3px solid transparent;
+            color: var(--text-2);
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: left;
+            transition: all var(--transition);
+        }
+        .nav-item i { width: 18px; text-align: center; font-size: 0.9rem; flex-shrink: 0; }
+        .nav-item:hover {
+            background: rgba(249,115,22,0.07);
+            color: var(--text-1);
+            border-left-color: rgba(249,115,22,0.3);
+        }
+        .nav-item.active {
+            background: rgba(249,115,22,0.12);
+            color: var(--primary);
+            border-left-color: var(--primary);
+        }
+
+        /* ── MAIN CONTENT ───────────────────────────────────── */
+        .main {
+            margin-left: var(--sidebar-w);
+            margin-top: var(--header-h);
+            padding: 2rem;
+            min-height: calc(100vh - var(--header-h));
+            background:
+                radial-gradient(ellipse 70% 50% at 85% 10%, rgba(249,115,22,0.05) 0%, transparent 55%),
+                var(--bg-page);
+        }
+
+        .content-wrap { max-width: 820px; margin: 0 auto; }
+
+        /* ── CARDS ──────────────────────────────────────────── */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-card);
+            animation: fadeSlideUp 0.4s ease both;
+        }
+
+        .card-header { margin-bottom: 1.75rem; }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--text-1);
+            margin-bottom: 0.375rem;
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            letter-spacing: -0.01em;
+        }
+        .card-title i { color: var(--primary); font-size: 1.2rem; }
+
+        .card-desc { color: var(--text-2); font-size: 0.9rem; }
+
+        /* ── WELCOME CARD ───────────────────────────────────── */
+        .welcome-card {
+            background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(59,130,246,0.06) 100%);
+            border-color: rgba(249,115,22,0.2);
+        }
+
+        .welcome-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.875rem;
+            background: rgba(249,115,22,0.15);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-1);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .welcome-title span { color: var(--primary); }
+
+        /* ── UPLOAD AREAS ───────────────────────────────────── */
+        .upload-area {
+            border: 2px dashed rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            background: var(--bg-upload);
+            cursor: pointer;
+            transition: all var(--transition);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .upload-area:hover,
+        .upload-area.dragover {
+            border-color: var(--primary);
+            background: rgba(249,115,22,0.05);
+        }
+        .upload-area.has-file {
+            border-color: rgba(16,185,129,0.5);
+            background: rgba(16,185,129,0.04);
+        }
+
+        .upload-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(249,115,22,0.12);
+            border: 1px solid rgba(249,115,22,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.375rem;
+            color: var(--primary);
+            transition: all var(--transition);
+        }
+        .upload-area:hover .upload-icon { transform: scale(1.1); background: rgba(249,115,22,0.2); }
+
+        .upload-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-1);
+            margin-bottom: 0.3rem;
+        }
+        .upload-sub {
+            font-size: 0.82rem;
+            color: var(--text-3);
+            margin-bottom: 1.25rem;
+        }
+
+        input[type="file"] { display: none; }
+
+        .upload-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.55rem 1.25rem;
+            background: rgba(249,115,22,0.12);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: var(--radius-sm);
+            color: var(--primary);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .upload-btn:hover {
+            background: rgba(249,115,22,0.22);
+            border-color: var(--primary);
+        }
+
+        .upload-formats {
+            margin-top: 0.875rem;
+            font-size: 0.78rem;
+            color: var(--text-3);
+        }
+
+        /* ── FILE INFO STRIP ────────────────────────────────── */
+        .file-info {
+            display: none;
+            padding: 0.75rem 1rem;
+            background: var(--bg-card-inner);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            color: var(--text-2);
+            margin-bottom: 1.25rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .file-info.show { display: flex; }
+        .file-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .file-info-item i { color: var(--primary); font-size: 0.8rem; }
+
+        /* ── ACTION BUTTON ──────────────────────────────────── */
+        .action-btn {
+            width: 100%;
+            padding: 0.9rem 2rem;
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: 0 4px 16px rgba(16,185,129,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+        .action-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16,185,129,0.4);
+        }
+        .action-btn:active:not(:disabled) { transform: translateY(0); }
+        .action-btn:disabled {
+            background: var(--bg-card-inner);
+            color: var(--text-3);
+            border: 1px solid var(--border);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        /* ── LOADING ────────────────────────────────────────── */
+        .loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 0.625rem;
+            padding: 1.5rem;
+            color: var(--text-2);
+            font-size: 0.9rem;
+        }
+        .loading.show { display: block; }
+
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+            display: none;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.4s ease, background 0.4s ease;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+        .loading i { color: var(--primary); animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── RESULT PANELS ──────────────────────────────────── */
+        .result-panel {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid transparent;
+            animation: fadeSlideUp 0.35s ease both;
+        }
+
+        .result-panel.success {
+            display: block;
+            background: rgba(16,185,129,0.06);
+            border-color: rgba(16,185,129,0.25);
+        }
+        .result-panel.error {
+            display: block;
+            background: rgba(239,68,68,0.06);
+            border-color: rgba(239,68,68,0.25);
+        }
+
+        .result-error-head {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #fca5a5;
+            margin-bottom: 0.375rem;
+        }
+
+        .result-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.75rem;
+            background: rgba(16,185,129,0.12);
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #34d399;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .result-sentence {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-1);
+            margin-bottom: 0.625rem;
+            line-height: 1.3;
+        }
+
+        .result-confidence {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            font-size: 0.875rem;
+            color: var(--text-2);
+            margin-bottom: 1.25rem;
+        }
+        .conf-pill {
+            padding: 0.2rem 0.6rem;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.3);
+            border-radius: 99px;
+            color: #93c5fd;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* ── PROBABILITY BARS ───────────────────────────────── */
+        .probs-section { margin-top: 1.25rem; }
+        .probs-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.875rem;
+        }
+        .prob-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem 0.75rem;
+            align-items: center;
+            margin-bottom: 0.625rem;
+        }
+        .prob-label { font-size: 0.85rem; color: var(--text-2); }
+        .prob-pct { font-size: 0.8rem; font-weight: 600; color: var(--primary); text-align: right; white-space: nowrap; }
+        .prob-track {
+            grid-column: 1 / -1;
+            height: 4px;
+            background: var(--bg-card-inner);
+            border-radius: 99px;
+            overflow: hidden;
+            margin-top: -0.25rem;
+        }
+        .prob-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 99px;
+            transition: width 0.6s ease;
+        }
+
+        /* ── AUDIO / VIDEO OUTPUTS ──────────────────────────── */
+        .media-section {
+            margin-top: 1.375rem;
+            padding-top: 1.375rem;
+            border-top: 1px solid var(--border);
+        }
+        .media-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 1rem;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .media-grid.single { grid-template-columns: 1fr; }
+        .media-block {
+            background: var(--bg-card-inner);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        .media-block-header {
+            display: flex;
+            align-items: center;
+            padding: 0.625rem 0.875rem;
+            border-bottom: 1px solid var(--border);
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-2);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .media-block-header i { color: var(--primary); font-size: 0.75rem; }
+        .media-block-body { padding: 0.75rem; }
+        audio, video {
+            width: 100%;
+            border-radius: var(--radius-sm);
+            outline: none;
+            background: #000;
+            display: block;
+        }
+        video { max-height: 240px; object-fit: contain; }
+
+        /* ── DOWNLOADS ──────────────────────────────────────── */
+        .downloads-section {
+            margin-top: 1.375rem;
+            padding: 1rem 1.25rem;
+            background: rgba(59,130,246,0.05);
+            border: 1px solid rgba(59,130,246,0.15);
+            border-radius: var(--radius-md);
+        }
+        .downloads-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.75rem;
+        }
+        .downloads-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.875rem;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.3);
+            border-radius: var(--radius-sm);
+            color: #93c5fd;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+        .dl-btn:hover {
+            background: rgba(59,130,246,0.25);
+            border-color: var(--accent);
+            color: #bfdbfe;
+            transform: translateY(-1px);
+        }
+        .dl-btn.orange {
+            background: rgba(249,115,22,0.1);
+            border-color: rgba(249,115,22,0.3);
+            color: var(--primary);
+        }
+        .dl-btn.orange:hover {
+            background: rgba(249,115,22,0.2);
+            border-color: var(--primary);
+        }
+        .dl-btn.green {
+            background: rgba(16,185,129,0.1);
+            border-color: rgba(16,185,129,0.3);
+            color: #34d399;
+        }
+        .dl-btn.green:hover {
+            background: rgba(16,185,129,0.2);
+            border-color: var(--success);
+        }
+        @media (max-width: 600px) {
+            .media-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── GUIDELINES CARD ────────────────────────────────── */
+        .guidelines-card {
+            background: var(--bg-card-inner);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.25rem;
+        }
+        .guidelines-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.875rem;
+        }
+        .guidelines-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+        .guidelines-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-2);
+        }
+        .guidelines-list li::before {
+            content: '▸';
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+            font-size: 0.7rem;
+        }
+
+        /* ── TOAST ──────────────────────────────────────────── */
+        .toast {
+            position: fixed;
+            top: calc(var(--header-h) + 1rem);
+            right: 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: var(--radius-md);
+            padding: 0.875rem 1.25rem;
+            font-size: 0.875rem;
+            color: var(--text-1);
+            box-shadow: var(--shadow-card);
+            z-index: 9999;
+            max-width: 360px;
+            animation: toastIn 0.3s ease both;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.625rem;
+        }
+        .toast i { color: var(--success); margin-top: 0.1rem; flex-shrink: 0; }
+        @keyframes toastIn { from { opacity:0; transform: translateX(20px); } to { opacity:1; transform: translateX(0); } }
+
+        /* ── RESPONSIVE ─────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform var(--transition);
+                z-index: 950;
+            }
+            .sidebar.open { transform: translateX(0); }
+            .main { margin-left: 0; padding: 1.25rem; }
+            .card { padding: 1.5rem; }
+            .welcome-title { font-size: 1.375rem; }
+        }
+
+        /* ── DYNAMIC HOMEPAGE ELEMENTS ──────────────────────── */
+        .home-bg-orb {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            max-width: 600px;
+            max-height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 60%);
+            opacity: 0.08;
+            filter: blur(60px);
+            z-index: 0;
+            animation: orbFloat 20s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+        .orb-1 { top: -10%; left: -10%; }
+        .orb-2 { bottom: -10%; right: -10%; animation-delay: -10s; background: radial-gradient(circle, var(--accent) 0%, transparent 60%); }
+        
+        @keyframes orbFloat {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 10%) scale(1.1); }
+            100% { transform: translate(-5%, 5%) scale(0.9); }
+        }
+
+        .soundwave {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            height: 60px;
+            margin-bottom: 0.5rem;
+            z-index: 1;
+            position: relative;
+        }
+        .wave-bar {
+            width: 8px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 4px;
+            animation: waveAnim 1.2s ease-in-out infinite alternate;
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
+        }
+        .wave-bar:nth-child(1) { animation-delay: 0.0s; height: 20px; }
+        .wave-bar:nth-child(2) { animation-delay: 0.2s; height: 40px; }
+        .wave-bar:nth-child(3) { animation-delay: 0.4s; height: 60px; }
+        .wave-bar:nth-child(4) { animation-delay: 0.6s; height: 35px; }
+        .wave-bar:nth-child(5) { animation-delay: 0.5s; height: 50px; }
+        .wave-bar:nth-child(6) { animation-delay: 0.3s; height: 25px; }
+        .wave-bar:nth-child(7) { animation-delay: 0.1s; height: 15px; }
+
+        @keyframes waveAnim {
+            0% { transform: scaleY(0.2); opacity: 0.5; }
+            100% { transform: scaleY(1); opacity: 1; }
+        }
+
+        .home-card {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .home-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.03), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.7s ease;
+        }
+        .home-card:hover::before {
+            left: 200%;
+        }
+        .home-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(249, 115, 22, 0.15);
+            border-color: rgba(249, 115, 22, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════
+     LOGIN PAGE
+══════════════════════════════════════════════════════════════ -->
+<div class="login-page" id="loginPage">
+    <div class="login-card">
+        <div class="login-header">
+            <div class="login-logo">
+                <i class="fas fa-wave-square"></i>
+                EchoVox
+            </div>
+            <h1>Welcome Back</h1>
+            <p>Sign in to access the lip reading &amp; voice cloning platform</p>
+        </div>
+
+        <div class="error-banner" id="loginError">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="loginErrorMsg">Invalid email or password</span>
+        </div>
+
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label class="form-label" for="loginEmail">
+                    <i class="fas fa-envelope"></i> Email
+                </label>
+                <input type="email" id="loginEmail" class="form-input" placeholder="Enter your email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="loginPassword">
+                    <i class="fas fa-lock"></i> Password
+                </label>
+                <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="login-btn" id="loginBtn">
+                <i class="fas fa-sign-in-alt"></i> Sign In
+            </button>
+        </form>
+
+        <div class="login-demo">
+            Don't have an account?&nbsp;
+            <a href="#" onclick="showRegisterPage(); return false;" style="color:var(--primary); text-decoration:none; font-weight:600;">Register here</a>
+        </div>
+
+        <!-- Admin Gateway -->
+        <hr style="border:none; border-top:1px solid rgba(255,255,255,0.1); margin: 2rem 0 1rem 0;">
+        <div style="text-align:center;">
+            <a href="#" onclick="toggleAdminLogin(); return false;" style="color:var(--text-3); font-size:0.85rem; text-decoration:none;">
+                <i class="fas fa-shield-alt"></i> Admin Gateway
+            </a>
+        </div>
+        
+        <div id="adminLoginSection" style="display:none; margin-top:1rem; padding-top:1rem; border-top:1px dashed rgba(255,255,255,0.1);">
+            <h3 style="font-size:1rem; color:var(--text-2); margin-bottom:1rem; text-align:center;">Admin Portal</h3>
+            
+            <div class="error-banner" id="adminLoginError">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="adminLoginErrorMsg" style="font-size:0.85rem;">Invalid credentials</span>
+            </div>
+
+            <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+                <div class="form-group" style="margin-bottom:0.75rem;">
+                    <input type="email" id="adminEmail" class="form-input" placeholder="Admin Email" required>
+                </div>
+                <div class="form-group" style="margin-bottom:0.75rem;">
+                    <input type="password" id="adminPassword" class="form-input" placeholder="Admin Password" required>
+                </div>
+                <button type="submit" class="login-btn" id="adminLoginBtn" style="background:var(--accent); font-size:0.9rem; padding:0.6rem;">
+                    <i class="fas fa-shield-alt"></i> Admin Sign In
+                </button>
+            </form>
+            
+            <div style="text-align:center; margin-top:1rem;">
+                <a href="#" onclick="toggleAdminRegister(); return false;" style="color:var(--text-3); font-size:0.75rem;">Register Initial Admin Node</a>
+            </div>
+            
+            <form id="adminRegisterForm" onsubmit="handleAdminRegister(event)" style="display:none; margin-top:1rem;">
+                <div class="form-group" style="margin-bottom:0.75rem;">
+                    <input type="email" id="adminRegEmail" class="form-input" placeholder="New Admin Email" required>
+                </div>
+                <div class="form-group" style="margin-bottom:0.75rem;">
+                    <input type="password" id="adminRegPassword" class="form-input" placeholder="New Admin Password" required minlength="6">
+                </div>
+                <button type="submit" class="login-btn" id="adminRegisterBtn" style="background:transparent; border:1px solid var(--accent); color:var(--accent); font-size:0.9rem; padding:0.6rem;">
+                    Initialize Admin
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     REGISTER PAGE
+══════════════════════════════════════════════════════════════ -->
+<div class="login-page" id="registerPage" style="display:none;">
+    <div class="login-card">
+        <div class="login-header">
+            <div class="login-logo">
+                <i class="fas fa-wave-square"></i>
+                EchoVox
+            </div>
+            <h1>Create Account</h1>
+            <p>Register to access the AI-powered platform</p>
+        </div>
+
+        <div class="error-banner" id="registerError">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="registerErrorMsg">Registration failed</span>
+        </div>
+
+        <div class="error-banner" id="registerSuccess" style="border-color:rgba(16,185,129,0.4); background:rgba(16,185,129,0.08);">
+            <i class="fas fa-check-circle" style="color:var(--success);"></i>
+            <span style="color:var(--success);">Account created! Redirecting to login…</span>
+        </div>
+
+        <form id="registerForm" onsubmit="handleRegister(event)">
+            <div class="form-group">
+                <label class="form-label" for="regEmail">
+                    <i class="fas fa-envelope"></i> Email
+                </label>
+                <input type="email" id="regEmail" class="form-input" placeholder="Enter your email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="regPassword">
+                    <i class="fas fa-lock"></i> Password
+                </label>
+                <input type="password" id="regPassword" class="form-input" placeholder="Create a password" required minlength="6" autocomplete="new-password">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="regConfirm">
+                    <i class="fas fa-lock"></i> Confirm Password
+                </label>
+                <input type="password" id="regConfirm" class="form-input" placeholder="Confirm your password" required minlength="6" autocomplete="new-password">
+            </div>
+            <button type="submit" class="login-btn" id="registerBtn">
+                <i class="fas fa-user-plus"></i> Register
+            </button>
+        </form>
+
+        <div class="login-demo">
+            Already have an account?&nbsp;
+            <a href="#" onclick="showLoginPage(); return false;" style="color:var(--primary); text-decoration:none; font-weight:600;">Sign In</a>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     HOMEPAGE
+══════════════════════════════════════════════════════════════ -->
+<div class="dashboard" id="homePage" style="display:none; flex-direction:column; align-items:center; justify-content:center; padding: 4rem 2rem; min-height: 100vh; position: relative; overflow: hidden;">
+    
+    <!-- Animated Background Orbs -->
+    <div class="home-bg-orb orb-1"></div>
+    <div class="home-bg-orb orb-2"></div>
+
+    <div style="max-width:950px; width:100%; text-align:center; position: relative; z-index: 2;">
+        
+        <!-- Animated AI Soundwave -->
+        <div class="soundwave">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+        </div>
+
+        <h1 style="font-family:var(--font-display); font-size:4rem; color:var(--text-1); margin-bottom:1.5rem; line-height:1.1;">
+            Welcome to <span style="color:var(--primary);">EchoVox AI</span>
+        </h1>
+        <p style="font-size:1.15rem; color:var(--text-2); line-height:1.7; margin-bottom:3.5rem; max-width:750px; margin-left:auto; margin-right:auto;">
+            EchoVox is a state-of-the-art multimodal AI platform designed to bridge the gap between visual text recognition and synthetic speech generation. Our core goal is to provide accurate lip-reading predictions from silent videos and to realistically clone voices for seamless media generation.
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2rem; margin-bottom:4.5rem; text-align:left;">
+            <div class="card home-card" onclick="openToolFromHome('prediction-only', 1)" style="cursor:pointer; padding:2.5rem; background:var(--bg-card); border-radius:var(--radius-lg); border:1px solid var(--border); box-shadow:var(--shadow-card);">
+                <div style="font-size:2.5rem; color:var(--accent); margin-bottom:1.5rem;"><i class="fas fa-eye"></i></div>
+                <h3 style="font-family:var(--font-display); font-size:1.35rem; color:var(--text-1); margin-bottom:1rem;">Sentence Prediction</h3>
+                <p style="color:var(--text-3); font-size:1rem; line-height:1.6;">Utilizes advanced CNN + LSTM models and MediaPipe face landmarking to accurately read lips from video frames, outputting sentence predictions with high confidence.</p>
+            </div>
+            <div class="card home-card" onclick="openToolFromHome('full-pipeline', 2)" style="cursor:pointer; padding:2.5rem; background:var(--bg-card); border-radius:var(--radius-lg); border:1px solid var(--border); box-shadow:var(--shadow-card);">
+                <div style="font-size:2.5rem; color:var(--success); margin-bottom:1.5rem;"><i class="fas fa-magic"></i></div>
+                <h3 style="font-family:var(--font-display); font-size:1.35rem; color:var(--text-1); margin-bottom:1rem;">Voice Cloning</h3>
+                <p style="color:var(--text-3); font-size:1rem; line-height:1.6;">Integrates leading zero-shot TTS engines (XTTS-v2) to clone a target speaker's voice using only a highly optimal 6-second reference audio sample.</p>
+            </div>
+        </div>
+
+        <button onclick="goToDashboard()" style="background:var(--primary); color:#000; font-family:var(--font-display); font-weight:700; font-size:1.15rem; padding:1.25rem 3rem; border:none; border-radius:var(--radius-xl); cursor:pointer; box-shadow:var(--shadow-btn); transition:var(--transition);">
+            Launch EchoVox Dashboard <i class="fas fa-arrow-right" style="margin-left:0.75rem;"></i>
+        </button>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     DASHBOARD
+══════════════════════════════════════════════════════════════ -->
+<div class="dashboard" id="dashboardPage" style="display:none;">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-wave-square"></i>
+            EchoVox
+        </div>
+        <div class="header-spacer"></div>
+        <nav class="header-nav">
+            <button class="header-btn" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+            <button class="header-btn" onclick="showHelp()">
+                <i class="fas fa-question-circle"></i> Help
+            </button>
+            <button class="header-btn" onclick="logout()" style="border-color:rgba(239,68,68,0.3); color:#f87171;">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="nav-section">
+            <div class="nav-section-title">Overview</div>
+            <button class="nav-item" onclick="goToHome()">
+                <i class="fas fa-home"></i> Project Home
+            </button>
+        </div>
+        <div class="nav-section" style="margin-top: 1.5rem;">
+            <div class="nav-section-title">Processing Options</div>
+            <button class="nav-item active" onclick="navigate(this,'prediction-only')">
+                <i class="fas fa-eye"></i> Prediction Only
+            </button>
+            <button class="nav-item" onclick="navigate(this,'full-pipeline')">
+                <i class="fas fa-magic"></i> Full Pipeline
+            </button>
+        </div>
+        <div class="nav-section" style="margin-top: 1.5rem;">
+            <div class="nav-section-title">History</div>
+            <button class="nav-item" onclick="navigate(this,'history')">
+                <i class="fas fa-folder-open"></i> My Projects
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main" id="mainContent">
+        <div class="content-wrap">
+
+            <!-- Welcome -->
+            <div class="card welcome-card" id="welcome-card">
+                <div class="welcome-badge"><i class="fas fa-bolt"></i> AI Powered</div>
+                <h1 class="welcome-title">Lip Reading &amp;<br><span>Voice Cloning</span></h1>
+                <p style="color:var(--text-2);font-size:0.925rem;max-width:480px;">
+                    State-of-the-art AI for accurate speech recognition from silent video and
+                    realistic zero-shot voice synthesis. Select a mode from the sidebar to begin.
+                </p>
+            </div>
+
+            <!-- ── PREDICTION ONLY ── -->
+            <div class="card" id="prediction-only-card" style="display:none;">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-eye"></i> Prediction Only</h2>
+                    <p class="card-desc">Upload a video to get lip reading predictions without voice cloning.</p>
+                </div>
+
+                <div class="upload-area" id="predVideoArea">
+                    <div class="upload-icon"><i class="fas fa-film"></i></div>
+                    <div class="upload-title">Upload Video</div>
+                    <div class="upload-sub">Drag &amp; drop or click to browse</div>
+                    <input type="file" id="predVideoInput" accept="video/*">
+                    <button class="upload-btn">
+                        <i class="fas fa-folder-open"></i> Choose File
+                    </button>
+                    <div class="upload-formats">MP4, AVI, MOV, MKV, WebM · Max 200 MB</div>
+                </div>
+
+                <div class="file-info" id="predFileInfo"></div>
+
+                <button class="action-btn" id="predBtn" onclick="processPrediction()" disabled>
+                    <i class="fas fa-play-circle"></i> Predict Sentence
+                </button>
+
+                <div class="loading" id="predLoading">
+                    <div id="predLoadingText"><i class="fas fa-spinner fa-spin"></i> Processing…</div>
+                    <div class="progress-container" id="predProgressContainer">
+                        <div class="progress-bar-fill" id="predProgressBar"></div>
+                    </div>
+                </div>
+
+                <div class="result-panel" id="predResult"></div>
+            </div>
+
+            <!-- ── FULL PIPELINE ── -->
+            <div class="card" id="full-pipeline-card" style="display:none;">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-magic"></i> Full Pipeline</h2>
+                    <p class="card-desc">Lip reading + voice cloning + output video generation.</p>
+                </div>
+
+                <div class="upload-area" id="fullVideoArea">
+                    <div class="upload-icon"><i class="fas fa-film"></i></div>
+                    <div class="upload-title">Upload Video</div>
+                    <div class="upload-sub">Drag &amp; drop or click to browse</div>
+                    <input type="file" id="fullVideoInput" accept="video/*">
+                    <button class="upload-btn">
+                        <i class="fas fa-folder-open"></i> Choose File
+                    </button>
+                    <div class="upload-formats">MP4, AVI, MOV, MKV, WebM · Max 200 MB</div>
+                </div>
+
+                <div class="upload-area" id="fullAudioArea" style="margin-top:1rem;">
+                    <div class="upload-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <div class="upload-title">Reference Audio</div>
+                    <div class="upload-sub">Voice sample for cloning (6–30 seconds recommended)</div>
+                    <input type="file" id="fullAudioInput" accept="audio/*">
+                    <button class="upload-btn">
+                        <i class="fas fa-music"></i> Choose File
+                    </button>
+                    <div class="upload-formats">WAV, MP3, M4A, FLAC</div>
+                </div>
+
+                <div class="file-info" id="fullFileInfo"></div>
+
+                <button class="action-btn" id="fullBtn" onclick="processFullPipeline()" disabled>
+                    <i class="fas fa-magic"></i> Generate Video with Cloned Voice
+                </button>
+
+                <div class="loading" id="fullLoading">
+                    <div id="fullLoadingText"><i class="fas fa-spinner fa-spin"></i> Processing…</div>
+                    <div class="progress-container" id="fullProgressContainer">
+                        <div class="progress-bar-fill" id="fullProgressBar"></div>
+                    </div>
+                </div>
+
+                <div class="result-panel" id="fullResult"></div>
+            </div>
+
+            <!-- ── MY PROJECTS HISTORY ── -->
+            <div class="card" id="history-card" style="display:none;">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-folder-open"></i> My Projects</h2>
+                    <p class="card-desc">History of your generated videos and voice clones.</p>
+                </div>
+                <div id="historyLoading" style="display:none; text-align:center; padding: 2rem; color: var(--text-2);">
+                    <i class="fas fa-spinner fa-spin"></i> Loading your projects...
+                </div>
+                <div id="historyGrid" style="display:grid; grid-template-columns:1fr; gap:1.5rem; margin-top:2rem;">
+                    <!-- History cards injected here by JS -->
+                </div>
+            </div>
+
+        </div><!-- /content-wrap -->
+    </main>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     ADMIN DASHBOARD
+══════════════════════════════════════════════════════════════ -->
+<div class="dashboard" id="adminDashboardPage" style="display:none; flex-direction:column; align-items:center; min-height:100vh; overflow-y:auto; padding:3rem 1rem;">
+    <div style="width:100%; max-width:1100px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
+            <div>
+                <h1 style="font-size:2rem; font-family:var(--font-display); color:var(--text-1);"><i class="fas fa-shield-alt" style="color:var(--accent);"></i> System Admin Dashboard</h1>
+                <p style="color:var(--text-2); font-size:1rem; margin-top:0.25rem;">Global Monitoring Node</p>
+            </div>
+            <div style="display:flex; gap:1rem;">
+                <button class="header-btn" onclick="logout(); showRegisterPage();" style="border-color:var(--primary); color:var(--primary);">
+                    <i class="fas fa-user-plus"></i> Go to Sign-Up
+                </button>
+                <button class="header-btn" onclick="logout()" style="border-color:rgba(239,68,68,0.3); color:#f87171;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- Stat Cards -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; margin-bottom:3rem;">
+            <div class="card" style="padding:1.5rem; background:rgba(59,130,246,0.05); border:1px solid rgba(59,130,246,0.2);">
+                <div style="font-size:0.85rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Total Processed</div>
+                <div id="adminStatVideos" style="font-size:2.5rem; font-weight:700; color:var(--primary); font-family:var(--font-display);">0</div>
+            </div>
+            <div class="card" style="padding:1.5rem; background:rgba(16,185,129,0.05); border:1px solid rgba(16,185,129,0.2);">
+                <div style="font-size:0.85rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Voice Clones Generated</div>
+                <div id="adminStatClones" style="font-size:2.5rem; font-weight:700; color:var(--success); font-family:var(--font-display);">0</div>
+            </div>
+            <div class="card" style="padding:1.5rem; background:rgba(139,92,246,0.05); border:1px solid rgba(139,92,246,0.2);">
+                <div style="font-size:0.85rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Registered Users</div>
+                <div id="adminStatUsers" style="font-size:2.5rem; font-weight:700; color:var(--accent); font-family:var(--font-display);">0</div>
+            </div>
+            <div class="card" style="padding:1.5rem; background:rgba(245,158,11,0.05); border:1px solid rgba(245,158,11,0.2);">
+                <div style="font-size:0.85rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Feedback Entries</div>
+                <div id="adminStatFeedback" style="font-size:2.5rem; font-weight:700; color:#f59e0b; font-family:var(--font-display);">0</div>
+            </div>
+            <div class="card" style="padding:1.5rem; background:rgba(255,255,255,0.03); border:1px solid var(--border);">
+                <div style="font-size:0.85rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;"><i class="fas fa-chart-bar"></i> Feedback by Module</div>
+                <div style="height: 300px; position: relative;">
+                    <canvas id="satisfactionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Analytics Chart -->
+        <div class="card" style="padding:1.5rem; margin-bottom:2rem;">
+            <div style="font-size:0.85rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;"><i class="fas fa-chart-line"></i> Usage Analytics (Last 30 Days)</div>
+            <div style="height: 280px; position: relative;">
+                <canvas id="usageChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Activity Heatmap + System Health side by side -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2rem;">
+            <!-- Activity Heatmap -->
+            <div class="card" style="padding:1.5rem;">
+                <div style="font-size:0.85rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;"><i class="fas fa-fire"></i> Activity Heatmap</div>
+                <div id="heatmapContainer" style="overflow-x:auto;"></div>
+            </div>
+
+            <!-- System Health -->
+            <div class="card" style="padding:1.5rem;">
+                <div style="font-size:0.85rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;"><i class="fas fa-heartbeat"></i> System Health</div>
+                <div id="systemHealthContainer">
+                    <div style="text-align:center; padding:2rem; color:var(--text-3);">Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Management Section -->
+        <div class="card" style="padding:0; margin-bottom:2rem;">
+            <div style="padding:1.5rem; border-bottom:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                <h2 style="font-size:1.25rem; font-weight:600;"><i class="fas fa-users-cog"></i> User Management</h2>
+                <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+                    <input id="userSearchInput" type="text" placeholder="Search by email..." oninput="loadUserDirectory()" class="form-input" style="max-width:220px; padding:0.4rem 0.75rem; font-size:0.85rem; margin:0;">
+                    <select id="userFilterSelect" onchange="loadUserDirectory()" class="form-input" style="max-width:160px; padding:0.4rem 0.75rem; font-size:0.85rem; margin:0; cursor:pointer;">
+                        <option value="">All Users</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="banned">Banned</option>
+                    </select>
+                </div>
+            </div>
+            <div style="overflow-x:auto;">
+                <table style="width:100%; text-align:left; border-collapse:collapse; min-width:750px;">
+                    <thead>
+                        <tr style="background:rgba(0,0,0,0.3); color:var(--text-3); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">
+                            <th style="padding:0.8rem 1.25rem;">User Email</th>
+                            <th style="padding:0.8rem 1.25rem;">Joined</th>
+                            <th style="padding:0.8rem 1.25rem;">Last Login</th>
+                            <th style="padding:0.8rem 1.25rem;">Projects</th>
+                            <th style="padding:0.8rem 1.25rem;">Feedback</th>
+                            <th style="padding:0.8rem 1.25rem;">Status</th>
+                            <th style="padding:0.8rem 1.25rem;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userDirectoryTable" style="font-size:0.9rem;">
+                        <!-- Injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr; gap:3rem;">
+            <!-- Recent Predictions Table -->
+            <div class="card" style="padding:0;">
+                <div style="padding:1.5rem; border-bottom:1px solid rgba(255,255,255,0.05);">
+                    <h2 style="font-size:1.25rem; font-weight:600;"><i class="fas fa-history"></i> Global Prediction History</h2>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; text-align:left; border-collapse:collapse; min-width:600px;">
+                        <thead>
+                            <tr style="background:rgba(0,0,0,0.3); color:var(--text-3); font-size:0.85rem; text-transform:uppercase; letter-spacing:1px;">
+                                <th style="padding:1rem 1.5rem;">Date</th>
+                                <th style="padding:1rem 1.5rem;">User</th>
+                                <th style="padding:1rem 1.5rem;">Type</th>
+                                <th style="padding:1rem 1.5rem;">Predicted Words</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProjectsTable" style="font-size:0.95rem;">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Global Feedback Table -->
+            <div class="card" style="padding:0;">
+                <div style="padding:1.5rem; border-bottom:1px solid rgba(255,255,255,0.05);">
+                    <h2 style="font-size:1.25rem; font-weight:600;"><i class="fas fa-comment-dots"></i> User Feedback Directory</h2>
+                </div>
+                <div style="padding:1.5rem;" id="adminFeedbackList">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* ── State ─────────────────────────────────────────────── */
+    let selPredVideo = null, selFullVideo = null, selFullAudio = null;
+
+    /* ── Login / Navigation ────────────────────────────────── */
+    function goToDashboard() {
+        document.getElementById('homePage').style.display = 'none';
+        document.getElementById('dashboardPage').style.display = 'block';
+        initDashboard();
+    }
+
+    function goToHome() {
+        document.getElementById('dashboardPage').style.display = 'none';
+        document.getElementById('homePage').style.display = 'flex';
+    }
+
+    function openToolFromHome(toolId, btnIndex) {
+        goToDashboard();
+        const btns = document.querySelectorAll('.nav-item');
+        navigate(btns[btnIndex] || null, toolId);
+    }
+
+    function handleLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        const pass  = document.getElementById('loginPassword').value;
+        const btn   = document.getElementById('loginBtn');
+        const err   = document.getElementById('loginError');
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in…';
+
+        fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password: pass })
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) {
+                localStorage.setItem('currentUser', JSON.stringify({ id: data.user_id, email: data.email }));
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('homePage').style.display = 'flex';
+            } else {
+                document.getElementById('loginErrorMsg').textContent = data.error || 'Invalid email or password';
+                err.classList.add('show');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+                setTimeout(() => err.classList.remove('show'), 3000);
+            }
+        })
+        .catch(() => {
+            document.getElementById('loginErrorMsg').textContent = 'Server error. Please try again.';
+            err.classList.add('show');
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+            setTimeout(() => err.classList.remove('show'), 3000);
+        });
+    }
+
+    function handleRegister(e) {
+        e.preventDefault();
+        const email   = document.getElementById('regEmail').value;
+        const pass    = document.getElementById('regPassword').value;
+        const confirm = document.getElementById('regConfirm').value;
+        const btn     = document.getElementById('registerBtn');
+        const err     = document.getElementById('registerError');
+        const success = document.getElementById('registerSuccess');
+
+        if (pass !== confirm) {
+            document.getElementById('registerErrorMsg').textContent = 'Passwords do not match';
+            err.classList.add('show');
+            setTimeout(() => err.classList.remove('show'), 3000);
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering…';
+
+        fetch('/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password: pass })
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) {
+                success.classList.add('show');
+                setTimeout(() => {
+                    success.classList.remove('show');
+                    showLoginPage();
+                }, 2000);
+            } else {
+                document.getElementById('registerErrorMsg').textContent = data.error || 'Registration failed';
+                err.classList.add('show');
+                setTimeout(() => err.classList.remove('show'), 3000);
+            }
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-user-plus"></i> Register';
+        })
+        .catch(() => {
+            document.getElementById('registerErrorMsg').textContent = 'Server error. Please try again.';
+            err.classList.add('show');
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-user-plus"></i> Register';
+            setTimeout(() => err.classList.remove('show'), 3000);
+        });
+    }
+
+    function showRegisterPage() {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('registerPage').style.display = 'flex';
+        document.getElementById('registerForm').reset();
+    }
+
+    function showLoginPage() {
+        document.getElementById('registerPage').style.display = 'none';
+        document.getElementById('loginPage').style.display = 'flex';
+        document.getElementById('loginForm').reset();
+    }
+
+    function logout() {
+        localStorage.removeItem('currentUser');
+        document.getElementById('loginPage').style.display = 'flex';
+        document.getElementById('registerPage').style.display = 'none';
+        document.getElementById('homePage').style.display = 'none';
+        document.getElementById('dashboardPage').style.display = 'none';
+        
+        // Hide admin page if it exists
+        const adminDash = document.getElementById('adminDashboardPage');
+        if(adminDash) adminDash.style.display = 'none';
+
+        document.getElementById('loginForm').reset();
+        document.getElementById('adminLoginForm').reset();
+        document.getElementById('adminRegisterForm').reset();
+        document.getElementById('loginBtn').disabled = false;
+        document.getElementById('loginBtn').innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+        selPredVideo = selFullVideo = selFullAudio = null;
+    }
+
+    /* ── Admin Auth Handlers ──────────────────────────────── */
+    function toggleAdminLogin() {
+        const sec = document.getElementById('adminLoginSection');
+        sec.style.display = sec.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function toggleAdminRegister() {
+        const frm = document.getElementById('adminRegisterForm');
+        frm.style.display = frm.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function handleAdminLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById('adminEmail').value;
+        const pass  = document.getElementById('adminPassword').value;
+        const btn   = document.getElementById('adminLoginBtn');
+        const err   = document.getElementById('adminLoginError');
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking…';
+
+        fetch('/admin/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password: pass })
+        }).then(r => r.json()).then(data => {
+            if (data.success) {
+                localStorage.setItem('currentUser', JSON.stringify({ id: data.admin_id, email: data.email, role: 'admin' }));
+                document.getElementById('loginPage').style.display = 'none';
+                
+                // Route to Admin Dashboard Page (created in Phase 4)
+                const adp = document.getElementById('adminDashboardPage');
+                if (adp) {
+                    adp.style.display = 'block';
+                    loadAdminDashboard();
+                } else {
+                    document.getElementById('homePage').style.display = 'flex'; // fallback
+                }
+            } else {
+                document.getElementById('adminLoginErrorMsg').textContent = data.error || 'Invalid credentials';
+                err.classList.add('show');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-shield-alt"></i> Admin Sign In';
+                setTimeout(() => err.classList.remove('show'), 3000);
+            }
+        }).catch(() => {
+            document.getElementById('adminLoginErrorMsg').textContent = 'Server error. Please try again.';
+            err.classList.add('show');
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-shield-alt"></i> Admin Sign In';
+            setTimeout(() => err.classList.remove('show'), 3000);
+        });
+    }
+
+    function handleAdminRegister(e) {
+        e.preventDefault();
+        const email = document.getElementById('adminRegEmail').value;
+        const pass  = document.getElementById('adminRegPassword').value;
+        const btn   = document.getElementById('adminRegisterBtn');
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Initializing…';
+
+        fetch('/admin/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password: pass })
+        }).then(r => r.json()).then(data => {
+            if (data.success) {
+                alert("Internal Admin Node Initialized Successfully. Please Sign In.");
+                document.getElementById('adminRegisterForm').style.display = 'none';
+                document.getElementById('adminRegisterForm').reset();
+            } else {
+                alert(data.error || "Initialization failed.");
+            }
+            btn.disabled = false;
+            btn.innerHTML = 'Initialize Admin';
+        }).catch(() => {
+            alert("Network error.");
+            btn.disabled = false;
+            btn.innerHTML = 'Initialize Admin';
+        });
+    }
+
+    /* ── Init ──────────────────────────────────────────────── */
+    let _dashboardReady = false;
+    function initDashboard() {
+        if (_dashboardReady) return;   // only attach listeners ONCE
+        _dashboardReady = true;
+        setupDrop('predVideoArea',  'predVideoInput',  f => handleVideo(f, 'pred'));
+        setupDrop('fullVideoArea',  'fullVideoInput',  f => handleVideo(f, 'full'));
+        setupDrop('fullAudioArea',  'fullAudioInput',  f => handleAudio(f, 'full'));
+    }
+
+    /* ── Sidebar / Nav ─────────────────────────────────────── */
+    function toggleSidebar() {
+        document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    function navigate(el, id) {
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        if (el) el.classList.add('active');
+        ['prediction-only-card','full-pipeline-card','history-card'].forEach(c => {
+            const card = document.getElementById(c);
+            if(card) card.style.display = 'none';
+        });
+        const target = document.getElementById(id + '-card');
+        if (target) { target.style.display = 'block'; target.scrollIntoView({ behavior:'smooth', block:'start' }); }
+
+        if (id === 'history') {
+            loadHistory();
+        }
+    }
+
+    function showHelp() {
+        showToast('Select a mode from the sidebar, upload required files, then click the action button to process.');
+    }
+
+    function showToast(msg) {
+        const t = document.createElement('div');
+        t.className = 'toast';
+        t.innerHTML = `<i class="fas fa-info-circle"></i><span>${msg}</span>`;
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 5000);
+    }
+
+    /* ── Drag & Drop ───────────────────────────────────────── */
+    function setupDrop(areaId, inputId, handler) {
+        const area  = document.getElementById(areaId);
+        const input = document.getElementById(inputId);
+        if (!area || !input) return;
+
+        area.addEventListener('dragover',  e => { e.preventDefault(); area.classList.add('dragover'); });
+        area.addEventListener('dragleave', () => area.classList.remove('dragover'));
+        area.addEventListener('drop', e => {
+            e.preventDefault();
+            area.classList.remove('dragover');
+            if (e.dataTransfer.files[0]) handler(e.dataTransfer.files[0]);
+        });
+        /* only trigger file picker when clicking the area itself, not child buttons */
+        area.addEventListener('click', e => {
+            if (e.target.tagName !== 'BUTTON' && !e.target.closest('button')) {
+                input.click();
+            }
+        });
+        /* prevent nested upload-btn from also bubbling to area */
+        area.querySelectorAll('.upload-btn').forEach(btn => {
+            btn.addEventListener('click', e => { e.stopPropagation(); input.click(); });
+        });
+        input.addEventListener('change', e => { if (e.target.files[0]) handler(e.target.files[0]); });
+    }
+
+    /* ── File handlers ─────────────────────────────────────── */
+    function handleVideo(file, mode) {
+        const resultId = mode === 'pred' ? 'predResult' : 'fullResult';
+        if (!/\.(mp4|avi|mov|mkv|webm)$/i.test(file.name)) {
+            return showResultError(resultId, 'Invalid video type. Use MP4, AVI, MOV, MKV or WebM.');
+        }
+        if (file.size > 200 * 1024 * 1024) {
+            return showResultError(resultId, 'Video must be under 200 MB.');
+        }
+        clearResult(resultId);
+        if (mode === 'pred') {
+            selPredVideo = file;
+            updateFileInfo('predFileInfo', [{icon:'fa-film', label:'Video', file}]);
+            document.getElementById('predBtn').disabled = false;
+            document.getElementById('predVideoArea').classList.add('has-file');
+        } else {
+            selFullVideo = file;
+            refreshFullInfo();
+            updateFullBtn();
+            document.getElementById('fullVideoArea').classList.add('has-file');
+        }
+    }
+
+    function handleAudio(file, mode) {
+        if (!/\.(wav|mp3|m4a|flac)$/i.test(file.name)) {
+            const resultId = mode === 'full' ? 'fullResult' : null;
+            if (resultId) showResultError(resultId, 'Invalid audio type. Use WAV, MP3, M4A or FLAC.');
+            return;
+        }
+        if (mode === 'full') {
+            selFullAudio = file;
+            refreshFullInfo();
+            updateFullBtn();
+            document.getElementById('fullAudioArea').classList.add('has-file');
+        }
+    }
+
+    function updateFileInfo(elId, items) {
+        const el = document.getElementById(elId);
+        if (!el) return;
+        el.innerHTML = items.map(({icon,label,file}) =>
+            `<span class="file-info-item"><i class="fas ${icon}"></i><strong>${label}:</strong> ${file.name} <span style="color:var(--text-3)">(${(file.size/1024/1024).toFixed(2)} MB)</span></span>`
+        ).join('');
+        el.classList.add('show');
+    }
+
+    function refreshFullInfo() {
+        const items = [];
+        if (selFullVideo) items.push({icon:'fa-film',       label:'Video', file:selFullVideo});
+        if (selFullAudio) items.push({icon:'fa-microphone', label:'Audio', file:selFullAudio});
+        if (items.length) updateFileInfo('fullFileInfo', items);
+    }
+
+    function updateFullBtn() {
+        document.getElementById('fullBtn').disabled = !(selFullVideo && selFullAudio);
+    }
+
+    /* ── Mock data (used when backend unreachable) ─────────── */
+    const MOCK_SENTENCES = [
+        'Place place it in my hand',
+        'Bin blue at F two now',
+        'Lay red by A nine please',
+        'Set white with G six soon',
+        'Place green at C four again',
+    ];
+
+    function mockData(mode) {
+        const picked = MOCK_SENTENCES[Math.floor(Math.random() * MOCK_SENTENCES.length)];
+        const conf   = 0.72 + Math.random() * 0.25;
+        const probs  = {};
+        MOCK_SENTENCES.forEach(s => { probs[s] = s === picked ? conf : Math.random() * 0.18; });
+        return {
+            predicted_sentence: picked,
+            confidence: conf,
+            all_probs: probs,
+            /* prediction mode: no generated outputs, just the uploaded video preview
+               full pipeline:   cloned audio + output video from backend            */
+            audio_path: mode === 'full' ? 'outputs/cloned_voice.wav'    : null,
+            video_path: mode === 'full' ? 'outputs/output_with_voice.mp4' : null,
+        };
+    }
+
+    /* ── API calls ─────────────────────────────────────────── */
+    async function processPrediction() {
+        if (!selPredVideo) return;
+        await runRequest('predLoading', 'predBtn', 'predResult', 'prediction');
+    }
+
+    async function processFullPipeline() {
+        if (!selFullVideo || !selFullAudio) return;
+        await runRequest('fullLoading', 'fullBtn', 'fullResult', 'full');
+    }
+
+    async function runRequest(loadingId, btnId, resultId, mode) {
+        const loading = document.getElementById(loadingId);
+        const btn     = document.getElementById(btnId);
+
+        /* reset result panel */
+        clearResult(resultId);
+        loading.classList.add('show');
+        document.getElementById(loadingId + 'Text').innerHTML = `<i class="fas fa-spinner fa-spin"></i> Initializing...`;
+        
+        const pContainer = document.getElementById(loadingId.replace('Loading', 'ProgressContainer'));
+        const pBar = document.getElementById(loadingId.replace('Loading', 'ProgressBar'));
+        if (pContainer && pBar) {
+            pContainer.style.display = 'block';
+            pBar.style.width = '5%';
+        }
+        
+        btn.disabled = true;
+
+        const currentUserObj = localStorage.getItem('currentUser');
+        const currentUser = currentUserObj ? JSON.parse(currentUserObj) : null;
+
+        try {
+            const fd = new FormData();
+            if (mode === 'prediction') {
+                fd.append('video', selPredVideo);
+                fd.append('mode', 'prediction');
+            } else {
+                fd.append('video', selFullVideo);
+                fd.append('audio', selFullAudio);
+                fd.append('mode', 'full');
+            }
+            if (currentUser) fd.append('user_id', currentUser.id);
+
+            const res = await fetch('/process', { method: 'POST', body: fd });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            
+            if (data.error) {
+                showResultError(resultId, data.error);
+                loading.classList.remove('show');
+                btn.disabled = false;
+                return;
+            }
+
+            let progressInterval = null;
+            let currentPct = 5;
+
+            // Setup SSE Stream for Live Progress
+            const evtSource = new EventSource('/stream/' + data.task_id);
+            evtSource.onmessage = function(event) {
+                const taskData = JSON.parse(event.data);
+                
+                if (taskData.error) {
+                    if(progressInterval) clearInterval(progressInterval);
+                    showResultError(resultId, taskData.error);
+                    loading.classList.remove('show');
+                    btn.disabled = false;
+                    evtSource.close();
+                } else if (taskData.status === 'complete') {
+                    if(progressInterval) clearInterval(progressInterval);
+                    currentPct = 100;
+                    if (pBar) pBar.style.width = '100%';
+                    document.getElementById(loadingId + 'Text').innerHTML = `<i class="fas fa-check-circle" style="color:#10b981;"></i> Complete (100%)`;
+                    
+                    setTimeout(() => {
+                        showResultSuccess(resultId, taskData.result, mode);
+                        loading.classList.remove('show');
+                        btn.disabled = false;
+                    }, 600);
+                    evtSource.close();
+                } else if (taskData.status === 'running') {
+                    // Determine where the bar "should" be based on the current step
+                    let targetPct = mode === 'prediction' ? 95 : 15;
+                    if (mode === 'full') {
+                        if (taskData.progress_msg.includes('Step 1')) targetPct = 35;
+                        if (taskData.progress_msg.includes('Step 2')) targetPct = 75;
+                        if (taskData.progress_msg.includes('Generating')) targetPct = 85;
+                        if (taskData.progress_msg.includes('Step 3')) targetPct = 95;
+                    }
+                    
+                    // Start smooth animation interval if not started
+                    if (!progressInterval) {
+                        progressInterval = setInterval(() => {
+                            if (currentPct < targetPct) {
+                                // Crawl upwards. Crawls slower as it gets closer to the target.
+                                currentPct += Math.max(0.1, (targetPct - currentPct) * 0.05);
+                                if (currentPct > targetPct - 0.5) currentPct = targetPct;
+                                
+                                if (pBar) pBar.style.width = currentPct + '%';
+                                
+                                // Update live progress text with the climbed percentage
+                                const textEl = document.getElementById(loadingId + 'Text');
+                                if (textEl) {
+                                    textEl.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${taskData.progress_msg} <strong style="color:var(--accent); margin-left:8px;">${Math.floor(currentPct)}%</strong>`;
+                                }
+                            }
+                        }, 250);
+                    }
+                }
+            };
+            
+            evtSource.onerror = function(err) {
+                if(progressInterval) clearInterval(progressInterval);
+                console.warn('SSE Error:', err);
+                evtSource.close();
+                showResultError(resultId, 'Lost connection to backend process.');
+                loading.classList.remove('show');
+                btn.disabled = false;
+            };
+
+        } catch (err) {
+            console.warn('Backend unreachable or error:', err.message);
+            showResultError(resultId, 'Process failed: ' + err.message);
+            loading.classList.remove('show');
+            btn.disabled = false;
+        }
+    }
+
+    /* ── History (My Projects) ─────────────────────────────── */
+    async function loadHistory() {
+        const currentUserObj = localStorage.getItem('currentUser');
+        if (!currentUserObj) return;
+
+        const user = JSON.parse(currentUserObj);
+        const grid = document.getElementById('historyGrid');
+        const loading = document.getElementById('historyLoading');
+
+        grid.innerHTML = '';
+        loading.style.display = 'block';
+
+        try {
+            const res = await fetch('/api/projects/' + user.id);
+            if (!res.ok) throw new Error('Failed to load history');
+            const projects = await res.json();
+            
+            loading.style.display = 'none';
+
+            if (projects.length === 0) {
+                grid.innerHTML = '<div style="text-align:center; padding:3rem; color:var(--text-3); background:rgba(0,0,0,0.2); border-radius:12px;">No projects generated yet.</div>';
+                return;
+            }
+
+            grid.innerHTML = projects.map(p => `
+                <div class="card" style="background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); padding:1.5rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:1rem;">
+                        <span class="badge ${p.type === 'full' ? 'badge-full' : 'badge-pred'}">
+                            ${p.type === 'full' ? '<i class="fas fa-magic"></i> Full Pipeline' : '<i class="fas fa-eye"></i> Prediction Only'}
+                        </span>
+                        <span style="font-size:0.875rem; color:var(--text-3);"><i class="far fa-clock"></i> ${new Date(p.created_at + 'Z').toLocaleString()}</span>
+                    </div>
+                    
+                    <div style="margin-bottom:1.5rem;">
+                        <h4 style="font-size:0.875rem; color:var(--text-3); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Predicted Text</h4>
+                        <div style="font-size:1.1rem; font-weight:500; color:var(--text); padding:1rem; background:rgba(0,0,0,0.3); border-radius:8px; border-left:4px solid var(--accent);">
+                            "${p.predicted_sentence || 'No prediction available'}"
+                        </div>
+                    </div>
+
+                    ${p.video_file || p.audio_file ? `
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+                        ${p.video_file ? `
+                            <div>
+                                <h4 style="font-size:0.875rem; color:var(--text-3); margin-bottom:0.5rem;">Generated Video</h4>
+                                <a href="/download/video/${p.video_file}" class="action-btn" style="padding:0.6rem; font-size:0.9rem;" download>
+                                    <i class="fas fa-video"></i> Download Video
+                                </a>
+                            </div>
+                        ` : ''}
+                        ${p.audio_file ? `
+                            <div>
+                                <h4 style="font-size:0.875rem; color:var(--text-3); margin-bottom:0.5rem;">Cloned Audio</h4>
+                                <a href="/download/audio/${p.audio_file}" class="action-btn" style="padding:0.6rem; font-size:0.9rem; background:rgba(255,255,255,0.1);" download>
+                                    <i class="fas fa-music"></i> Download Audio
+                                </a>
+                            </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
+                </div>
+            `).join('');
+            
+        } catch(err) {
+            loading.style.display = 'none';
+            grid.innerHTML = `<div class="result-panel error" style="display:block;">Failed to load project history.</div>`;
+            console.error(err);
+        }
+    }
+
+    /* ── Admin Dashboard Population ────────────────────────── */
+    async function loadAdminDashboard() {
+        try {
+            // 1. Fetch Stats
+            const statsRes = await fetch('/api/admin/stats');
+            const stats = await statsRes.json();
+            document.getElementById('adminStatVideos').innerText = stats.total_projects;
+            document.getElementById('adminStatClones').innerText = stats.total_clones;
+            document.getElementById('adminStatUsers').innerText = stats.total_users;
+            document.getElementById('adminStatFeedback').innerText = stats.total_feedback;
+
+            // 1.5 Render grouped bar chart
+            const fbStatsRes = await fetch('/api/admin/feedback-stats');
+            const fbStats = await fbStatsRes.json();
+            renderFeedbackBarChart(fbStats);
+
+            // 2. Fetch Projects / Predictions
+            const projRes = await fetch('/api/admin/projects');
+            const projs = await projRes.json();
+            const pTable = document.getElementById('adminProjectsTable');
+            if (projs.length === 0) {
+                pTable.innerHTML = `<tr><td colspan="4" style="text-align:center; padding:2rem; color:var(--text-3);">No system activity yet.</td></tr>`;
+            } else {
+                pTable.innerHTML = projs.map(p => `
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                        <td style="padding:1rem 1.5rem; color:var(--text-2); font-size:0.85rem;">${new Date(p.created_at + 'Z').toLocaleString()}</td>
+                        <td style="padding:1rem 1.5rem; color:var(--primary); font-family:monospace;">${p.user_email || 'Unknown User'}</td>
+                        <td style="padding:1rem 1.5rem;">
+                            <span class="badge ${p.type === 'full' ? 'badge-full' : 'badge-pred'}" style="font-size:0.75rem; padding:0.25rem 0.6rem;">${p.type.toUpperCase()}</span>
+                        </td>
+                        <td style="padding:1rem 1.5rem; font-weight:500;">"${p.predicted_sentence || '...'}"</td>
+                    </tr>
+                `).join('');
+            }
+
+            // 3. Fetch Feedback
+            const fbRes = await fetch('/api/admin/feedback');
+            const fb = await fbRes.json();
+            const fList = document.getElementById('adminFeedbackList');
+            if (fb.length === 0) {
+                fList.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-3); background:rgba(0,0,0,0.2); border-radius:8px;">No user feedback submitted yet.</div>`;
+            } else {
+                fList.innerHTML = fb.map(f => {
+                    const moduleLabels = {
+                        'video_cloning': 'Video Cloning',
+                        'audio_cloning': 'Audio Cloning',
+                        'sentence_prediction': 'Sentence Prediction'
+                    };
+                    const moduleLabel = moduleLabels[f.module_type] || f.module_type || 'Unknown';
+                    return `
+                    <div style="background:rgba(255,255,255,0.03); border-left:3px solid ${f.satisfied ? '#10b981' : '#ef4444'}; padding:1.25rem; border-radius:4px; margin-bottom:1rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
+                            <strong style="color:var(--text-1);"><i class="fas fa-user-circle"></i> ${f.user_email}</strong>
+                            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                                <span style="background:rgba(59,130,246,0.1); color:#93c5fd; border:1px solid rgba(59,130,246,0.2); font-size:0.65rem; padding:0.15rem 0.5rem; border-radius:99px; text-transform:uppercase; letter-spacing:0.5px; font-weight:600;">${moduleLabel}</span>
+                                <span class="badge" style="background:${f.satisfied ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.1)'}; color:${f.satisfied ? '#10b981' : '#fca5a5'}; border:1px solid ${f.satisfied ? 'rgba(16,185,129,0.2)' : 'rgba(239,68,68,0.2)'}; font-size:0.7rem;">
+                                    ${f.satisfied ? '<i class="fas fa-thumbs-up"></i> Satisfied' : '<i class="fas fa-thumbs-down"></i> Not Satisfied'}
+                                </span>
+                                <span style="font-size:0.85rem; color:var(--text-3);">${new Date(f.created_at + 'Z').toLocaleString()}</span>
+                            </div>
+                        </div>
+                        <p style="color:var(--text-2); line-height:1.5;">${f.comment ? `"${f.comment}"` : '<i style="color:var(--text-3)">No comment provided</i>'}</p>
+                    </div>
+                `}).join('');
+            }
+        } catch(err) {
+            console.error("Failed to load admin dashboard:", err);
+            alert("Error loading admin data.");
+        }
+
+        // 4. Load new analytics sections (non-blocking)
+        try {
+            const [usageRes, heatRes, healthRes] = await Promise.all([
+                fetch('/api/admin/usage-analytics'),
+                fetch('/api/admin/activity-heatmap'),
+                fetch('/api/admin/system-health')
+            ]);
+            renderUsageChart(await usageRes.json());
+            renderHeatmap(await heatRes.json());
+            renderSystemHealth(await healthRes.json());
+        } catch(e) { console.error('Analytics load error:', e); }
+
+        // 5. Load user directory
+        loadUserDirectory();
+    }
+
+    let satChart = null;
+    function renderFeedbackBarChart(fbStats) {
+        const ctx = document.getElementById('satisfactionChart').getContext('2d');
+        if (satChart) satChart.destroy();
+
+        const labels = ['Sentence Prediction', 'Video Cloning', 'Audio Cloning'];
+        const keys   = ['sentence_prediction', 'video_cloning', 'audio_cloning'];
+        const likes    = keys.map(k => fbStats[k]?.likes    || 0);
+        const dislikes = keys.map(k => fbStats[k]?.dislikes || 0);
+
+        satChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Like',
+                        data: likes,
+                        backgroundColor: '#10b981',
+                        borderRadius: 6,
+                        barPercentage: 0.5,
+                        categoryPercentage: 0.6
+                    },
+                    {
+                        label: 'Dislike',
+                        data: dislikes,
+                        backgroundColor: '#ef4444',
+                        borderRadius: 6,
+                        barPercentage: 0.5,
+                        categoryPercentage: 0.6
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.04)' },
+                        ticks: { color: '#8b95a8', font: { family: 'DM Sans', size: 12 } }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.06)' },
+                        ticks: { color: '#8b95a8', stepSize: 1, font: { family: 'DM Sans' } },
+                        title: { display: true, text: 'Vote Count', color: '#55616e', font: { family: 'Syne', size: 13, weight: 600 } }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#8b95a8', font: { family: 'DM Sans' }, usePointStyle: true, pointStyle: 'rectRounded', padding: 18 }
+                    },
+                    tooltip: {
+                        backgroundColor: '#161b27',
+                        borderColor: 'rgba(255,255,255,0.1)',
+                        borderWidth: 1,
+                        titleColor: '#f0f4ff',
+                        bodyColor: '#8b95a8'
+                    }
+                }
+            }
+        });
+    }
+
+    /* ── Usage Analytics Line Chart ── */
+    let usageChartObj = null;
+    function renderUsageChart(data) {
+        const ctx = document.getElementById('usageChart').getContext('2d');
+        if (usageChartObj) usageChartObj.destroy();
+        const labels = data.map(d => d.day);
+        usageChartObj = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels,
+                datasets: [
+                    { label: 'Predictions', data: data.map(d => d.predictions), borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', fill: true, tension: 0.35, pointRadius: 3, borderWidth: 2 },
+                    { label: 'Voice Clones', data: data.map(d => d.clones), borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.1)', fill: true, tension: 0.35, pointRadius: 3, borderWidth: 2 },
+                    { label: 'Total', data: data.map(d => d.total), borderColor: '#8b5cf6', backgroundColor: 'rgba(139,92,246,0.05)', fill: false, tension: 0.35, pointRadius: 2, borderWidth: 1.5, borderDash: [5,3] }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#8b95a8', font: { size: 10 }, maxRotation: 45 } },
+                    y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: '#8b95a8', stepSize: 1 } }
+                },
+                plugins: {
+                    legend: { position: 'top', labels: { color: '#8b95a8', font: { family: 'DM Sans' }, usePointStyle: true, padding: 15 } },
+                    tooltip: { backgroundColor: '#161b27', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1, titleColor: '#f0f4ff', bodyColor: '#8b95a8' }
+                }
+            }
+        });
+    }
+
+    /* ── Activity Heatmap ── */
+    function renderHeatmap(matrix) {
+        const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        const maxVal = Math.max(1, ...matrix.flat());
+        let html = '<div style="display:grid; grid-template-columns:40px repeat(24, 1fr); gap:2px; font-size:0.65rem;">';
+        // Header row
+        html += '<div></div>';
+        for (let h = 0; h < 24; h++) html += `<div style="text-align:center; color:var(--text-3); padding:2px 0;">${h}</div>`;
+        // Data rows
+        for (let d = 0; d < 7; d++) {
+            html += `<div style="color:var(--text-3); display:flex; align-items:center; font-weight:500;">${days[d]}</div>`;
+            for (let h = 0; h < 24; h++) {
+                const val = matrix[d][h];
+                const intensity = val / maxVal;
+                const bg = val === 0 ? 'rgba(255,255,255,0.03)' : `rgba(59,130,246,${0.15 + intensity * 0.7})`;
+                html += `<div style="background:${bg}; border-radius:3px; aspect-ratio:1; display:flex; align-items:center; justify-content:center; color:${intensity > 0.5 ? '#fff' : 'var(--text-3)'}; font-weight:${val ? 600 : 400}; min-height:22px;" title="${days[d]} ${h}:00 — ${val} activities">${val || ''}</div>`;
+            }
+        }
+        html += '</div>';
+        document.getElementById('heatmapContainer').innerHTML = html;
+    }
+
+    /* ── System Health ── */
+    function renderSystemHealth(h) {
+        const statusDot = (ok) => `<span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${ok ? '#10b981' : '#ef4444'}; margin-right:6px;"></span>`;
+        const bar = (pct, color) => `<div style="background:rgba(255,255,255,0.06); border-radius:6px; height:10px; overflow:hidden; flex:1;"><div style="width:${pct}%; height:100%; background:${color}; border-radius:6px; transition:width 0.5s ease;"></div></div>`;
+        const barColor = (pct) => pct > 85 ? '#ef4444' : pct > 60 ? '#f59e0b' : '#10b981';
+
+        document.getElementById('systemHealthContainer').innerHTML = `
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+                <div style="font-size:0.85rem; color:var(--text-2); font-weight:500;">Model Status</div>
+                <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+                    <span style="font-size:0.8rem; color:var(--text-2);">${statusDot(h.lip_model_loaded)}Lip Reading Model</span>
+                    <span style="font-size:0.8rem; color:var(--text-2);">${statusDot(h.tts_model_loaded)}TTS Model</span>
+                    <span style="font-size:0.8rem; color:var(--text-2);">${statusDot(h.voice_engine_loaded)}Voice Engine</span>
+                </div>
+                <div style="margin-top:0.5rem;">
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="font-size:0.8rem; color:var(--text-3); min-width:55px;">RAM</span>
+                        ${bar(h.memory.percent, barColor(h.memory.percent))}
+                        <span style="font-size:0.75rem; color:var(--text-3); min-width:90px; text-align:right;">${h.memory.used_gb}/${h.memory.total_gb} GB</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                        <span style="font-size:0.8rem; color:var(--text-3); min-width:55px;">Disk</span>
+                        ${bar(h.disk.percent, barColor(h.disk.percent))}
+                        <span style="font-size:0.75rem; color:var(--text-3); min-width:90px; text-align:right;">${h.disk.used_gb}/${h.disk.total_gb} GB</span>
+                    </div>
+                </div>
+                <div style="display:flex; gap:1.5rem; font-size:0.8rem; color:var(--text-3); border-top:1px solid rgba(255,255,255,0.05); padding-top:0.75rem;">
+                    <span><i class="fas fa-upload"></i> Uploads: ${h.uploads_size_mb} MB</span>
+                    <span><i class="fas fa-file-video"></i> Outputs: ${h.outputs_size_mb} MB</span>
+                </div>
+            </div>`;
+    }
+
+    /* ── User Directory ── */
+    async function loadUserDirectory() {
+        const search = document.getElementById('userSearchInput')?.value || '';
+        const filter = document.getElementById('userFilterSelect')?.value || '';
+        try {
+            const res = await fetch(`/api/admin/users?search=${encodeURIComponent(search)}&filter=${filter}`);
+            const users = await res.json();
+            const tbody = document.getElementById('userDirectoryTable');
+            if (!users.length) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:2rem; color:var(--text-3);">No users found.</td></tr>';
+                return;
+            }
+            tbody.innerHTML = users.map(u => `
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+                    <td style="padding:0.8rem 1.25rem; color:var(--primary); font-family:monospace;">${u.email}</td>
+                    <td style="padding:0.8rem 1.25rem; color:var(--text-3); font-size:0.8rem;">${new Date(u.created_at + 'Z').toLocaleDateString()}</td>
+                    <td style="padding:0.8rem 1.25rem; color:var(--text-3); font-size:0.8rem;">${u.last_login ? new Date(u.last_login + 'Z').toLocaleString() : '<i>Never</i>'}</td>
+                    <td style="padding:0.8rem 1.25rem; font-weight:600;">${u.total_projects}</td>
+                    <td style="padding:0.8rem 1.25rem; font-weight:600;">${u.total_feedback}</td>
+                    <td style="padding:0.8rem 1.25rem;">
+                        <span style="font-size:0.7rem; padding:0.15rem 0.5rem; border-radius:99px; font-weight:600; letter-spacing:0.5px;
+                            background:${u.is_banned ? 'rgba(239,68,68,0.1)' : 'rgba(16,185,129,0.1)'};
+                            color:${u.is_banned ? '#fca5a5' : '#34d399'};
+                            border:1px solid ${u.is_banned ? 'rgba(239,68,68,0.2)' : 'rgba(16,185,129,0.2)'};
+                        ">${u.is_banned ? 'BANNED' : 'ACTIVE'}</span>
+                    </td>
+                    <td style="padding:0.8rem 1.25rem;">
+                        <button onclick="toggleBanUser(${u.id})" class="header-btn" style="padding:0.3rem 0.75rem; font-size:0.75rem;
+                            border-color:${u.is_banned ? 'rgba(16,185,129,0.3)' : 'rgba(239,68,68,0.3)'};
+                            color:${u.is_banned ? '#34d399' : '#fca5a5'};
+                        ">
+                            <i class="fas ${u.is_banned ? 'fa-unlock' : 'fa-ban'}"></i> ${u.is_banned ? 'Unban' : 'Ban'}
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        } catch(e) { console.error('User directory error:', e); }
+    }
+
+    async function toggleBanUser(userId) {
+        if (!confirm('Are you sure you want to change this user's status?')) return;
+        try {
+            const res = await fetch(`/api/admin/user/${userId}/ban`, { method: 'POST' });
+            const data = await res.json();
+            if (data.success) loadUserDirectory();
+            else alert('Error: ' + data.error);
+        } catch(e) { alert('Failed to update user status.'); }
+    }
+
+    /* ── Result rendering ──────────────────────────────────── */
+    function clearResult(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.className = 'result-panel';
+        el.innerHTML = '';
+    }
+
+    function showResultError(id, msg) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.className = 'result-panel error';
+        el.innerHTML = `
+            <div class="result-error-head">
+                <i class="fas fa-exclamation-triangle"></i> Error
+            </div>
+            <div style="color:var(--text-2);font-size:.875rem;margin-top:0.25rem;">${msg}</div>`;
+    }
+
+    function showResultSuccess(id, data, mode) {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const confPct  = (data.confidence * 100).toFixed(1);
+        const isPred   = mode === 'prediction';
+        const isFull   = mode === 'full';
+
+        /* ── uploaded video blob URL for preview ── */
+        const uploadedVideoFile = isPred ? selPredVideo : selFullVideo;
+        const uploadedVideoURL  = uploadedVideoFile ? URL.createObjectURL(uploadedVideoFile) : null;
+
+        /* ── header: tag + sentence + confidence ── */
+        let html = `
+            <div class="result-tag">
+                <i class="fas fa-check-circle"></i>
+                ${isFull ? 'Pipeline Complete' : 'Prediction Complete'}
+            </div>`;
+
+        if (data.warning) {
+            html += `
+            <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #fcd34d; padding: 0.75rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+                <i class="fas fa-exclamation-triangle"></i> <strong>Warning:</strong> ${data.warning}
+            </div>`;
+        }
+
+        html += `
+            <div class="result-sentence">"${data.predicted_sentence}"</div>
+            <div class="result-confidence">
+                Confidence &nbsp;<span class="conf-pill">${confPct}%</span>
+            </div>`;
+
+        /* ── probability bars ── */
+        // Removed as requested by the user
+
+        /* ── PREDICTION ONLY: show uploaded video ── */
+        if (isPred && uploadedVideoURL) {
+            html += `
+            <div class="media-section">
+                <div class="media-section-title">Input Video Preview</div>
+                <div class="media-grid single">
+                    <div class="media-block">
+                        <div class="media-block-header">
+                            <i class="fas fa-film"></i> Uploaded Video
+                        </div>
+                        <div class="media-block-body">
+                            <video controls>
+                                <source src="${uploadedVideoURL}">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        /* ── FULL PIPELINE: show uploaded video + cloned audio + output video ── */
+        if (isFull) {
+            /* row 1: uploaded video + cloned audio */
+            html += `<div class="media-section"><div class="media-section-title">Media Results</div>`;
+
+            /* determine layout: if we have both input video and audio, 2-col */
+            const hasAudio  = !!data.audio_path;
+            const hasOutVid = !!data.video_path;
+            const colCount  = (uploadedVideoURL && hasAudio) ? 2 : 1;
+
+            html += `<div class="media-grid ${colCount === 1 ? 'single' : ''}">`;
+
+            /* uploaded video */
+            if (uploadedVideoURL) {
+                html += `
+                <div class="media-block">
+                    <div class="media-block-header"><i class="fas fa-film"></i> Input Video</div>
+                    <div class="media-block-body">
+                        <video controls>
+                            <source src="${uploadedVideoURL}">
+                        </video>
+                    </div>
+                </div>`;
+            }
+
+            /* cloned audio */
+            if (hasAudio) {
+                const af = data.audio_path.split('/').pop();
+                html += `
+                <div class="media-block">
+                    <div class="media-block-header"><i class="fas fa-music"></i> Cloned Audio</div>
+                    <div class="media-block-body">
+                        <audio controls>
+                            <source src="/download/audio/${af}" type="audio/wav">
+                            Your browser does not support audio playback.
+                        </audio>
+                    </div>
+                </div>`;
+            }
+
+            html += `</div>`; /* close media-grid */
+
+            /* output video — full width below */
+            if (hasOutVid) {
+                const vf = data.video_path.split('/').pop();
+                html += `
+                <div style="margin-top:1rem;">
+                    <div class="media-block">
+                        <div class="media-block-header"><i class="fas fa-clapperboard"></i> Output Video with Cloned Voice</div>
+                        <div class="media-block-body">
+                            <video controls>
+                                <source src="/download/video/${vf}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                    </div>
+                </div>`;
+            }
+
+            html += `</div>`; /* close media-section */
+
+            /* ── Downloads section (full pipeline only) ── */
+            if (hasAudio || hasOutVid || uploadedVideoURL) {
+                html += `
+                <div class="downloads-section">
+                    <div class="downloads-section-title"><i class="fas fa-download"></i> &nbsp;Downloads</div>
+                    <div class="downloads-row">`;
+
+                if (uploadedVideoURL && uploadedVideoFile) {
+                    html += `
+                        <a class="dl-btn orange" href="${uploadedVideoURL}" download="${uploadedVideoFile.name}">
+                            <i class="fas fa-film"></i> Input Video
+                        </a>`;
+                }
+                if (hasAudio) {
+                    const af = data.audio_path.split('/').pop();
+                    html += `
+                        <a class="dl-btn" href="/download/audio/${af}" download>
+                            <i class="fas fa-file-audio"></i> Cloned Audio
+                        </a>`;
+                }
+                if (hasOutVid) {
+                    const vf = data.video_path.split('/').pop();
+                    html += `
+                        <a class="dl-btn green" href="/download/video/${vf}" download>
+                            <i class="fas fa-file-video"></i> Output Video
+                        </a>`;
+                }
+
+                html += `</div></div>`; /* close downloads-row + downloads-section */
+            }
+        }
+
+        /* ── Feedback section ── */
+        const moduleTypeMap = { 'prediction': 'sentence_prediction', 'full': 'video_cloning' };
+        const currentModuleType = moduleTypeMap[mode] || 'sentence_prediction';
+
+        if (data.project_id) {
+            html += `
+            <div class="feedback-section" style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1);">
+                <h4 style="font-size:1rem; color:var(--text-2); margin-bottom:1rem; text-align:center;"><i class="fas fa-comment-dots"></i> Provide Feedback</h4>
+                <div id="feedbackContainer_${data.project_id}">
+                    <p style="font-size:0.9rem; color:var(--text-2); margin-bottom:0.75rem; text-align:center;">Are you satisfied with the output generated?</p>
+                    <div style="display:flex; justify-content:center; gap:1rem; margin-bottom:1.25rem;">
+                        <button id="likeBtn_${data.project_id}" onclick="selectSatisfaction(${data.project_id}, 1, '${currentModuleType}')" class="header-btn" style="padding:0.65rem 1.5rem; border-color:rgba(16,185,129,0.3); color:#34d399; font-weight:600; transition:all 0.2s ease;">
+                            <i class="fas fa-thumbs-up"></i> Like
+                        </button>
+                        <button id="dislikeBtn_${data.project_id}" onclick="selectSatisfaction(${data.project_id}, 0, '${currentModuleType}')" class="header-btn" style="padding:0.65rem 1.5rem; border-color:rgba(239,68,68,0.3); color:#fca5a5; font-weight:600; transition:all 0.2s ease;">
+                            <i class="fas fa-thumbs-down"></i> Dislike
+                        </button>
+                    </div>
+                    <textarea id="feedbackText_${data.project_id}" class="form-input" rows="2" placeholder="Tell us your thoughts (optional)..." style="margin-bottom:0.75rem;"></textarea>
+                    <button onclick="finalSubmitFeedback(${data.project_id})" class="login-btn" style="max-width:220px; padding:0.6rem 1.25rem; font-size:0.875rem;">
+                        <i class="fas fa-paper-plane"></i> Submit Feedback
+                    </button>
+                </div>
+            </div>`;
+        }
+
+        el.className = 'result-panel success';
+        el.innerHTML = html;
+    }
+
+    let lastSatisfaction = 1;
+    let lastModuleType = 'sentence_prediction';
+
+    function selectSatisfaction(projectId, isSatisfied, moduleType) {
+        lastSatisfaction = isSatisfied;
+        lastModuleType = moduleType || 'sentence_prediction';
+
+        // Highlight selected button, dim the other
+        const likeBtn = document.getElementById('likeBtn_' + projectId);
+        const dislikeBtn = document.getElementById('dislikeBtn_' + projectId);
+        if (isSatisfied) {
+            likeBtn.style.background = 'rgba(16,185,129,0.2)';
+            likeBtn.style.borderColor = '#10b981';
+            likeBtn.style.transform = 'scale(1.05)';
+            dislikeBtn.style.background = 'transparent';
+            dislikeBtn.style.borderColor = 'rgba(239,68,68,0.3)';
+            dislikeBtn.style.transform = 'scale(1)';
+        } else {
+            dislikeBtn.style.background = 'rgba(239,68,68,0.2)';
+            dislikeBtn.style.borderColor = '#ef4444';
+            dislikeBtn.style.transform = 'scale(1.05)';
+            likeBtn.style.background = 'transparent';
+            likeBtn.style.borderColor = 'rgba(16,185,129,0.3)';
+            likeBtn.style.transform = 'scale(1)';
+        }
+    }
+
+    async function finalSubmitFeedback(projectId) {
+        const currentUserObj = localStorage.getItem('currentUser');
+        if (!currentUserObj) {
+            alert("You must be logged in to submit feedback.");
+            return;
+        }
+        const user = JSON.parse(currentUserObj);
+        const textEl = document.getElementById('feedbackText_' + projectId);
+        const comment = textEl ? textEl.value.trim() : "";
+
+        try {
+            const res = await fetch('/api/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    user_id: user.id, 
+                    project_id: projectId, 
+                    module_type: lastModuleType,
+                    comment: comment,
+                    satisfied: lastSatisfaction
+                })
+            });
+            const data = await res.json();
+            if(data.success) {
+                document.getElementById('feedbackContainer_' + projectId).innerHTML = '<div style="color:var(--success); font-weight:600; padding:1rem; background:rgba(16,185,129,0.1); border-radius:8px; text-align:center;"><i class="fas fa-check-circle"></i> Thank you for your feedback!</div>';
+            } else {
+                alert("Failed to submit feedback: " + (data.error || "Unknown error"));
+            }
+        } catch(err) {
+            alert("Error communicating with server.");
+        }
+    }
+
+    /* ── Init ──────────────────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('loginPage').style.display = 'flex';
+        document.getElementById('dashboardPage').style.display = 'none';
+    });
+</script>
+</body>
+</html>

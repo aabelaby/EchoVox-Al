@@ -1,0 +1,10 @@
+flask==2.3.3
+werkzeug==2.3.7
+opencv-python==4.8.1.78
+TTS==0.22.0
+coqpit-config
+torch>=2.0.0
+torchaudio>=2.0.0
+soundfile
+numpy
+scipy
